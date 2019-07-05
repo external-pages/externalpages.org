@@ -1,0 +1,553 @@
+/* basics */
+
+@font-face {
+    font-family: SF Arborcrest Heavy, sans-serif;
+    src: url(Fonts/SF Arborcrest Heavy.ttf);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body, input, textarea { 
+	font-family: Arial Black, sans-serif; 
+	font-size: 13px; 
+	color: #000000;
+	letter-spacing: 1px;
+	margin: 0;
+  	padding: 0;
+  	height: 100%;
+}
+
+a { 
+	text-decoration: none; 
+	cursor: pointer; 
+	color: coral;
+}
+
+a:hover {
+	color: Lime;
+}
+
+li {
+	list-style-type: none;
+	text-decoration: none;
+}
+
+p { 
+	line-height: 1.6em; 
+	margin-bottom: 10px;
+}
+
+.lilnotice {
+	display: none;
+	width: 40vw;
+    font-family: Arial;
+    line-height: 1.6em;
+    letter-spacing: 1px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+}
+
+/* logo */
+
+.logo h1 {
+	font-size: 26px;
+	letter-spacing: 5px;
+	text-transform: uppercase;
+	font-style: italic;
+	color: Gainsboro; 
+	text-shadow: 4px 4px 3px DeepSkyBlue;
+	margin: 25px;
+}
+
+.logo h1:hover {
+	color: Lime;
+}
+
+#options {
+	position: absolute;
+	z-index: 99999;
+}
+
+#scene {
+	z-index: -1;
+}
+
+/* nav bar */
+
+.nav-tabs-justified {
+	border-bottom: 0;
+}
+
+.nav-tabs-justified > li > a {
+	margin-right: 0;
+	border-radius: 4px;
+}
+
+.nav-tabs-justified > .active > a,
+.nav-tabs-justified > .active > a:focus,
+.nav-tabs-justified > .active > a:hover {
+}
+
+.tab-content > .tab-pane {
+	display: none;
+}
+
+.tab-content > .active {
+	display: block;
+}
+
+.nav-tabs .dropdown-menu {
+	border-top-left-radius: 0;
+	border-top-right-radius: 0;
+}
+
+.navbar {
+	position: relative;
+}
+
+.tab-content {
+	padding-top: 100px;
+	margin-right: 180px; /* spacing from nav bar = .pages width */
+}
+	
+@media (min-width:768px) {
+
+	.nav-tabs-justified > li > a {
+	}
+
+	.nav-tabs-justified > .active > a,
+	.nav-tabs-justified > .active > a:focus,
+	.nav-tabs-justified > .active > a:hover {
+	}
+
+	.nav-justified > li {
+		width: 1%;
+	}
+
+	.nav-justified > li > a {
+		margin-bottom: 0;
+	}
+
+}
+
+h6 { 
+	font-size: 13px;
+	width: 100%;
+	font-family: Arial;
+	font-weight: bold;
+}
+
+.pages { /* 25px margin on the outside in total */
+	width: 180px;
+	position: fixed;
+	bottom: 0;
+	right: 0;
+	float: right;
+	margin-right: 10px;
+	margin-bottom: 10px;
+	z-index: 999;
+}
+
+.pages li {
+	margin: 15px;
+}
+
+#b1 {
+	color: coral;
+	display: inline-block;
+}
+
+#b1:hover {
+	color: Lime;
+}
+
+.colon {
+	display: none;
+	position: absolute;
+	color: coral;
+}
+
+#b1:hover .colon {
+	display: inline-block;
+}
+
+.box {
+	display: none;
+}
+
+.box i {
+	display: block;
+}
+
+.box p, .visiblebox p {
+	margin-top: 0px !important;
+	margin-bottom: 0px !important;
+}
+
+p.date {
+	position: absolute;
+	visibility: hidden;
+	width: 60px;
+	vertical-align: top;
+	margin-left: -70px;
+}
+
+.notframe iframe {
+	position: fixed;
+	padding: 0px !important;
+	z-index: 0.000001;
+	background-size: cover;
+	background-repeat: no-repeat;
+	width: calc(100% + 10px);
+	height: calc(100% + 10px);
+	top: -10px;
+	left: -10px;
+}
+
+/* tabs */
+
+h4 {
+	float: right;
+	margin-top: -3px;
+	color: DarkBlue;
+	height: auto;
+	background: Gainsboro;
+	background-position: -90deg;
+	display: block;
+	clear: both;
+}
+
+div#about.tab-pane.active {
+	position: relative;
+}
+
+div#about.tab-pane.active div.inside {
+}
+
+div#about.tab-pane.active div.ref {
+	background: #ffab62;
+	width: 100%;
+	height: 100px;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+ }
+
+.tab-pane {
+	margin-left: 25px;
+	margin-bottom: 25px;
+}
+
+a.sections1, 
+a.sections2,
+a.sections3 {
+	color: DarkBlue;
+}
+
+.some-element1, 
+.some-element2, 
+.some-element3  {
+	display: none;
+}
+
+.sections1:hover .some-element1 {
+	display: block;
+	position: absolute;
+	width: 50%;
+	font-size: 90%;
+	float:right;
+}
+
+.sections2:hover .some-element2 {
+	display: block;
+	position: absolute;
+	width: 50%;
+	font-size: 90%;
+	float: right;
+}
+
+.sections3:hover .some-element3 {
+	display: block;
+	position: absolute;
+	width: 50%;
+	font-size: 90%;
+	float: right;
+}
+
+/* exhibitions */
+
+p.about4 {
+	position: relative;
+	display: block;
+	width: 50vw;
+	font-family: Arial;
+	color: DarkBlue;
+	float: right;
+	margin-bottom: 25px;
+	margin-top: 17px;
+	background: linear-gradient(to right, Gainsboro, Yellow, LimeGreen);;
+}
+
+p.about4 a {
+	font-family: Arial;
+	color: DarkBlue;
+}
+
+p.about4 a:hover {
+	color: White;
+}
+
+a.enter {
+	display: block;
+	clear: both;
+	font-family: Arial;
+	text-transform: uppercase;
+	text-align: center;
+	color: DarkBlue;
+	width: 100px;
+	text-align: center;
+	margin-top: 100px;
+	margin-bottom: 100px;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+small {
+	margin-right: 0;
+	float: right;
+	right: 0;
+}
+
+/* about-contact */
+
+p.about {
+	width: 50vw;
+	font-family: Arial;
+	color: DarkBlue;
+	float: right;
+	margin-right: 0px;
+	margin-bottom: 20px;
+	margin-top: 17px;
+	background: linear-gradient(to right, Gainsboro, PaleTurquoise , Cyan );;
+}
+
+p.about1 {
+	width: 50vw;
+	font-family: Arial;
+	color: DarkBlue;
+	float: right;
+	margin-right: 0px;
+	margin-bottom: 20px;
+	margin-top: 17px;
+	background: linear-gradient(to right, LimeGreen, LimeGreen, rgba(0, 0, 0, 0));;
+}
+
+@keyframes animatedBackground {
+    0% { background-position: 0% 0% }
+    50% { background-position: 100% 0% }
+    100% { background-position: 200% 0% }
+}
+
+.fun, .references {
+	background-size: 200% 100%; 
+	-webkit-animation: animatedBackground 3s linear infinite;
+}
+
+/* manifesto */
+
+.manifesto {
+	margin-bottom: 20px;
+	display: block;
+	clear: both;
+}
+
+.manifesto a {
+	font-family: Arial;
+	color: DarkBlue;
+}
+
+.manifesto a:hover {
+	color: coral;
+}
+
+.two {
+	display: none;
+}
+
+.two p{
+	width: 60vw;
+	font-family: Arial;
+	color: DarkBlue;
+	float: left;
+	margin-right: 200px;
+	margin-bottom: 20px;
+	background: linear-gradient(to left, Yellow, Pink, Plum);;
+	line-height: 1.6em; 
+}
+
+.box .threee {
+	width: 60vw;
+	font-family: Arial;
+	color: DarkBlue;
+	float: left;
+	margin-right: 200px;
+	margin-bottom: 20px;
+	background: linear-gradient(to left, Yellow, Pink, Plum);;
+	line-height: 1.6em; 
+}
+
+i.material-icons {
+	position: absolute;
+}
+
+a.references {
+	color: DarkBlue;
+}
+
+a.references:hover {
+	color: lime;
+}
+
+/* support */
+
+p.about3 {
+	position: relative;
+	display: block;
+	width: 50vw;
+	font-family: Arial;
+	color: DarkBlue;
+	float: right;
+	margin-right: 0px;
+	margin-top: 17px;
+	background: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0), Gainsboro);;
+}
+
+.donatebutton {
+	position: relative;
+	display: block;
+	margin-right: 100px;
+}
+
+.notice {
+	height: 170px;
+	background-color: yellow;
+	display: block;
+	clear: both;
+	width: 100px;
+	margin-left: 20vw;
+	position: relative;
+	margin-bottom: 30px;
+}
+
+.notice p {
+	margin: 0;
+    position: absolute;
+    font-family: Arial;
+    line-height: 1.6em;
+    letter-spacing: 1px;
+    width: 80px;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+}
+
+.emoji1 {
+	display: inline;
+	clear: both;
+	font-size: 50px;
+	margin-left: 105px;
+	position: absolute;
+	bottom:-10px;
+}
+
+/* if video on main page */
+
+#video-controls {
+	position: absolute;
+}
+
+button#play {
+	border: none;
+	border-radius: 0 !important;
+	position: absolute;
+	float: left;
+	left: 50px;
+	bottom: 10px;
+	background: transparent;
+	border-radius: 4px;
+	font-style: italic;
+	background-color: Gainsboro;
+}
+
+button#mute {
+	border: none;
+	border-radius: 0 !important;
+	position: absolute;
+	float: left;
+	left: 20px;
+	bottom: 10px;
+	background: transparent;
+	border-radius: 4px;
+	font-style: italic;
+	background-color: Gainsboro;
+}
+
+/* media queries */
+
+@media (max-width: 500px) {
+
+	.pages {
+		width: 100px;
+	}
+
+	.tab-content {
+		margin-right: 100px; /* = .pages width */
+	}
+
+	p.date {
+		display: none;
+	}
+
+	p.about4 {
+		width: 100%;
+	}
+
+/*	a#b1 a{
+    	display: table-cell;
+    	vertical-align: top;
+	}*/
+
+	a.colon { /* very bad work around for aligning */
+		width: 87px;
+		position: absolute;
+		margin-top: -15px;
+		text-align: right;
+	}
+
+}
+
+/* for BYMG cover art only */
+
+@media (max-device-width: 1024px) {
+
+	#scene {
+		display: none;
+	}
+
+	.lilnotice {
+		display: block;
+	}
+
+	.tab-pane {
+		margin-top: 25px;
+	}
+
+}
+
