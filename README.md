@@ -2,4 +2,4 @@
 source code ( ͡° ͜ʖ ͡°)
 
 three.js stuff requires a three.js-master folder in the root directory<br>
-all images are here: https://github.com/external-pages/images
+no images soz they were too big, but you can find them in the individual artist repositories
