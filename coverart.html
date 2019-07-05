@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>"Hand 1" by Proxy Mund</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+        <meta name="msapplication-TileColor" content="#da532c">
+        <meta name="theme-color" content="#ffffff">
+        <script src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
+        <script src="http://code.jquery.com/ui/1.10.0/jquery-ui.js"></script>
+        <link rel="apple-touch-icon" sizes="180x180" href="favicons/proxy/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="favicons/proxy/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="favicons/proxy/favicon-16x16.png">
+        <link rel="manifest" href="favicons/proxy/site.webmanifest">
+        <link rel="mask-icon" href="favicons/proxy/safari-pinned-tab.svg" color="#5bbad5">
+        <style>
+            p {
+                visibility: visible;
+                position: absolute;
+                color: black;
+                z-index: 9999999;
+                top: 50%;
+                left: 50%;
+                margin-right: -50%;
+                transform: translate(-50%, -50%);
+            }
+        </style>
+    </head>
+
+    <body>
+        <script src="three.js-master/build/three.min.js"></script>
+        <script src="three.js-master/examples/js/loaders/OBJLoader.js"></script>
+        <script src="three.js-master/examples/js/controls/OrbitControls.js"></script>
+
+        <div id="container">
+
+            <script>
+                var container;
+                var camera, scene, renderer;
+                var mouseX = 0, mouseY = 0;
+
+                var windowHalfX = window.innerWidth / 2;
+                var windowHalfY = window.innerHeight / 2;
+
+                init();
+                animate();
+
+                function init() {
+
+                    container = document.createElement( 'div' );
+                    document.body.appendChild( container );
+
+                    camera = new THREE.PerspectiveCamera( 45, window.innerWidth / window.innerHeight, 1, 80000 );
+                    camera.position.z = 850;
+
+                    // scene
+
+                    scene = new THREE.Scene();
+
+                    var ambient = new THREE.AmbientLight( 0x101030 );
+                    scene.add( ambient );
+
+                    var directionalLight = new THREE.DirectionalLight( 0xffeedd );
+                    directionalLight.position.set( 0, 0, 1 );
+                    scene.add( directionalLight );
+
+                    // texture
+
+                    var manager = new THREE.LoadingManager();
+                    manager.onProgress = function ( item, loaded, total ) {
+                        console.log( item, loaded, total );
+                    };
+
+                    var texture = new THREE.Texture();
+
+                    var onProgress = function ( xhr ) {
+                        if ( xhr.lengthComputable ) {
+                            var percentComplete = xhr.loaded / xhr.total * 100;
+                            if (percentComplete < 100) {var downloaded = ('Loading: ' + Math.round(percentComplete, 2) + '%' ); 
+                            }
+                            else {var downloaded = (" ");
+                            }
+                          document.getElementById("myText").innerHTML = downloaded;
+                        }
+                    };
+
+                    var onError = function ( xhr ) {};
+
+                    var loader = new THREE.ImageLoader( manager );
+                    loader.load( 'images/proxyimages/texture.png', function ( image ) {
+                        texture.image = image;
+                        texture.needsUpdate = true;
+                    } );
+
+                    // model
+
+                    var loader = new THREE.OBJLoader( manager );
+                    loader.load( 'images/proxyimages/hand1.obj', function ( object ) {
+                        object.traverse( function ( child ) {
+                            if ( child instanceof THREE.Mesh ) {
+                                child.material.map = texture;
+                            }
+                        } );
+
+                        object.position.y = - 10;
+                        object.position.x = 0;
+                        scene.add( object );
+
+                    }, onProgress, onError );
+
+                    controls = new THREE.OrbitControls( camera );
+                    controls.enableZoom = true;
+                    controls.enableRotate = true;
+                    controls.enablePan = false;
+
+                    renderer = new THREE.WebGLRenderer({ alpha: true });
+                    renderer.setClearColor( 0x000000, 0 );
+                    renderer.setPixelRatio( window.devicePixelRatio );
+                    renderer.setSize( window.innerWidth, window.innerHeight );
+                    container.appendChild( renderer.domElement );
+
+                    window.addEventListener( 'resize', onWindowResize, false );
+
+                }
+
+                function onWindowResize() {
+
+                    windowHalfX = window.innerWidth / 2;
+                    windowHalfY = window.innerHeight / 2;
+
+                    camera.aspect = window.innerWidth / window.innerHeight;
+                    camera.updateProjectionMatrix();
+
+                    renderer.setSize( window.innerWidth, window.innerHeight );
+
+                }
+
+                function onDocumentMouseMove( event ) {
+
+                    mouseX = ( event.clientX - windowHalfX ) / 2;
+                    mouseY = ( event.clientY - windowHalfY ) / 2;
+
+                }
+
+                function animate() {
+
+                    requestAnimationFrame( animate );
+                    render();
+
+                }
+
+                function render() {
+
+                    camera.position.x += ( mouseX - camera.position.x ) * .003;
+                    camera.position.y += ( - mouseY - camera.position.y ) * .003;
+                    camera.lookAt( scene.position );
+
+                    renderer.render( scene, camera );
+
+                }
+            </script>
+
+            <p><span id="myText"></span></p>
+
+        </div>
+
+    </body>
+</html>

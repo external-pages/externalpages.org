@@ -1,0 +1,320 @@
+body {
+	margin: 0px;
+	padding: 0px;
+	overflow-x: hidden;
+}
+
+@keyframes textmove {
+	from {
+		transform: translate(0);
+	}
+	to {
+		transform: translate(500px);
+	}
+} 
+
+@keyframes textmovee {
+	from {
+		transform: translate(50);
+	}
+	to {
+		transform: translate(300px);
+	}
+} 
+
+#myDiv {
+	display: none;
+}
+
+#loading {   
+	margin: 0;
+	color: #dfaede;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%); 
+}
+
+#loading2 {   
+	margin: 0;
+	color: #dfaede;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%); 
+	display: none;
+}
+
+img.fairies2 {
+	height: 100px;
+	width: 250px;
+}
+
+img.fairies1 {
+	height: 100px;
+	width: 200px;
+}
+
+.background {
+	width: 100vw;
+	height: 510vh;
+	position: absolute;
+	margin: 0px;
+	padding: 0px;
+	top: 0;
+	left: 0;
+	opacity: 0;
+}
+
+#water {
+	filter: url('#turbulence');
+	background-size: 5940px;
+	position: absolute;
+	overflow: visible;
+	z-index: -1;
+}
+
+#container img{
+	filter: url('#turbulence');
+	margin: 100px;
+	position: absolute;
+	z-index: 1;
+}
+
+.float {
+	position: absolute;
+}
+
+div#container {
+	height: 1000px;
+	width: 1000px;
+	position: absolute;
+	filter: url('#turbulence');
+	z-index: 1;
+}
+
+.acquaimages0 {
+	filter: url('#turbulence');
+	width: 45vw;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.acquaimages2 {
+	filter: url('#turbulence');
+	width: 50vw;
+	height: auto;
+	position: absolute;
+	padding-bottom: 15vh;
+	top: 10vh;
+	float: right;
+	right: 20px;
+}
+
+.acquaimages3 {
+	filter: url('#turbulence');
+	width: 110%;
+	height: auto;
+	padding-top: 30vh;
+	opacity: 0.8;
+	z-index: 0;
+}
+
+.q img, .r img, .s img, .t img, .j img, .k img, .l img {
+	padding-top: 40vh;
+	z-index: 1;
+	filter: url('#turbulence');
+}
+
+.d img, .e img, .f img, .g img, .h img, .i img {
+	padding-top: 300vh;
+	z-index: 1;
+	filter: url('#turbulence');
+}
+
+.acquaimages44 {
+	width: 40vw;
+	opacity: 0.9;
+	filter: url('#turbulence');
+	height: auto;
+	margin-top: 5vh;
+	animation-name: textmovee;
+	animation-duration: 10s;
+	animation-iteration-count: infinite;
+	animation-delay: 2s;
+	animation-timing-function: ease-in-out;
+	animation-fill-mode: both;
+	animation-direction: alternate;
+}
+
+p.eggs {
+	color: yellow;
+	font-family: arial;
+	position: absolute;
+	left: 40vw;
+	font-size: 50px;
+}
+
+.hero {
+	height: 300px;
+}
+
+.hero-img {
+	background: transparent url("../images/acquaimages/eeeeeecopy.png") repeat-x 5% 0;
+	background-size: 2000px;
+	animation: infinite-shift-left 200s linear;
+}
+
+@keyframes infinite-shift-left {
+	0% {
+		background-position: 5000px;
+	}
+	100% {
+		background-position: 0;
+	}
+}
+
+.acquaimages5 {
+	width: 40vw;
+	height: auto;
+	float: right;
+	margin-top: 0vh;
+	right: 10vh;
+	z-index: 0;
+	filter: url('#turbulence');
+	position: absolute;
+}
+
+.acquaimages55 {
+	width: 30vw;
+	height: auto;
+	float: right;
+	padding-top: 10vh;
+	margin-top: 10vh;
+	right: 7vh;
+	z-index: 0;
+	opacity: 0.8;
+	-ms-transform: rotate(10deg); 
+	-webkit-transform: rotate(10deg);
+	transform: rotate(10deg);
+	filter: url('#turbulence');
+	position: absolute;
+}
+
+.acquaimages555 {
+	width: 20vw;
+	height: auto;
+	float: right;
+	padding-top: 20vh;
+	margin-top: 20vh;
+	right: 0;
+	z-index: 0;
+	opacity: 0.9;
+	-ms-transform: rotate(25deg);
+	-webkit-transform: rotate(25deg);
+	transform: rotate(25deg);
+	filter: url('#turbulence');
+	position: absolute;
+}
+
+iframe {
+	padding-top: 5vh;
+	margin-top: 5vh;
+	filter: url('#turbulence');
+	z-index: 9;
+	display: block;
+	margin-right: auto;
+	margin-left: auto;
+	margin-bottom: 0;
+}
+
+.acquaimages4 {
+	width: 30vw;
+	filter: url('#turbulence');
+	height: auto;
+	margin-left: 20vw;
+	opacity: 0.6;
+	margin-top: 5vh;
+	margin-bottom: 3vh;
+	animation-name: textmove;
+	animation-duration: 5s;
+	animation-iteration-count: infinite;
+	animation-timing-function: ease-in-out;
+	animation-direction: alternate;
+}
+
+#acquaimages1 {
+	filter: url('#turbulence');
+	width: 40vw;
+	height: auto;
+	margin-top: 15vh;
+	padding-top: 15vh;
+	z-index: 0;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#acquaimages1 img {
+	filter: url('#turbulence');
+	z-index: 0;
+}
+
+a {
+	z-index: 9;
+	color: #dfaede;
+	text-align: center;
+	width: 100%;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	font-size: 30px;
+	padding-top: 15vh;
+	text-decoration: none;
+	filter: url('#turbulence');
+}
+
+.Limg, .Rimg {
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	height: 500px;
+	width: 500px;
+	float: left;
+	margin: 15px;
+}
+
+@media (max-width: 850px) { 
+
+	div#loading2 {   
+		margin: 0;
+		color: #dfaede;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		margin-right: -50%;
+		transform: translate(-50%, -50%);
+		display: visible;
+		z-index: 9;
+	}
+
+	div#loading {   
+		display: none;
+	}
+
+	div#myDiv {
+		display: none;
+	}
+
+	body {
+		position: fixed;
+	}
+
+	img {
+		display: none;
+	}
+
+}

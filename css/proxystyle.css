@@ -1,0 +1,52 @@
+body {
+    height: 100%;
+    width: 100%;
+}
+#contentsndcldmain {
+    color: white;
+    z-index: 99999999999;
+    position: relative;
+    width:20px;
+}
+.projectItem, 
+.projectItem2, 
+.projectItem3, 
+.projectItem4, 
+.projectItem5, 
+.projectItem6, 
+.projectItem7, 
+.projectItem8, 
+.projectItem9, 
+.projectItem10 {
+    position: fixed;
+}
+.projectItem {
+    z-index: 1;
+}
+.projectItem2 {
+    z-index: 2;
+}
+.projectItem3 {
+    z-index: 3;
+}
+.projectItem4 {
+    z-index: 4;
+}
+.projectItem5 {
+    z-index: 5;
+}
+.projectItem6 {
+    z-index: 6;
+}
+.projectItem7 {
+    z-index: 7;
+}
+.projectItem8 {
+    z-index: 8;
+}
+.projectItem9 {
+    z-index: 9;
+}
+.projectItem10 {
+    z-index: 10;
+}
