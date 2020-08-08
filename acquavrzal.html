@@ -1,175 +1,184 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
-		<title>?/§nake/girl/?</title>
-		<script src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
-		<script src="http://code.jquery.com/ui/1.10.0/jquery-ui.js"></script>
-		<link rel="apple-touch-icon" sizes="180x180" href="favicons/acqua/apple-icon-180x180.png">
-		<link rel="icon" type="image/png" sizes="32x32" href="favicons/acqua/favicon-32x32.png">
-		<link rel="icon" type="image/png" sizes="16x16" href="favicons/acqua/favicon-16x16.png">
-		<link rel="icon" type="image/png" sizes="32x32" href="favicons/acqua/favicon-96x96.png">
-		<link rel="stylesheet" href="css/acquastyle.css">
-		<script>
-			var looper;
-			var degrees = 0;
-			function rotateAnimation(el,speed){
-				var elem = document.getElementById(el);
-				//check the browsers
-				if(navigator.userAgent.match("Chrome")){
-					elem.style.WebkitTransform = "rotate("+degrees+"deg)";
-				} else if(navigator.userAgent.match("Firefox")){
-					elem.style.MozTransform = "rotate("+degrees+"deg)";
-				} else if(navigator.userAgent.match("MSIE")){
-					elem.style.msTransform = "rotate("+degrees+"deg)";
-				} else if(navigator.userAgent.match("Opera")){
-					elem.style.OTransform = "rotate("+degrees+"deg)";
-				} else {
-					elem.style.transform = "rotate("+degrees+"deg)";
-				}
-				looper = setTimeout('rotateAnimation(\''+el+'\','+speed+')',speed);
-				degrees++;
-				if(degrees > 359){
-					degrees = 1;
-				}
-				document.getElementById("status").innerHTML = "rotate("+degrees+"deg)";
-			}
-		</script>
-	</head>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
+        <title>?/§nake/girl/?</title>
+        <script src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
+        <script src="http://code.jquery.com/ui/1.10.0/jquery-ui.js"></script>
+        <link rel="apple-touch-icon" sizes="180x180" href="favicons/acqua/apple-icon-180x180.png" />
+        <link rel="icon" type="image/png" sizes="32x32" href="favicons/acqua/favicon-32x32.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="favicons/acqua/favicon-16x16.png" />
+        <link rel="icon" type="image/png" sizes="32x32" href="favicons/acqua/favicon-96x96.png" />
+        <link rel="stylesheet" href="css/acquastyle.css" />
+        <script>
+            var looper
+            var degrees = 0
+            function rotateAnimation(el, speed) {
+                var elem = document.getElementById(el)
+                //check the browsers
+                if (navigator.userAgent.match("Chrome")) {
+                    elem.style.WebkitTransform = "rotate(" + degrees + "deg)"
+                } else if (navigator.userAgent.match("Firefox")) {
+                    elem.style.MozTransform = "rotate(" + degrees + "deg)"
+                } else if (navigator.userAgent.match("MSIE")) {
+                    elem.style.msTransform = "rotate(" + degrees + "deg)"
+                } else if (navigator.userAgent.match("Opera")) {
+                    elem.style.OTransform = "rotate(" + degrees + "deg)"
+                } else {
+                    elem.style.transform = "rotate(" + degrees + "deg)"
+                }
+                looper = setTimeout("rotateAnimation('" + el + "'," + speed + ")", speed)
+                degrees++
+                if (degrees > 359) {
+                    degrees = 1
+                }
+                document.getElementById("status").innerHTML = "rotate(" + degrees + "deg)"
+            }
+        </script>
+    </head>
 
-	<body>
+    <body>
+        <div id="loading"><p>~§((*))§~ Loading ~§((*))§~</p></div>
+        <div id="loading2"
+            ><p
+                >~§((*))§~<br />We're working on bringing this exhibition on your device.<br />Please view on a bigger screen in the meantime.<br />~§((*))§~</p
+            ></div
+        >
 
-		<div id="loading"><p>~§((*))§~ Loading ~§((*))§~</p></div>
-		<div id="loading2"><p>~§((*))§~<br>We're working on bringing this exhibition on your device.<br>Please view on a bigger screen in the meantime.<br>~§((*))§~</p></div>
+        <div id="myDiv">
+            <div id="water"></div>
+            <div class="background"></div>
+            <div id="container">
+                <div class="a">
+                    <img class="fairies1" src="https://i.imgur.com/hanieKr.png" />
+                </div>
+                <div class="b">
+                    <img class="fairies2" src="https://i.imgur.com/JKHK4Mi.png" />
+                </div>
+                <div class="c">
+                    <img class="fairies1" src="https://i.imgur.com/hanieKr.png" />
+                </div>
+                <div class="d">
+                    <img class="fairies2" src="https://i.imgur.com/JKHK4Mi.png" />
+                </div>
+                <div class="e">
+                    <img class="fairies1" src="https://i.imgur.com/hanieKr.png" />
+                </div>
+                <div class="f">
+                    <img class="fairies1" src="https://i.imgur.com/hanieKr.png" />
+                </div>
+                <div class="g">
+                    <img class="fairies2" src="https://i.imgur.com/JKHK4Mi.png" />
+                </div>
+                <div class="h">
+                    <img class="fairies1" src="https://i.imgur.com/hanieKr.png" />
+                </div>
+                <div class="i">
+                    <img class="fairies2" src="https://i.imgur.com/JKHK4Mi.png" />
+                </div>
+                <div class="j">
+                    <img class="fairies1" src="https://i.imgur.com/hanieKr.png" />
+                </div>
+                <div class="k">
+                    <img class="fairies2" src="https://i.imgur.com/JKHK4Mi.png" />
+                </div>
+                <div class="l">
+                    <img class="fairies1" src="https://i.imgur.com/hanieKr.png" />
+                </div>
+                <div class="m">
+                    <img class="fairies1" src="https://i.imgur.com/hanieKr.png" />
+                </div>
+                <div class="n">
+                    <img class="fairies2" src="https://i.imgur.com/JKHK4Mi.png" />
+                </div>
+                <div class="o">
+                    <img class="fairies1" src="https://i.imgur.com/hanieKr.png" />
+                </div>
+                <div class="p">
+                    <img class="fairies2" src="https://i.imgur.com/JKHK4Mi.png" />
+                </div>
+                <div class="q">
+                    <img class="fairies1" src="https://i.imgur.com/hanieKr.png" />
+                </div>
+                <div class="r">
+                    <img class="fairies2" src="https://i.imgur.com/JKHK4Mi.png" />
+                </div>
+                <div class="s">
+                    <img class="fairies1" src="https://i.imgur.com/hanieKr.png" />
+                </div>
+                <div class="t">
+                    <img class="fairies1" src="https://i.imgur.com/hanieKr.png" />
+                </div>
+                <div class="a">
+                    <img class="fairies2" src="https://i.imgur.com/JKHK4Mi.png" />
+                </div>
+                <div class="b">
+                    <img class="fairies1" src="https://i.imgur.com/hanieKr.png" />
+                </div>
+                <div class="c">
+                    <img class="fairies2" src="https://i.imgur.com/JKHK4Mi.png" />
+                </div>
+                <div class="a">
+                    <img class="fairies1" src="https://i.imgur.com/hanieKr.png" />
+                </div>
+                <div class="b">
+                    <img class="fairies2" src="https://i.imgur.com/JKHK4Mi.png" />
+                </div>
+                <div class="c">
+                    <img class="fairies1" src="https://i.imgur.com/hanieKr.png" />
+                </div>
+                <div class="a">
+                    <img class="fairies1" src="https://i.imgur.com/hanieKr.png" />
+                </div>
+                <div class="b">
+                    <img class="fairies2" src="https://i.imgur.com/JKHK4Mi.png" />
+                </div>
+            </div>
 
-		<div id="myDiv">
-	    	<div id="water"></div>
-	    	<div class="background"></div>
-			<div id="container">
-			    <div class="a">
-			    	<img class="fairies1" src="https://i.imgur.com/hanieKr.png"/>
-			    </div>
-			    <div class="b">
-			    	<img class="fairies2" src="https://i.imgur.com/JKHK4Mi.png"/>
-			    </div>
-			    <div class="c">
-			    	<img class="fairies1" src="https://i.imgur.com/hanieKr.png"/>
-			    </div>
-			    <div class="d">
-			    	<img class="fairies2" src="https://i.imgur.com/JKHK4Mi.png"/>
-			    </div>
-			    <div class="e">
-			    	<img class="fairies1" src="https://i.imgur.com/hanieKr.png"/>
-			    </div>
-			    <div class="f">
-			    	<img class="fairies1" src="https://i.imgur.com/hanieKr.png"/>
-			    </div>
-			    <div class="g">
-			    	<img class="fairies2" src="https://i.imgur.com/JKHK4Mi.png"/>
-			    </div>
-			    <div class="h">
-			    	<img class="fairies1" src="https://i.imgur.com/hanieKr.png"/>
-			    </div>
-			    <div class="i">
-			    	<img class="fairies2" src="https://i.imgur.com/JKHK4Mi.png"/>
-			    </div>
-			    <div class="j">
-			    	<img class="fairies1" src="https://i.imgur.com/hanieKr.png"/>
-			    </div>
-			    <div class="k">
-			    	<img class="fairies2" src="https://i.imgur.com/JKHK4Mi.png"/>
-			    </div>
-			    <div class="l">
-			    	<img class="fairies1" src="https://i.imgur.com/hanieKr.png"/>
-			    </div>
-			    <div class="m">
-			    	<img class="fairies1" src="https://i.imgur.com/hanieKr.png"/>
-			    </div>
-			    <div class="n">
-			    	<img class="fairies2" src="https://i.imgur.com/JKHK4Mi.png"/>
-			    </div>
-			    <div class="o">
-			    	<img class="fairies1" src="https://i.imgur.com/hanieKr.png"/>
-			    </div>
-			    <div class="p">
-			    	<img class="fairies2" src="https://i.imgur.com/JKHK4Mi.png"/>
-			    </div>
-			    <div class="q">
-			    	<img class="fairies1" src="https://i.imgur.com/hanieKr.png"/>
-			    </div>
-			    <div class="r">
-			    	<img class="fairies2" src="https://i.imgur.com/JKHK4Mi.png"/>
-			    </div>
-			    <div class="s">
-			    	<img class="fairies1" src="https://i.imgur.com/hanieKr.png"/>
-			    </div>
-			    <div class="t">
-			    	<img class="fairies1" src="https://i.imgur.com/hanieKr.png"/>
-			    </div>
-			    <div class="a">
-			    	<img class="fairies2" src="https://i.imgur.com/JKHK4Mi.png"/>
-			    </div>
-			    <div class="b">
-			    	<img class="fairies1" src="https://i.imgur.com/hanieKr.png"/>
-			    </div>
-			    <div class="c">
-			    	<img class="fairies2" src="https://i.imgur.com/JKHK4Mi.png"/>
-			    </div>
-			    <div class="a">
-			    	<img class="fairies1" src="https://i.imgur.com/hanieKr.png"/>
-			    </div>
-			    <div class="b">
-			    	<img class="fairies2" src="https://i.imgur.com/JKHK4Mi.png"/>
-			    </div>
-			    <div class="c">
-			    	<img class="fairies1" src="https://i.imgur.com/hanieKr.png"/>
-			    </div>
-			    <div class="a">
-			    	<img class="fairies1" src="https://i.imgur.com/hanieKr.png"/>
-			    </div>
-			    <div class="b">
-			    	<img class="fairies2" src="https://i.imgur.com/JKHK4Mi.png"/>
-			    </div>
-			</div>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
-			<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+            <img class="acquaimages0" src="images/acquaimages/efrrft.png" />
+            <img class="acquaimages2" src="images/acquaimages/uiuiui.png" />
+            <img class="acquaimages3" src="images/acquaimages/tertte.png" />
 
-		    <img class="acquaimages0" src="images/acquaimages/efrrft.png"/>
-		    <img class="acquaimages2" src="images/acquaimages/uiuiui.png"/>
-		    <img class="acquaimages3" src="images/acquaimages/tertte.png"/>
+            <div class="hero hero-img"></div>
 
-		    <div class="hero hero-img"></div>
+            <img class="acquaimages44" src="images/acquaimages/Eeffeer.jpg" />
+            <img class="acquaimages5" src="images/acquaimages/efr3t45t.png" />
+            <img class="acquaimages55" src="images/acquaimages/efr3t45t.png" />
+            <img class="acquaimages555" src="images/acquaimages/efr3t45t.png" />
 
-		    <img class="acquaimages44" src="images/acquaimages/Eeffeer.jpg"/>
-		    <img class="acquaimages5" src="images/acquaimages/efr3t45t.png"/>
-		    <img class="acquaimages55" src="images/acquaimages/efr3t45t.png"/>
-		    <img class="acquaimages555" src="images/acquaimages/efr3t45t.png"/>
+            <br />
 
-		    <br>
+            <iframe
+                width="360"
+                height="203"
+                src="https://www.youtube.com/embed/n9baocz2qvY?rel=0&autoplay=1"
+                frameborder="0"
+                allow="autoplay; encrypted-media"
+                allowfullscreen
+            ></iframe>
 
-		    <iframe width="360" height="203" src="https://www.youtube.com/embed/n9baocz2qvY?rel=0&autoplay=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            <img class="acquaimages4" src="images/acquaimages/tumblr_pfd1orIguH1xeegjlo2_1280.jpg" />
+            <div class="hero hero-img"></div>
+            <img id="acquaimages1" src="images/acquaimages/jgkjkg.png" />
 
-		    <img class="acquaimages4" src="images/acquaimages/tumblr_pfd1orIguH1xeegjlo2_1280.jpg"/>
-		    <div class="hero hero-img"></div>
-		    <img id="acquaimages1" src="images/acquaimages/jgkjkg.png"/>
+            <script>
+                rotateAnimation("acquaimages1", 60)
+            </script>
 
-		    <script>rotateAnimation("acquaimages1",60);</script>
-		    
-		    <a href="https://www.youtube.com/watch?v=s6cFekA_YEM" target="_blank">https://www.youtube.com/watch?v=s6cFekA_YEM</a>
+            <a href="https://www.youtube.com/watch?v=s6cFekA_YEM" target="_blank">https://www.youtube.com/watch?v=s6cFekA_YEM</a>
 
-			<svg style="absolute" xlmns="http://www.w3.org/2000/svg" version="1.1">
-			  <filter id="turbulence" filterUnits="objectBoundingBox" x="0" y="0" width="100%" height="100%">
-			    <feTurbulence id="feturbulence" type="fractalNoise" numOctaves="1" seed="1"></feTurbulence>
-			    <feDisplacementMap xChannelSelector="G" yChannelSelector="B" scale="20" in="SourceGraphic"></feDisplacementMap>
-			  </filter>
-			</svg>
+            <svg style="absolute" xlmns="http://www.w3.org/2000/svg" version="1.1">
+                <filter id="turbulence" filterUnits="objectBoundingBox" x="0" y="0" width="100%" height="100%">
+                    <feTurbulence id="feturbulence" type="fractalNoise" numOctaves="1" seed="1"></feTurbulence>
+                    <feDisplacementMap xChannelSelector="G" yChannelSelector="B" scale="20" in="SourceGraphic"></feDisplacementMap>
+                </filter>
+            </svg>
 
-			<script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/TweenMax.min.js'></script>
-			<script  src="js/acquaindex.js"></script>
-
-		</div><!-- end of myDiv -->
-
-	</body>
-
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/TweenMax.min.js"></script>
+            <script src="js/acquaindex.js"></script> </div
+        ><!-- end of myDiv -->
+    </body>
 </html>
