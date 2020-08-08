@@ -120,7 +120,7 @@
     }
   },
   "eslintIgnore": [
-    "js/lib*",
+    "js/_lib*",
     "assets*",
     "fonts*"
   ]
