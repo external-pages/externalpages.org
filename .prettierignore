@@ -1,0 +1,7 @@
+node_modules*
+.now*
+.vercel*
+
+js/lib*
+*.min.js"
+fonts*
