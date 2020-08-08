@@ -1,0 +1,127 @@
+{
+  "name": "external-pages",
+  "version": "1.0.1",
+  "description": "source code ( ͡° ͜ʖ ͡°)",
+  "private": true,
+  "main": "index.html",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/external-pages/externalpages.org.git"
+  },
+  "author": "Ana Meisel <aanameisall@gmail.com> (https://ana.lol)",
+  "contributors": [
+    "Mackenzie Davidson <mwvdavidson@gmail.com> (https://mackenzie.blue)"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/external-pages/externalpages.org/issues"
+  },
+  "homepage": "https://github.com/external-pages/externalpages.org#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "eslint": "^7.6.0",
+    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "prettier": "2.0.5"
+  },
+  "prettier": {
+    "printWidth": 160,
+    "tabWidth": 4,
+    "useTabs": false,
+    "semi": false,
+    "bracketSpacing": true,
+    "overrides": [
+      {
+        "files": [
+          "index.js",
+          "*.js"
+        ],
+        "options": {
+          "tabWidth": 2,
+          "semi": false,
+          "singleQuote": true
+        }
+      },
+      {
+        "files": [
+          "*.html"
+        ],
+        "options": {
+          "parser": "html",
+          "tabWidth": 4,
+          "htmlWhitespaceSensitivity": "strict",
+          "jsxBracketSameLine": false
+        }
+      },
+      {
+        "files": [
+          "*.json",
+          "*.yaml",
+          "*.yml"
+        ],
+        "options": {
+          "tabWidth": 2
+        }
+      }
+    ]
+  },
+  "eslintConfig": {
+    "parserOptions": {
+      "ecmaVersion": 2017
+    },
+    "env": {
+      "es6": true,
+      "browser": true,
+      "jquery": true
+    },
+    "extends": [
+      "eslint:recommended",
+      "airbnb-base",
+      "prettier"
+    ],
+    "plugins": [
+      "prettier"
+    ],
+    "rules": {
+      "array-bracket-spacing": [
+        0,
+        "always",
+        {
+          "objectsInArrays": false
+        }
+      ],
+      "func-names": [
+        0
+      ],
+      "no-console": [
+        1
+      ],
+      "no-param-reassign": [
+        "error",
+        {
+          "props": false
+        }
+      ],
+      "no-underscore-dangle": [
+        0
+      ],
+      "object-curly-spacing": [
+        1,
+        "always"
+      ],
+      "prefer-destructuring": [
+        0
+      ],
+      "prettier/prettier": [
+        1
+      ]
+    }
+  },
+  "eslintIgnore": [
+    "js/lib*",
+    "assets*",
+    "fonts*"
+  ]
+}
