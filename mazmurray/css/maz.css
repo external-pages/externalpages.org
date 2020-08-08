@@ -1,0 +1,114 @@
+* {
+    margin: 0;
+    padding: 0
+}
+
+*:focus {
+    outline: none;
+}
+
+@font-face {
+    font-family: 'chancery';
+    src: url('../../fonts/urw_chancery_l_medium_italic.ttf') format('truetype');
+}
+
+html, body {
+    -webkit-font-smoothing: antialiased;
+    display: flex;
+    justify-content: center;
+}
+
+.content {
+    width: 50vw;
+    margin: 40px;
+}
+
+textarea {
+    width: 50vw;
+    border: 0px;
+	font-family: arial, sans-serif;
+    font-weight: 100;
+    font-size: 2em;
+}
+
+a.dots {
+    cursor: pointer;
+    font-size: 6em;
+    display: flex;
+    width: 1em;
+    color: orange;
+}
+
+img, video {
+    margin-top: 80px;
+    margin-bottom: 80px;
+    max-width: 100%;
+}
+
+.notice {
+    position: fixed;
+    margin: 40px;
+    width: 40px;
+    right: 0;
+    top: 0;
+    font-family: arial, sans-serif;
+    font-size: 0.9em;
+    color: orange;
+    text-align: right;
+    border: 1px solid orange;
+    padding: 5px;
+}
+
+button {
+    font-size: 2em;
+    vertical-align: top;
+    cursor: pointer;
+    margin-bottom: 33px;
+    color: black;
+    padding: 5px;
+}
+
+.flex {
+    display: flex;
+}
+
+.flex video {
+    width: 50%;
+}
+
+#myDIV, #end {
+    position: fixed;
+    margin: 0;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+}
+
+.endbtn {
+    width: 50vw;
+    border: 0px;
+    font-family: arial, sans-serif;
+    font-weight: 100;
+    font-size: 2em;
+    outline: none;
+    text-align: left;
+    color: orange;
+    cursor: pointer;
+}
+
+p#end {
+    font-family: chancery;
+    font-size: 16em;
+} 
+
+#end {
+    animation: MoveUpDown 15s linear infinite;
+}
+
+@keyframes MoveUpDown {
+    0% { top: -10vh; }
+    100% { top: 140vh; }
+}
+
+

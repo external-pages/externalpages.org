@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>BLACK MEME - Cover Art</title>
+		<meta name="description" content="Cover art for 'BLACK MEME' (2020), Legacy Russell" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+		<link href="../images/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content="http://externalpages.org/legacy-russell/black-meme" />
+		<meta property="og:title" content="BLACK MEME" />
+		<meta property="og:description" content="by Legacy Russell" />
+		<meta property="og:image" content="http://externalpages.org/legacy-russell/black-meme/stills/meta.png" />
+
+		<meta property="twitter:card" content="summary_large_image" />
+		<meta property="twitter:url" content="http://externalpages.org/legacy-russell/black-meme" />
+		<meta property="twitter:title" content="BLACK MEME" />
+		<meta property="twitter:description" content="by Legacy Russell" />
+		<meta property="twitter:image" content="http://externalpages.org/legacy-russell/black-meme/stills/meta.png" />
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+		<style>
+			body {
+				background-color: black;
+			}
+
+			@font-face {
+				font-family: "univers";
+				src: url("fonts/univers/UniversNextPro-LightExt.woff") format("woff"), url("fonts/univers/UniversNextPro-LightExt.woff2") format("woff2");
+			}
+
+			html {
+				font-family: sans-serif;
+				overflow: hidden;
+			}
+
+			h1 {
+				text-align: center;
+			}
+
+			.hero {
+				min-height: 100vh;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				color: black;
+				font-family: "univers";
+				letter-spacing: 0.2em;
+				font-size: 4em;
+				color: rgba(0, 0, 0, 0.4);
+				text-shadow: 3px 2px 10px black, 0 0 0 #9c9c9c, 1px 2px 2px black, -2px 0 #474747, 0 -2px #474747, 2px -1px #474747, -1px -2px #474747;
+			}
+
+			@media (max-width: 650px) {
+				.hero {
+					letter-spacing: 0.1em;
+					font-size: 3em;
+				}
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="hero">
+			<h1 contenteditable>BLACK MEME</h1>
+		</div>
+		<script>
+			const hero = document.querySelector(".hero")
+			const text = document.querySelector("h1")
+			const walk = 50 // 300px (shadow movement range)
+
+			function shadow(e) {
+				// Hero position
+				const { offsetWidth: width, offsetHeight: height } = hero
+				// Mouse location
+				let { offsetX: x, offsetY: y } = e
+				// If mouse is over inner element, adjust coordinates
+				if (this !== e.target) {
+					x += e.target.offsetLeft
+					y += e.target.offsetTop
+				}
+				// Determine shadow coordinates within 'walk' range
+				const xWalk = Math.round((x / width) * walk - walk / 1.2)
+				const yWalk = Math.round((y / height) * walk - walk / 1.27)
+				// Adjust text shadow accordingly
+				text.style.textShadow = `${xWalk}px ${yWalk}px 10px black, 
+										 0 0 0 #5a5a5a, 
+										 1px 2px 2px black, 
+										 -2px 0 #474747, 
+										 0 -2px #474747, 
+										 2px -1px #474747, 
+										 -1px -2px #474747`
+			}
+
+			hero.addEventListener("mousemove", shadow)
+		</script>
+	</body>
+</html>

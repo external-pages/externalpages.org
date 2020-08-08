@@ -1,0 +1,100 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: url("https://s3.amazonaws.com/external-pages/sanjana-varghese/96421a97b83034f52c410befe7cefa20.jpg");
+}
+
+a {
+    color: green;
+}
+
+.frame {
+    --block-size: 2vw;
+    display: grid;
+    grid-template-rows: var(--block-size) calc(25 * var(--block-size)) var(
+            --block-size
+        );
+    margin: 1vw;
+}
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(48, var(--block-size));
+    grid-template-rows: repeat(24, var(--block-size));
+    border: 1px solid white;
+    margin: 1vw;
+    align-items: center;
+}
+
+.block {
+    width: var(--block-size);
+    height: var(--block-size);
+}
+
+.diamond {
+    background: url("https://s3.amazonaws.com/external-pages/sanjana-varghese/office_building.png");
+    background-size: 2vh;
+    background-repeat: no-repeat;
+    filter: invert(1);
+}
+
+.player {
+    background: url("https://s3.amazonaws.com/external-pages/sanjana-varghese/564750.png");
+    background-size: 2vh;
+    background-repeat: no-repeat;
+    filter: invert(1);
+}
+
+.header .diamond {
+    background-color: transparent;
+    float: right;
+}
+
+.diamond-count {
+    float: right;
+    font-size: 0.9em;
+    line-height: var(--block-size);
+    color: green;
+    margin-right: 1vw;
+    margin-left: 1vw;
+}
+
+.sanj-text {
+    float: left;
+    color: green;
+    line-height: 20px;
+}
+
+.sanj-text p {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0);
+    margin-bottom: 20px;
+    margin-top: 0px;
+}
+
+.help {
+    float: left;
+    font-size: 0.9em;
+    line-height: var(--block-size);
+    color: green;
+    margin-right: 1vw;
+    margin-left: 1vw;
+}
+
+.not-a-website {
+    display: none;
+}
+
+@media (max-device-width: 834px) {
+    .not-a-website {
+        display: block;
+        position: fixed;
+        width: 100%;
+        text-align: center;
+        background-color: green;
+        font-style: italic;
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+}

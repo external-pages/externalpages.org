@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>BLACK MEME</title>
+    <meta name="description" content="'BLACK MEME' (2020), Legacy Russell" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+    <link href="../images/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="http://externalpages.org/legacy-russell/black-meme" />
+    <meta property="og:title" content="BLACK MEME" />
+    <meta property="og:description" content="by Legacy Russell" />
+    <meta property="og:image" content="http://externalpages.org/legacy-russell/black-meme/stills/meta.png" />
+
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="http://externalpages.org/legacy-russell/black-meme" />
+    <meta property="twitter:title" content="BLACK MEME" />
+    <meta property="twitter:description" content="by Legacy Russell" />
+    <meta property="twitter:image" content="http://externalpages.org/legacy-russell/black-meme/stills/meta.png" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+
+    <style>
+        html {
+            background-color: black;
+        }
+
+        body {
+            margin: 0px;
+            padding: 0px;
+            top: 0px;
+            left: 0px;
+            max-height: 100%;
+            position: absolute;
+            overflow-y: hidden;
+            width: 100%;
+        }
+
+        button,
+        a {
+            padding: 0;
+            border: none;
+            background: none;
+            color: green;
+            display: inline-block;
+        }
+
+        p {
+            display: inline-block;
+            vertical-align: middle;
+            padding-bottom: 20px;
+        }
+
+        span,
+        #myText {
+            visibility: visible;
+            position: absolute;
+            color: blue;
+            z-index: 9999999;
+        }
+
+        .buttons,
+        .fullscreen-btn,
+        .fullscreen-btn-exit,
+        #info {
+            position: absolute;
+            display: inline-block;
+            margin-top: 0px;
+            left: 50%;
+            margin-right: -50%;
+            transform: translate(-50%, 0%);
+            text-align: center;
+            vertical-align: middle;
+        }
+
+        .fullscreen-btn,
+        .fullscreen-btn-exit {
+            display: inline-block;
+            vertical-align: middle;
+            margin-top: 85vh;
+            text-align: center;
+            font-size: 1.25rem;
+        }
+
+        .material-icons {
+            font-size: 2rem;
+        }
+
+        .buttons {
+            display: inline-block;
+            vertical-align: middle;
+            margin-top: 85vh;
+            text-align: center;
+        }
+
+        .play {
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        .pause,
+        .fullscreen-btn-exit {
+            display: none;
+        }
+
+        .html-stuff {
+            margin: 0px;
+            top: 0px;
+            display: inline-block;
+            position: absolute;
+            text-align: center;
+            width: 100%;
+        }
+
+        canvas {
+            margin-top: 0px;
+        }
+
+        #fullscreen-video {
+            display: none;
+            position: absolute;
+            margin-top: 0px;
+            top: 0px;
+            left: 50%;
+            margin-right: -50%;
+            transform: translate(-50%, 0%);
+            background-color: black;
+            background-image: url("blackbck.png");
+            background-size: cover;
+            width: 100%;
+            height: 100vh;
+        }
+
+        #fullscreen-video-phone {
+            display: none;
+            position: absolute;
+        }
+
+        @media (max-width: 800px) {
+            #info {
+                visibility: hidden;
+            }
+
+            .fullscreen-btn,
+            .fullscreen-btn-exit {
+                font-size: 0.9rem;
+            }
+
+            .html-stuff {
+                width: 100%;
+            }
+
+            .buttons,
+            .fullscreen-btn,
+            .fullscreen-btn-exit {
+                margin-top: 75vh;
+            }
+
+            #fullscreen-video-phone {
+                display: block;
+                position: absolute;
+                width: 100%;
+                text-align: center;
+            }
+
+            #fullscreen-video-phone p {
+                display: block;
+                z-index: 999999;
+                color: green;
+                font-family: arial;
+                margin: 10vh 10px 10px 10px;
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <script src="../three.js-master/build/three.js"></script>
+    <script src="../three.js-master/examples/js/controls/OrbitControls.js"></script>
+    <script src="../three.js-master/examples/js/Stats.js"></script>
+    <script src="../three.js-master/examples/js/libs/stats.min.js"></script>
+    <script src="../three.js-master/examples/js/loaders/OBJLoader.js"></script>
+    <script src="../three.js-master/examples/js/controls/TrackballControls.js"></script>
+
+    <div class="html-stuff">
+        <div id="fullscreen-video-phone">
+            <p>Your browser might not support HTML5 videos or 3D scenes. Please view on desktop instead.</p>
+        </div>
+
+        <button id="info"></button>
+
+        <video id="video" width="100%" loop controls webkit-playsinline playsinline style="display:none">
+            <source id="videosrc" src="BLACK_MEME_2020_VOL.mp4" loop controls webkit-playsinline playsinline
+                type="video/mp4" />
+            <p>"Sorry, your browser doesn't support HTML5 video."</p>
+        </video>
+
+        <div class="buttons">
+            <button class="uk-button uk-button-primary play" onclick="playVid()" type="button">
+                <i class="material-icons">play_arrow</i>
+            </button>
+            <button class="uk-button uk-button-primary pause" onclick="pauseVid()" type="button">
+                <i class="material-icons">pause</i>
+            </button>
+        </div>
+
+        <p><span>
+                <div id="myText"></div>
+            </span></p>
+
+        <video id="fullscreen-video" width="100%" controls webkit-playsinline playsinline style="display:none">
+            <source id="videosrc" src="BLACK_MEME_2020_VOL.mp4" loop controls webkit-playsinline playsinline
+                type="video/mp4" />
+        </video>
+
+        <div class="buttons-fs">
+            <button class="fullscreen-btn">Fullscreen Toggle</button>
+            <button class="fullscreen-btn-exit"><i class="material-icons">fullscreen_exit</i></button>
+        </div>
+    </div>
+
+    <script>
+        // iOS iframe auto-resize workaround
+        if (/(iPad|iPhone|iPod)/g.test(navigator.userAgent)) {
+            var scene = document.getElementById("scene")
+            scene.style.width = getComputedStyle(scene).width
+            scene.style.height = getComputedStyle(scene).height
+            scene.setAttribute("scrolling", "no")
+        }
+
+        //fullscreen 
+        $(document).ready(function () {
+            $(".fullscreen-btn").click(function () {
+                $("#fullscreen-video").toggle();
+                $(".buttons").toggle();
+                var video = $("#video").get(0);
+                if (video.paused === false) {
+                    video.pause();
+                }
+                return false;
+            });
+            $(".fullscreen-btn-exit").click(function () {
+                $("#fullscreen-video").toggle();
+                $(".buttons").toggle();
+                $(".fullscreen-video-bckg").toggle();
+            });
+            $(".buttons-fs").on("click", function () {
+                $(".fullscreen-btn, .fullscreen-btn-exit").toggle()
+            })
+        });
+
+        // play section in the beginning
+        var vid = document.getElementById("video")
+        console.log(vid)
+        document.getElementById("info").addEventListener(
+            "click",
+            function (e) {
+                this.style.display = "none"
+                vid.play()
+                $(".play, .pause").toggle()
+            },
+            false
+        )
+        var vidClip = document.getElementById("video")
+
+        function playVid() {
+            video.play()
+        }
+
+        function pauseVid() {
+            video.pause()
+        }
+        $(".buttons").on("click", function () {
+            $(".play, .pause").toggle()
+        })
+        vidClip.onended = function (e) {
+            $(".play, .pause").toggle()
+        }
+
+        //three.js
+
+        var container
+        var camera, scene, renderer
+        var mouseX = 0,
+            mouseY = 0
+
+        init()
+        animate()
+
+        function init() {
+            container = document.createElement("div")
+            document.body.appendChild(container);
+            (renderer = new THREE.WebGLRenderer()), (camera = new THREE.PerspectiveCamera(45, window.innerWidth / window
+                .innerHeight, 1, 80000))
+            camera.position.z = 700
+            camera.position.y = 0
+            camera.rotation.set(100, 0, 0)
+
+            // scene
+
+            scene = new THREE.Scene()
+
+            geometry = new THREE.PlaneBufferGeometry(750, 434)
+
+            video = document.getElementById("video")
+            texture = new THREE.VideoTexture(video)
+            texture.minFilter = THREE.LinearFilter
+            texture.magFilter = THREE.LinearFilter
+            texture.format = THREE.RGBFormat;
+            (material = new THREE.MeshBasicMaterial({
+                map: texture,
+                side: THREE.DoubleSide
+            })),
+            (plane = new THREE.Mesh(geometry, material))
+            plane.rotation.x = 0
+            plane.position.y = 23
+            scene.add(plane)
+
+            // loading gif
+
+            var planeGeometry2 = new THREE.PlaneGeometry(420, 40, 1)
+            var texture2 = new THREE.TextureLoader().load("9.png")
+            var planeMaterial2 = new THREE.MeshLambertMaterial({
+                map: texture2
+            })
+            var loading = new THREE.Mesh(planeGeometry2, planeMaterial2)
+            loading.position.set(0, 265, -15) //z: negative goes closer
+            loading.rotation.x = 0
+            scene.add(loading)
+
+            // light
+
+            var ambientLight = new THREE.AmbientLight(0xcccccc, 0.4)
+            scene.add(ambientLight)
+
+            var light = new THREE.AmbientLight(0x404040)
+            scene.add(light)
+
+            var pointLight = new THREE.PointLight(0xffffff, 0.2)
+            camera.add(pointLight)
+
+            scene.add(camera)
+
+            controls = new THREE.OrbitControls(camera)
+            controls.enabled = true
+            controls.enableZoom = true
+            controls.enableRotate = true
+            controls.enablePan = true
+
+            // model
+
+            var colour = new THREE.Color(0x1e1e1e)
+
+            function loadModel() {
+                object.traverse(function (child) {
+                    if (child.isMesh) {
+                        child.material.ambient = pointLight
+                        child.material.color = colour
+                    }
+                })
+                object.scale.set(110, 110, 110)
+                object.position.set(0, -400, 285)
+                scene.add(object)
+            }
+
+            var manager = new THREE.LoadingManager(loadModel)
+
+            var loading = new THREE.LoadingManager()
+
+            var onError = function (xhr) {}
+
+            var loader = new THREE.OBJLoader(manager, loading)
+            loader.load(
+                "models/laptop-edited-rotated-3.obj",
+                function (obj) {
+                    object = obj
+                    scene.add(obj)
+                },
+                onProgress,
+                onError
+            )
+
+            manager.onProgress = function (item, loaded, total) {
+                console.log(item, loaded, total)
+            }
+
+            var onProgress = function (xhr) {
+                if (xhr.lengthComputable) {
+                    var percentComplete = (xhr.loaded / xhr.total) * 100
+                    if (percentComplete < 100) {
+                        var downloaded = "Loading: " + Math.round(percentComplete, 2) + "%"
+                    } else {
+                        var downloaded = " "
+                    }
+                    document.getElementById("myText").innerHTML = downloaded
+                }
+            }
+
+            renderer = new THREE.WebGLRenderer()
+            renderer.setPixelRatio(window.devicePixelRatio)
+            renderer.setSize(window.innerWidth, window.innerHeight)
+            container.appendChild(renderer.domElement)
+
+            window.addEventListener("resize", onWindowResize, false)
+
+            update()
+        }
+
+        function update() {
+            controls.update()
+            requestAnimationFrame(update)
+        }
+
+        function onWindowResize() {
+            camera.aspect = window.innerWidth / window.innerHeight
+            camera.updateProjectionMatrix()
+            renderer.setSize(window.innerWidth, window.innerHeight)
+        }
+
+        function animate() {
+            requestAnimationFrame(animate)
+            render()
+        }
+
+        function render() {
+            // camera.lookAt(scene.position)
+            renderer.render(scene, camera)
+        }
+    </script>
+</body>
+
+</html>
