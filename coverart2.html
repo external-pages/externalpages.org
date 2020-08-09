@@ -4,8 +4,8 @@
         <title>"Untitled" by Acqua Vrzal</title>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
-        <script src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
-        <script src="http://code.jquery.com/ui/1.10.0/jquery-ui.js"></script>
+        <script src="/js/_lib/jquery-3-2-1.min.js"></script>
+        <script src="/js/_lib/jquery-ui-1-10-0.min.js"></script>
         <link rel="apple-touch-icon" sizes="180x180" href="favicons/acqua/apple-icon-180x180.png" />
         <link rel="icon" type="image/png" sizes="32x32" href="favicons/acqua/favicon-32x32.png" />
         <link rel="icon" type="image/png" sizes="16x16" href="favicons/acqua/favicon-16x16.png" />
@@ -25,14 +25,14 @@
     </head>
 
     <body>
-        <script src="three.js-master/build/three.js"></script>
-        <script src="three.js-master/examples/js/controls/OrbitControls.js"></script>
-        <script src="three.js-master/examples/js/objects/Reflector.js"></script>
-        <script src="three.js-master/examples/js/objects/Refractor.js"></script>
-        <script src="three.js-master/examples/js/objects/Water2.js"></script>
-        <script src="three.js-master/examples/js/WebGL.js"></script>
-        <script src="three.js-master/examples/js/libs/dat.gui.min.js"></script>
-        <script src="three.js-master/examples/js/loaders/OBJLoader.js"></script>
+        <script src="/js/_lib/three.js/r97/build/three.min.js"></script>
+        <script src="/js/_lib/three.js/r97/examples/js/controls/OrbitControls.js"></script>
+        <script src="/js/_lib/three.js/r97/examples/js/objects/Reflector.js"></script>
+        <script src="/js/_lib/three.js/r97/examples/js/objects/Refractor.js"></script>
+        <script src="/js/_lib/three.js/r97/examples/js/objects/Water2.js"></script>
+        <script src="/js/_lib/three.js/r97/examples/js/WebGL.js"></script>
+        <script src="/js/_lib/three.js/r97/examples/js/libs/dat.gui.min.js"></script>
+        <script src="/js/_lib/three.js/r97/examples/js/loaders/OBJLoader.js"></script>
 
         <div id="container">
             <script>
@@ -87,7 +87,7 @@
                     // texture
 
                     var textureLoader = new THREE.TextureLoader(manager)
-                    var texture = textureLoader.load("three.js-master/examples/textures/waternormals.jpg")
+                    var texture = textureLoader.load("/js/_lib/three.js/r97/examples/textures/waternormals.jpg")
 
                     // model
 
@@ -107,7 +107,7 @@
 
                     var loader = new THREE.OBJLoader(manager)
                     loader.load(
-                        "three.js-master/examples/models/obj/coral/10010_Coral_v1_L3.obj",
+                        "/js/_lib/three.js/r97/examples/models/obj/coral/10010_Coral_v1_L3.obj",
                         function (obj) {
                             object = obj
                         },
@@ -157,7 +157,7 @@
                     // skybox
 
                     var cubeTextureLoader = new THREE.CubeTextureLoader()
-                    cubeTextureLoader.setPath("three.js-master/examples/textures/cube/Acqua/new/")
+                    cubeTextureLoader.setPath("/js/_lib/three.js/r97/examples/textures/cube/Acqua/new/")
 
                     var cubeTexture = cubeTextureLoader.load(["px.jpg", "nx.jpg", "py.jpg", "ny.jpg", "pz.jpg", "nz.jpg"])
 
