@@ -87,7 +87,7 @@
                     var onError = function (xhr) {}
 
                     var loader = new THREE.ImageLoader(manager)
-                    loader.load("images/proxyimages/texture.png", function (image) {
+                    loader.load("https://s3.amazonaws.com/external-pages/images/proxyimages/texture.png", function (image) {
                         texture.image = image
                         texture.needsUpdate = true
                     })
@@ -96,7 +96,7 @@
 
                     var loader = new THREE.OBJLoader(manager)
                     loader.load(
-                        "images/proxyimages/hand1.obj",
+                        "https://s3.amazonaws.com/external-pages/images/proxyimages/hand1.obj",
                         function (object) {
                             object.traverse(function (child) {
                                 if (child instanceof THREE.Mesh) {
