@@ -1,0 +1,16 @@
+body {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);
+}
+
+#target {
+	font-size: 5em;
+	border: none;
+	cursor: pointer;
+	background-color: none;
+	outline: none;
+	color: black;
+}
