@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Daddy Residency by Nahee Kim</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+        <meta name="description" content="Daddy Residency (cover art) by Nahee Kim for External Pages">
+        <link href="images/naheeimages/fav.ico" rel="shortcut icon" type="image/x-icon"/>
+    </head>
+
+    <body>
+		<script src="three.js-master/build/three.js"></script>
+		<script src="three.js-master/examples/js/controls/TrackballControls.js"></script>
+
+		<div id="container" style="position: absolute; top:0px; left:0px"></div>
+
+		<script>
+
+			var camera, scene, renderer;
+
+			init();
+			animate();
+
+			function init( ) {
+
+				var container = document.getElementById( 'container' );
+
+				camera = new THREE.PerspectiveCamera( 45, window.innerWidth / window.innerHeight, 1, 10000 );
+				camera.position.set( 0, 0, 1000 );
+
+				scene = new THREE.Scene();
+				scene.background = new THREE.Color( 0xe7ecf2 );
+
+				renderer = new THREE.WebGLRenderer( { antialias: true } );
+				renderer.setPixelRatio( window.devicePixelRatio );
+				renderer.setSize( window.innerWidth, window.innerHeight );
+				container.appendChild( renderer.domElement );
+
+				var loader = new THREE.FontLoader();
+				loader.load( 'three.js-master/examples/fonts/Spectral_Regular.json', function ( font ) {
+
+					var xMid, text;
+
+					var color = 0x000000;
+					var matDark = new THREE.LineBasicMaterial( {
+						color: color,
+						side: THREE.DoubleSide
+					} );
+
+					var message = "const mother = process.env.NAHEE;";
+					var shapes = font.generateShapes( message, 20 );
+					var geometry = new THREE.ShapeBufferGeometry( shapes );
+					geometry.computeBoundingBox();
+					xMid = - 0.514 * ( geometry.boundingBox.max.x - geometry.boundingBox.min.x );
+					geometry.translate( xMid, 0, 0 );
+
+					// make shape ( N.B. edge view not visible )
+
+					text = new THREE.Mesh( geometry, matDark );
+					scene.add( text );
+					text.position.set( 0, -10, 0 );
+
+				} ); //end load function
+
+				controls = new THREE.TrackballControls( camera, renderer.domElement );
+				controls.rotateSpeed = 4;
+
+				window.addEventListener( 'resize', onWindowResize, false );
+
+			} // end init
+
+			function onWindowResize() {
+
+				camera.aspect = window.innerWidth / window.innerHeight;
+				camera.updateProjectionMatrix();
+				renderer.setSize( window.innerWidth, window.innerHeight );
+
+			}
+
+			function animate() {
+
+				requestAnimationFrame( animate );
+				controls.update();
+				renderer.render( scene, camera );
+
+			}
+
+		</script>
+	</body>
+
+</html>

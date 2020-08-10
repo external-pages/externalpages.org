@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Cityscape by Sanjana Varghese</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="16x16"
+            href="sanjana-varghese/favicon.ico"
+        />
+        <style>
+            body {
+                position: fixed;
+                top: 50%;
+                left: 50%;
+                margin-right: -50%;
+                transform: translate(-50%, -50%);
+                padding: 0;
+                margin: 0;
+                border: 0;
+            }
+
+            #dice {
+                font-size: 190vh;
+                margin-top: -25vh;
+            }
+
+            @media only screen and (max-width: 834px) {
+                #dice {
+                    font-size: 190vw;
+                }
+            }
+        </style>
+    </head>
+
+    <body>
+        <div id="dice" onClick="whatface()"></div>
+
+        <script>
+            var dice = document.getElementById("dice");
+            var face = [
+                "\u2680",
+                "\u2681",
+                "\u2682",
+                "\u2683",
+                "\u2684",
+                "\u2685"
+            ];
+
+            function whatface() {
+                var i = (Math.random() * face.length) | 0;
+                dice.innerText = face[i];
+            }
+
+            whatface();
+        </script>
+    </body>
+</html>
