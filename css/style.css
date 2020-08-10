@@ -1,33 +1,39 @@
 /* basics */
 
 @font-face {
-    font-family: SF Arborcrest Heavy, sans-serif;
-    src: url(Fonts/SF Arborcrest Heavy.ttf);
+	font-family: SF Arborcrest Heavy, sans-serif;
+	src: url(Fonts/SF Arborcrest Heavy.ttf);
 }
 
 * {
-  padding: 0;
-  margin: 0;
+	padding: 0;
+	margin: 0;
 }
 
-body, input, textarea { 
-	font-family: Arial Black, sans-serif; 
-	font-size: 13px; 
+body {
+	background-color: black;
+}
+
+body,
+input,
+textarea {
+	font-family: Arial Black, sans-serif;
+	font-size: 0.9rem;
 	color: #000000;
 	letter-spacing: 1px;
 	margin: 0;
-  	padding: 0;
-  	height: 100%;
+	padding: 0;
+	height: 100%;
 }
 
-a { 
-	text-decoration: none; 
-	cursor: pointer; 
+a {
+	text-decoration: none;
+	cursor: pointer;
 	color: coral;
 }
 
 a:hover {
-	color: Lime;
+	color: green;
 }
 
 li {
@@ -35,22 +41,22 @@ li {
 	text-decoration: none;
 }
 
-p { 
-	line-height: 1.6em; 
+p {
+	line-height: 1.6em;
 	margin-bottom: 10px;
 }
 
 .lilnotice {
 	display: none;
 	width: 40vw;
-    font-family: Arial;
-    line-height: 1.6em;
-    letter-spacing: 1px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    margin-right: -50%;
-    transform: translate(-50%, -50%);
+	font-family: Arial;
+	line-height: 1.6em;
+	letter-spacing: 1px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);
 }
 
 /* logo */
@@ -60,13 +66,13 @@ p {
 	letter-spacing: 5px;
 	text-transform: uppercase;
 	font-style: italic;
-	color: Gainsboro; 
-	text-shadow: 4px 4px 3px DeepSkyBlue;
+	color: #9c9c9c;
+	text-shadow: 3px 3px 4px DeepSkyBlue;
 	margin: 25px;
 }
 
 .logo h1:hover {
-	color: Lime;
+	color: transparent;
 }
 
 #options {
@@ -74,9 +80,9 @@ p {
 	z-index: 99999;
 }
 
-#scene {
+/*#scene {
 	z-index: -1;
-}
+}*/
 
 /* nav bar */
 
@@ -84,21 +90,20 @@ p {
 	border-bottom: 0;
 }
 
-.nav-tabs-justified > li > a {
+.nav-tabs-justified>li>a {
 	margin-right: 0;
 	border-radius: 4px;
 }
 
-.nav-tabs-justified > .active > a,
-.nav-tabs-justified > .active > a:focus,
-.nav-tabs-justified > .active > a:hover {
-}
+.nav-tabs-justified>.active>a,
+.nav-tabs-justified>.active>a:focus,
+.nav-tabs-justified>.active>a:hover {}
 
-.tab-content > .tab-pane {
+.tab-content>.tab-pane {
 	display: none;
 }
 
-.tab-content > .active {
+.tab-content>.active {
 	display: block;
 }
 
@@ -113,37 +118,37 @@ p {
 
 .tab-content {
 	padding-top: 100px;
-	margin-right: 180px; /* spacing from nav bar = .pages width */
+	margin-right: 180px;
+	/* spacing from nav bar = .pages width */
 }
-	
+
 @media (min-width:768px) {
 
-	.nav-tabs-justified > li > a {
-	}
+	.nav-tabs-justified>li>a {}
 
-	.nav-tabs-justified > .active > a,
-	.nav-tabs-justified > .active > a:focus,
-	.nav-tabs-justified > .active > a:hover {
-	}
+	.nav-tabs-justified>.active>a,
+	.nav-tabs-justified>.active>a:focus,
+	.nav-tabs-justified>.active>a:hover {}
 
-	.nav-justified > li {
+	.nav-justified>li {
 		width: 1%;
 	}
 
-	.nav-justified > li > a {
+	.nav-justified>li>a {
 		margin-bottom: 0;
 	}
 
 }
 
-h6 { 
-	font-size: 13px;
+h6 {
+	font-size: 0.9rem;
 	width: 100%;
 	font-family: Arial;
 	font-weight: bold;
 }
 
-.pages { /* 25px margin on the outside in total */
+.pages {
+	/* 25px margin on the outside in total */
 	width: 180px;
 	position: fixed;
 	bottom: 0;
@@ -164,7 +169,7 @@ h6 {
 }
 
 #b1:hover {
-	color: Lime;
+	color: green;
 }
 
 .colon {
@@ -185,7 +190,8 @@ h6 {
 	display: block;
 }
 
-.box p, .visiblebox p {
+.box p,
+.visiblebox p {
 	margin-top: 0px !important;
 	margin-bottom: 0px !important;
 }
@@ -193,9 +199,10 @@ h6 {
 p.date {
 	position: absolute;
 	visibility: hidden;
-	width: 60px;
-	vertical-align: top;
+	/*vertical-align: top;*/
 	margin-left: -70px;
+	height: 0.9rem;
+	line-height: 0.9rem;
 }
 
 .notframe iframe {
@@ -217,7 +224,7 @@ h4 {
 	margin-top: -3px;
 	color: DarkBlue;
 	height: auto;
-	background: Gainsboro;
+	background: #9c9c9c;
 	background-position: -90deg;
 	display: block;
 	clear: both;
@@ -227,8 +234,7 @@ div#about.tab-pane.active {
 	position: relative;
 }
 
-div#about.tab-pane.active div.inside {
-}
+div#about.tab-pane.active div.inside {}
 
 div#about.tab-pane.active div.ref {
 	background: #ffab62;
@@ -237,22 +243,22 @@ div#about.tab-pane.active div.ref {
 	position: absolute;
 	bottom: 0;
 	left: 0;
- }
+}
 
 .tab-pane {
 	margin-left: 25px;
 	margin-bottom: 25px;
 }
 
-a.sections1, 
+a.sections1,
 a.sections2,
 a.sections3 {
 	color: DarkBlue;
 }
 
-.some-element1, 
-.some-element2, 
-.some-element3  {
+.some-element1,
+.some-element2,
+.some-element3 {
 	display: none;
 }
 
@@ -261,7 +267,7 @@ a.sections3 {
 	position: absolute;
 	width: 50%;
 	font-size: 90%;
-	float:right;
+	float: right;
 }
 
 .sections2:hover .some-element2 {
@@ -287,20 +293,37 @@ p.about4 {
 	display: block;
 	width: 50vw;
 	font-family: Arial;
-	color: DarkBlue;
+	color: #9c9c9c;
 	float: right;
 	margin-bottom: 25px;
 	margin-top: 17px;
-	background: linear-gradient(to right, Gainsboro, Yellow, LimeGreen);;
+	/*background: linear-gradient(to right, #002600, #003300, black);
+	;*/
+	background: linear-gradient(-90deg, DarkBlue, transparent, #666666);
+	background-size: 400% 400%;
+	animation: gradient 200s ease infinite;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
 }
 
 p.about4 a {
 	font-family: Arial;
-	color: DarkBlue;
+	font-style: italic;
+	color: #9c9c9c;
 }
 
 p.about4 a:hover {
-	color: White;
+	color: black;
 }
 
 a.enter {
@@ -319,9 +342,9 @@ a.enter {
 }
 
 small {
-	margin-right: 0;
+	/* margin-right: 0;
 	float: right;
-	right: 0;
+	right: 0; */
 }
 
 /* about-contact */
@@ -329,34 +352,46 @@ small {
 p.about {
 	width: 50vw;
 	font-family: Arial;
-	color: DarkBlue;
+	color: gainsboro;
 	float: right;
 	margin-right: 0px;
 	margin-bottom: 20px;
 	margin-top: 17px;
-	background: linear-gradient(to right, Gainsboro, PaleTurquoise , Cyan );;
+	background: linear-gradient(to right, #666666, #323232, #4c4c4c);
+	;
 }
 
 p.about1 {
 	width: 50vw;
 	font-family: Arial;
-	color: DarkBlue;
+	color: black;
 	float: right;
 	margin-right: 0px;
 	margin-bottom: 20px;
 	margin-top: 17px;
-	background: linear-gradient(to right, LimeGreen, LimeGreen, rgba(0, 0, 0, 0));;
+	background: linear-gradient(to right, #005f7f, #0085b2, #00394c);
+	;
 }
 
 @keyframes animatedBackground {
-    0% { background-position: 0% 0% }
-    50% { background-position: 100% 0% }
-    100% { background-position: 200% 0% }
+	0% {
+		background-position: 0% 0%
+	}
+
+	50% {
+		background-position: 100% 0%
+	}
+
+	100% {
+		background-position: 200% 0%
+	}
 }
 
-.fun, .references {
-	background-size: 200% 100%; 
-	-webkit-animation: animatedBackground 3s linear infinite;
+.fun,
+.references {
+	/* background-size: 200% 100%; */
+	/* -webkit-animation: animatedBackground 3s linear infinite; */
+	color: deepskyblue;
 }
 
 /* manifesto */
@@ -369,7 +404,7 @@ p.about1 {
 
 .manifesto a {
 	font-family: Arial;
-	color: DarkBlue;
+	color: green;
 }
 
 .manifesto a:hover {
@@ -380,26 +415,28 @@ p.about1 {
 	display: none;
 }
 
-.two p{
+.two p {
 	width: 60vw;
 	font-family: Arial;
-	color: DarkBlue;
+	color: #9c9c9c;
 	float: left;
 	margin-right: 200px;
 	margin-bottom: 20px;
-	background: linear-gradient(to left, Yellow, Pink, Plum);;
-	line-height: 1.6em; 
+	/* background: linear-gradient(to left, Yellow, Pink, Plum);
+	; */
+	line-height: 1.6em;
 }
 
 .box .threee {
 	width: 60vw;
 	font-family: Arial;
-	color: DarkBlue;
+	color: #9c9c9c;
 	float: left;
 	margin-right: 200px;
 	margin-bottom: 20px;
-	background: linear-gradient(to left, Yellow, Pink, Plum);;
-	line-height: 1.6em; 
+	/* background: linear-gradient(to left, Yellow, Pink, Plum);
+	; */
+	line-height: 1.6em;
 }
 
 i.material-icons {
@@ -407,11 +444,11 @@ i.material-icons {
 }
 
 a.references {
-	color: DarkBlue;
+	color: deepskyblue;
 }
 
 a.references:hover {
-	color: lime;
+	color: green;
 }
 
 /* support */
@@ -421,11 +458,12 @@ p.about3 {
 	display: block;
 	width: 50vw;
 	font-family: Arial;
-	color: DarkBlue;
+	color: gainsboro;
 	float: right;
 	margin-right: 0px;
 	margin-top: 17px;
-	background: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0), Gainsboro);;
+	background: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0), #9c9c9c);
+	;
 }
 
 .donatebutton {
@@ -447,15 +485,15 @@ p.about3 {
 
 .notice p {
 	margin: 0;
-    position: absolute;
-    font-family: Arial;
-    line-height: 1.6em;
-    letter-spacing: 1px;
-    width: 80px;
-    top: 50%;
-    left: 50%;
-    margin-right: -50%;
-    transform: translate(-50%, -50%);
+	position: absolute;
+	font-family: Arial;
+	line-height: 1.6em;
+	letter-spacing: 1px;
+	width: 80px;
+	top: 50%;
+	left: 50%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);
 }
 
 .emoji1 {
@@ -464,7 +502,7 @@ p.about3 {
 	font-size: 50px;
 	margin-left: 105px;
 	position: absolute;
-	bottom:-10px;
+	bottom: -10px;
 }
 
 /* if video on main page */
@@ -483,7 +521,7 @@ button#play {
 	background: transparent;
 	border-radius: 4px;
 	font-style: italic;
-	background-color: Gainsboro;
+	background-color: #9c9c9c;
 }
 
 button#mute {
@@ -496,10 +534,18 @@ button#mute {
 	background: transparent;
 	border-radius: 4px;
 	font-style: italic;
-	background-color: Gainsboro;
+	background-color: #9c9c9c;
 }
 
 /* media queries */
+
+@media (max-width: 650px) {
+
+	.date {
+		background-color: DarkBlue;
+	}
+
+}
 
 @media (max-width: 500px) {
 
@@ -508,23 +554,16 @@ button#mute {
 	}
 
 	.tab-content {
-		margin-right: 100px; /* = .pages width */
-	}
-
-	p.date {
-		display: none;
+		margin-right: 100px;
+		/* = .pages width */
 	}
 
 	p.about4 {
 		width: 100%;
 	}
 
-/*	a#b1 a{
-    	display: table-cell;
-    	vertical-align: top;
-	}*/
-
-	a.colon { /* very bad work around for aligning */
+	a.colon {
+		/* very bad work around for aligning */
 		width: 87px;
 		position: absolute;
 		margin-top: -15px;
@@ -537,17 +576,16 @@ button#mute {
 
 @media (max-device-width: 1024px) {
 
-	#scene {
+	/*#scene {
 		display: none;
 	}
 
 	.lilnotice {
 		display: block;
-	}
+	}*/
 
 	.tab-pane {
 		margin-top: 25px;
 	}
 
 }
-
