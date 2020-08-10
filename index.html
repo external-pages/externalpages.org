@@ -1,312 +1,815 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <head>
-        <title>External Pages</title>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, maximum-scale=0.9, initial-scale=0.9">
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-        <link rel="stylesheet" href="/js/_lib/font-awesome-4-7-0.min.css">
-        <link href="/images/favicon.ico" rel="shortcut icon" type="image/x-icon"/>
-        <link href="/css/style.css" title="compact" rel="stylesheet" type="text/css">
-        <script src="/js/_lib/jquery-3-2-1.min.js"></script>
-        <script src="/js/_lib/responsivevoice-1-6-5.min.js"></script>
-    </head>
+<head>
+	<title>External Pages</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, maximum-scale=0.9, initial-scale=0.9" />
+	<meta name="description" content="Open call for ambitious digital project proposals – Wednesday 1st of July." />
 
-    <body>
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="http://externalpages.org/" />
+	<meta property="og:title" content="External Pages" />
+	<meta property="og:description" content="Open Call" />
+	<meta property="og:image" content="http://externalpages.org/open-call-july/assets/meta-open-call.png" />
 
-        <div class="bs-example bs-example-tabs" role="tabpanel" data-example-id="togglable-tabs">
+	<meta property="twitter:card" content="summary_large_image" />
+	<meta property="twitter:url" content="http://externalpages.org/" />
+	<meta property="twitter:title" content="External Pages" />
+	<meta property="twitter:description" content="Open Call" />
+	<meta property="twitter:image" content="http://externalpages.org/open-call-july/assets/meta-open-call.png" />
 
-            <div id="options">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+	<link href="images/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+	<link href="css/style.css" title="compact" rel="stylesheet" type="text/css" />
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="https://code.responsivevoice.org/responsivevoice.js"></script>
+</head>
 
-                <ul id="myTab" class="nav nav-tabs" role="tablist"> 
+<body>
+	<div class="bs-example bs-example-tabs" role="tabpanel" data-example-id="togglable-tabs">
+		<div id="options">
+			<ul id="myTab" class="nav nav-tabs" role="tablist">
+				<li role="presentation" class="active">
+					<h6>
+						<a data-href=" " href="#home" id="home-tab" role="tab" data-toggle="tab" aria-controls="home">
+							<div class="logo">
+								<h1>external<br />pages</h1><!-- <h2>✿</h2> -->
+							</div>
+						</a>
+					</h6>
+				</li>
 
-                    <li role="presentation" class="active">
-                        <h6>
-                            <a data-href=" " href="#home" id="home-tab" role="tab" data-toggle="tab" aria-controls="home">
-                                <div class="logo">
-                                    <h1>external<br>pages</h1><!-- <h2>✿</h2> -->
-                                </div>
-                            </a>
-                        </h6>
-                    </li> 
+				<div class="pages">
+					<li role="presentation">
+						<h6>
+							<a class="visiblebox" data-href="#opencall" href="#opencall"
+								id="opencall-tab" role="tab" data-toggle="tab"
+								aria-controls="opencall">Announcing:<br />
+								<p class="date">07/2020</p>
+								<i><u>Open Call</u></i>
+							</a>
+						</h6>
+					</li>
 
-                    <div class="pages">
+					<li role="presentation">
+						<h6>
+							<a id="b1">Past Exhibitions
+								<a class="colon">:</a>
+							</a>
+							<a class="box" data-href="#legacyrussell" href="#legacyrussell" role="tab"
+								id="legacyrussell-tab" data-toggle="tab" aria-controls="legacyrussell" data-target="#legacyrussell,
+                                #legacyrussell">
+								<p class="date">04/2020</p>
+								<i><u>Legacy Russell</u></i>
+							</a>
+							<a class="box" data-href="#sanjanavarghese" href="#sanjanavarghese" role="tab"
+								id="sanjanavarghese-tab" data-toggle="tab" aria-controls="sanjanavarghese" data-target="#sanjanavarghese,
+                                #sanjanavarghese">
+								<p class="date">02/2020</p>
+								<i><u>Sanjana Varghese</u></i>
+							</a>
+							<a class="box" data-href="#mazmurray" href="#mazmurray" role="tab" id="mazmurray-tab"
+								data-toggle="tab" aria-controls="mazmurray" data-target="#mazmurray, #mazmurray">
+								<p class="date">11/2019</p>
+								<i><u>Maz Murray</u></i>
+							</a>
+							<a class="box" data-href="#naheekim" href="#naheekim" role="tab" id="naheekim-tab"
+								data-toggle="tab" aria-controls="naheekim" data-target="#naheekim, #naheekim">
+								<p class="date">08/2019</p>
+								<i><u>Nahee Kim</u></i>
+							</a>
+							<a class="box" data-href="#annatokareva" href="#annatokareva" role="tab"
+								id="annatokareva-tab" data-toggle="tab" aria-controls="annatokareva"
+								data-target="#annatokareva, #annatokareva">
+								<p class="date">05/2019</p>
+								<i><u>Anna Tokareva</u></i>
+							</a>
+							<a class="box" data-href="#mackenziedavidson" href="#mackenziedavidson" role="tab"
+								id="mackenziedavidson-tab" data-toggle="tab" aria-controls="mackenziedavidson"
+								data-target="#mackenziedavidson, #mackenziedavidson">
+								<p class="date">03/2019</p>
+								<i><u>Mackenzie Davidson</u></i>
+							</a>
+							<a class="box" data-href="#georginatyson" href="#georginatyson" role="tab"
+								id="georginatyson-tab" data-toggle="tab" aria-controls="georginatyson"
+								data-target="#georginatyson, #georginatyson">
+								<p class="date">10/2018</p>
+								<i><u>Georgina Tyson</u></i>
+							</a>
+							<a class="box" data-href="#acquavrzal" href="#acquavrzal" role="tab" id="acquavrzal-tab"
+								data-toggle="tab" aria-controls="acquavrzal"
+								data-target="#acquavrzal, #acquavrzal_else">
+								<p class="date">08/2018</p>
+								<i><u>Acqua Vrzal</u></i>
+							</a>
+							<a class="box" data-href="#proxymund" href="#proxymund" role="tab" id="proxymund-tab"
+								data-toggle="tab" aria-controls="proxymund" data-target="#proxymund, #proxymund_else">
+								<p class="date">06/2018</p>
+								<i><u>Proxy Mund</u></i>
+							</a>
+						</h6>
+					</li>
 
-                        <li role="presentation">
-                            <h6>
-                                <a class="visiblebox" data-href="#annatokareva" href="#annatokareva" id="annatokareva-tab" role="tab" data-toggle="tab" aria-controls="annatokareva">Current Exhibition:<br>
-                                    <p class="date">05/2019</p>
-                                    <p><i><u>Anna Tokareva</u></i></p>
-                                </a>
-                            </h6>
-                        </li>
+					<li role="presentation">
+						<h6><a data-href="#about-contact" href="#about-contact" id="about-contact-tab" role="tab"
+								data-toggle="tab" aria-controls="about-contact">About + Contact</a></h6>
+					</li>
 
-                        <li role="presentation">
-                            <h6>
-                                <a id="b1">Past Exhibitions
-                                    <a class="colon">:</a>
-                                </a>
-                                <a class="box" data-href="#proxymund" href="#proxymund" role="tab" id="proxymund-tab" data-toggle="tab" aria-controls="proxymund" data-target="#proxymund, #proxymund_else">
-                                    <p class="date">06/2018</p>
-                                    <i><u>Proxy Mund</u></i>
-                                </a>
-                                <a class="box" data-href="#acquavrzal" href="#acquavrzal" role="tab" id="acquavrzal-tab" data-toggle="tab" aria-controls="acquavrzal" data-target="#acquavrzal, #acquavrzal_else">
-                                    <p class="date">08/2018</p>
-                                    <i><u>Acqua Vrzal</u></i>
-                                </a>       
-                                <a class="box" data-href="#georginatyson" href="#georginatyson" role="tab" id="georginatyson-tab" data-toggle="tab" aria-controls="georginatyson" data-target="#georginatyson, #georginatyson">
-                                    <p class="date">10/2019</p>
-                                    <i><u>Georgina Tyson</u></i>
-                                </a>
-                                <a class="box" data-href="#mackenziedavidson" href="#mackenziedavidson" role="tab" id="mackenziedavidson-tab" data-toggle="tab" aria-controls="mackenziedavidson" data-target="#mackenziedavidson, #mackenziedavidson">
-                                    <p class="date">03/2019</p>
-                                    <i><u>Mackenzie Davidson</u></i>
-                                </a>
-                            </h6>    
-                        </li>
-
-                        <li role="presentation">
-                            <h6><a data-href="#about-contact" href="#about-contact" id="about-contact-tab" role="tab" data-toggle="tab" aria-controls="about-contact">About + Contact</a></h6>
-                        </li>
-
-                        <!-- <li role="presentation">
+					<!-- <li role="presentation">
                             <h6>
                                 <a data-href="#support" href="#support" id="support-tab" role="tab" data-toggle="tab" aria-controls="support">Support</a>
                             </h6>
                         </li> -->
+				</div>
+			</ul>
+		</div><!-- closed options -->
 
-                    </div>
+		<script href="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 
-                </ul>
-
-            </div><!-- closed options -->
-
-            <script href='/js/_lib/jquery-2-1-3.min.js'></script>
-            <script src='/js/_lib/bootstrap-3-3-4.min.js' ></script>
-
-            <div id="myTabContent" class="tab-content">
-
-                <div role="tabpanel" class="tab-pane fade in active" id="home" aria-labelledby="home-tab">
-
-                <!-- <div id="video-controls">
+		<div id="myTabContent" class="tab-content">
+			<div role="tabpanel" class="tab-pane fade in active" id="home" aria-labelledby="home-tab">
+				<!-- <div id="video-controls">
                   <button type="button" id="play"><i class="material-icons">pause</i></button>
                   <button type="button" id="pause"><i class="material-icons">play_arrow</i></button>
                   <button type="button" id="mute"><i class="material-icons">volume_up</i></button>
                   <button type="button" id="unmute"><i class="material-icons">volume_off</i></button>
                 </div> -->
 
-                    <div class="notframe">
-                        <iframe id="scene" scrolling="no" src="https://cedar-cornet.glitch.me/" frameborder="0"></iframe>
-                        <div class="lilnotice"><p>cover art isn't compatible with your screen size sorry :(</p></div>
-                    </div>
+				<div class="notframe">
+					<iframe id="scene" scrolling="no" src="http://externalpages.org/open-call-july/open-call" frameborder="0"></iframe>
+					<!-- <div class="lilnotice"><p>cover art isn't compatible with your screen size sorry :(</p></div> -->
+				</div>
 
+				<script>
+					// iOS iframe auto-resize workaround
+					if (/(iPad|iPhone|iPod)/g.test(navigator.userAgent)) {
+						var scene = document.getElementById("scene")
+						scene.style.width = getComputedStyle(scene).width
+						scene.style.height = getComputedStyle(scene).height
+						scene.setAttribute("scrolling", "no")
+					}
+				</script>
+			</div>
 
-                    <script>
-                        // iOS iframe auto-resize workaround
-                        if ( /(iPad|iPhone|iPod)/g.test( navigator.userAgent ) ) {
-                            var scene = document.getElementById( 'scene' );
-                            scene.style.width = getComputedStyle( scene ).width;
-                            scene.style.height = getComputedStyle( scene ).height;
-                            scene.setAttribute( 'scrolling', 'no' );
-                        }
-                    </script>
+			<div role="tabpanel" class="tab-pane fade" id="past" aria-labelledby="past-tab">
+				<h4>PAST EXHIBITION</h4>
+			</div>
 
-                </div>
+			<div role="tabpanel" class="tab-pane fade" id="proxymund" aria-labelledby="proxymund-tab">
+				<div class="intropara">
+					<h4>PROXY MUND</h4>
+					<p class="about4">
+						<!-- 23/06 — 23/08, 2018
+                        <br><br> -->
+						<i>(+dis-)embodiment</i> is an exhibition by techno-feminist collaboration Proxy Mund that play
+						with ideas of hegemony,
+						self-optimisation and work culture. The duo present over 70 images of 3D scanned hands which pop
+						up in a sequence of random loops,
+						each picture dotted across the screen in varying sizes and orders with every refresh. This is
+						the first show by External Pages, an
+						online exhibition space that focuses to develop a new wave of net art relating to
+						post-capitalist and xenofeminist thought.
+						<br /><br />
+						Often applied as a reference to agency and free will, the representation of hands in this
+						exhibition instead looks at how they are
+						vehicles of compulsory production, and function as elements that define labour in both
+						productive and reproductive (such as
+						self-optimising) work. With the idea of physicality wanting to achieve “non-physicality” —
+						fingers working to create virtual content
+						or bodies enhancing to attain happiness — Poxy Mund explore the possibility of defining our
+						anatomies beyond biological borders.
+						<br />
+						Using 2D screenshots of 3D scans, the pictured arms have a deceivingly interactive aesthetic to
+						them and an audio track
+						automatically plays on loop in the background, teasing the viewer with negligible command over
+						what is happening on the webpage.
+						<i>(+dis-)embodiment</i> applies this lack of power for the user to further question the agency
+						involved in self-reinvention and the
+						consequences of our online identities.
+						<br />
+						While Proxy Mund’s hands are here viewed as connectors between identity and its surrounding
+						environment, we are introduced to "the
+						lie of disembodied cyberspace" (C. Kraus, I Love Dick, 1997) and how the tangible and intangible
+						operate as non-binary units.
+						<br /><br />
+						Proxy Mund is an art project made up of <a href="http://www.eleniodysseos.net" target="_blank">
+							<u>Eleni Odysseos</u></a> and
+						<a href="http://www.sofianovikoffunger.com" target="_blank"> <u>Sofia Albina Novikoff
+								Unger</u></a>. They examine the connections between technology and the body, reflecting
+						on economic, ecological and feminist discourses. Their
+						medium is a combination of text, sound art, video, 3D modelling & scanning, motion capture, and
+						sculptural objects. Based in London
+						and founded at the Goldsmiths MFA Fine Art course, they are from Russian, Danish and Cypriot
+						backgrounds. <br /><br /><small>Edited by <a target="_blank"
+								href="https://deletechris.wordpress.com/">Chris Hayes</a></small>
+						<br /><br /><small><a target="_blank" href="http://externalpages.org/coverart">⇝ View cover art
+							</a></small>
+						<a class="enter" href="http://externalpages.org/proxymund" target="_blank"><b><i>Enter
+									to<br />exhibition</i></b></a>
+					</p>
+					<!-- ⟿ -->
+				</div>
+			</div>
 
-                <div role="tabpanel" class="tab-pane fade" id="past" aria-labelledby="past-tab">
+			<div role="tabpanel" class="tab-pane fade" id="acquavrzal" aria-labelledby="acquavrzal-tab">
+				<div class="intropara">
+					<h4>ACQUA VRZAL</h4>
+					<p class="about4">
+						<!-- 23/08 — 29/10, 2018
+                        <br><br> -->
+						In a translucid internet experience, <u><a target="_blank"
+								href="https://perlaovale.tumblr.com/">Acqua Vrzal</a></u> presents us
+						with <i>?/§nake/girl/?</i>, the second show by online exhibition space, External Pages.
+						<br /><br />
+						Currently transitioning from visual to movement, dance and performance art in Berlin, Vrzal’s
+						practice has largely consisted of
+						anonymous admin work, graphic design, and self-portraiture that she “mutilated” by editing and
+						collaging, published under multiple
+						aliases.
+						<br /><br />
+						This is explored further in the disfigurement of computer graphics or online photography in our
+						first solo show with the
+						interdisciplinary artist. Vrzal introduces us to six main digitally-manipulated pictures that
+						have either been stockpiled from
+						google images or shot through her webcam. They float around our browser in multilayered
+						arrangements and twisted, gelatinous
+						pulsations while little visual assemblages of moths or winged “fairies” are randomly scattered,
+						hovering between the self-portraits
+						like spirit animals. Normal maps are stretched and used as background sets or core elements of a
+						composition while reptiles, aliens
+						and insects append to her photographed skin. References of eggs crop up in a variety of symbols,
+						poems, urls and selfies, which
+						oppose the incessant question of “girl or boy” with “girl or snake”.
+						<br /><br />
+						While the page is laid out in ways that reminds us of a tumblr blog code that’s been fucked
+						with, the topic of the show rests on how
+						the artist copes with dysphoria, accumulated from her “tumblr trans teenager times”. Mixing
+						liquify filters and magic wand selection
+						tools in Photoshop with glitches and lags in CSS animation filters, <i>?/§nake/girl/?</i>
+						marries gentle fluid movements with
+						distortion, and asks us what alternatives can be found in exploring the self via grainy DIY
+						imagery and fantasy narratives.
+						<br /><br /><small><a target="_blank" href="http://externalpages.org/coverart2">⇝ View cover art
+							</a></small>
+						<a class="enter" href="http://externalpages.org/acquavrzal" target="_blank"><b><i>Enter
+									to<br />exhibition</i></b></a>
+					</p>
+					<!-- ⟿ -->
+				</div>
+			</div>
 
-                    <h4>PAST EXHIBITION</h4>
+			<div role="tabpanel" class="tab-pane fade" id="georginatyson" aria-labelledby="georginatyson-tab">
+				<div class="intropara">
+					<h4>GEORGINA TYSON</h4>
+					<p class="about4">
+						<!-- 30/10 — 17/03, 2019
+                        <br><br> -->
+						Fully committing to gush out her browser content in <i>Overshare</i>,
+						<u><a target="_blank"
+								href="https://sites.google.com/view/georginatyson/home?authuser=0">Georgina
+								Tyson</a></u> collaborates with
+						External Pages to produce it's third exhibition of the year. <br /><br />
+						Between the 12th and 18th of June, 2018, Tyson shares the entirety of her online activity with
+						us, that for some would seem too
+						personal, to examine how we give out information that nobody asks for. Her internet history is
+						completely disclosed and used as a
+						structural basis for her video <i>Overshare</i>, which has been recreated as a website
+						experience for External Pages. The virtual
+						timeline demands to be scrolled through as short, private notes appear along the list of visited
+						URLs, which vary from social media
+						and online shopping services to sex work websites. Vines located next to these intimate logs
+						automatically play only when visible,
+						like reaction gifs on twitter, and alleviate her confidential entries from the contextual
+						soreness of topics that cover emotional
+						insecurity, mental health, and sex addiction. <br /><br />
+						The low-cost/brow/res multimedia artist showcased <i>Overshare</i> during September 7th — 13th
+						at Chelsea College of Art, London,
+						September 22nd at The Royal Standard as part of “Bye Hun!” for the School of the Damned handover
+						show, and October 25th at Hotel
+						Elephant as part of Micro Acts 4. <br /><br />
+						Georgina Tyson focuses on sex work, social class and the internet, and runs
+						<a target="_blank"
+							href="https://www.instagram.com/low_res_camera_roll/?hl=en">low_res_camera_roll</a>, an
+						instagram residency
+						account. She is currently looking at the fetishisation of food and working class culture via
+						personal experiences in the sex
+						industry and art academia. <br /><br /><small><a target="_blank"
+								href="http://externalpages.org/coverart3">⇝ View cover art </a></small>
+						<a class="enter" href="http://externalpages.org/georginatyson" target="_blank"><b><i>Enter
+									to<br />exhibition</i></b></a>
+					</p>
+					<!-- ⟿ -->
+				</div>
+			</div>
 
-                </div>
+			<div role="tabpanel" class="tab-pane fade" id="mackenziedavidson" aria-labelledby="mackenziedavidson-tab">
+				<div class="intropara">
+					<h4>MACKENZIE DAVIDSON</h4>
+					<p class="about4">
+						<!-- 18/03 — 31/05, 2019
+                        <br><br> -->
+						External Pages presents its fourth exhibition titled <i>a memory</i>, built by Toronto-based
+						artist and designer
+						<u><a target="_blank" href="http://www.mackenzie.blue/">Mackenzie Davidson</a></u>. <br /><br />
+						Embedded in the centre of Davidson's web-page, a round-edged frame displays a poem which loses
+						parts of itself every time the page
+						is loaded. With each successive visit to this website, the poem renders a newly fragmented text,
+						and the previous text is deleted
+						permanently. This process repeats until the full poem is completely erased, predisposing a
+						blankness that is collectively produced
+						by site visits of past internet users. By viewing the poem, the visitor automatically agrees to
+						participate in destroying it.
+						<br /><br />
+						As a co-founder of the design and technology studio 4 us and 4 others (past: <a target="_blank"
+							href="https://56.digital/">56</a>,
+						Temporary Studio), Davidson continues to think about the impermanent connections between people
+						and art — especially in digital
+						contexts — and how that may reflect in personal relationships in general. Their
+						multidisciplinary coding practice retains writing as
+						a foundational medium, having published their first poem in <i>damp</i> (<a target="_blank"
+							href="https://mwvd.github.io/damp/">archive</a>), a group web project that requires user
+						interaction and object orientation to unveil texts. Davidson’s past work has been
+						exhibited at Ambiguous Ardour, Furthermore, and <a target="_blank"
+							href="https://www.centerfold.gallery/">Centerfold</a> Gallery,
+						where they later became a creative director and partner. <br /><br /><small><a target="_blank"
+								href="http://externalpages.org/coverart4">⇝ View cover art </a></small>
+						<br /><br />UPDATE: <i>a memory</i>'s poem is now entirely deleted due to a sufficient amount of
+						site visits.
+						<a class="enter" href="http://externalpages.org/mackenziedavidson" target="_blank"><b><i>Enter
+									to<br />exhibition</i></b></a>
+					</p>
+					<!-- ⟿ -->
+				</div>
+			</div>
 
-                <div role="tabpanel" class="tab-pane fade" id="proxymund" aria-labelledby="proxymund-tab">  
-    
-                    <div class="intropara">
-                        <h4>PROXY MUND</h4>
-                        <p class="about4">
-                            23/06 — 23/08, 2018
-                            <br><br>
-                            <i>(+dis-)embodiment</i> is an exhibition by techno-feminist collaboration Proxy Mund that play with ideas of hegemony, self-optimisation and work culture. The duo present over 70 images of 3D scanned hands which pop up in a sequence of random loops, each picture dotted across the screen in varying sizes and orders with every refresh. This is the first show by External Pages, an online exhibition space that focuses to develop a new wave of net art relating to post-capitalist and xenofeminist thought.
-                            <br><br>
-                            Often applied as a reference to agency and free will, the representation of hands in this exhibition instead looks at how they are vehicles of compulsory production, and function as elements that define labour in both productive and reproductive (such as self-optimising) work. With the idea of physicality wanting to achieve “non-physicality” — fingers working to create virtual content or bodies enhancing to attain happiness — Poxy Mund explore the possibility of defining our anatomies beyond biological borders.
-                            <br>
-                            Using 2D screenshots of 3D scans, the pictured arms have a deceivingly interactive aesthetic to them and an audio track automatically plays on loop in the background, teasing the viewer with negligible command over what is happening on the webpage. <i>(+dis-)embodiment</i> applies this lack of power for the user to further question the agency involved in self-reinvention and the consequences of our online identities.
-                            <br>
-                            While Proxy Mund’s hands are here viewed as connectors between identity and its surrounding environment, we are introduced to "the lie of disembodied cyberspace" (C. Kraus, I Love Dick, 1997) and how the tangible and intangible operate as non-binary units.
-                            <br><br>
-                            Proxy Mund is an art project made up of <a href="http://www.eleniodysseos.net" target="_blank"> <u>Eleni Odysseos</u></a> and <a href="http://www.sofianovikoffunger.com" target="_blank"> <u>Sofia Albina Novikoff Unger</u></a>. They examine the connections between technology and the body, reflecting on economic, ecological and feminist discourses. Their medium is a combination of text, sound art, video, 3D modelling & scanning, motion capture, and sculptural objects. Based in London and founded at the Goldsmiths MFA Fine Art course, they are from Russian, Danish and Cypriot backgrounds.
-                            <br><br><small>Edited by <a target="_blank" href="https://deletechris.wordpress.com/">Chris Hayes</a></small>
-                            <br><br><small><a target="_blank" href="http://externalpages.org/coverart.html">See cover art here.</a></small>
-                            <a class="enter" href="http://externalpages.org/proxymund.html" target="_blank"><b><i>Enter to<br>exhibition</i></b></a>
-                        </p> <!-- ⟿ -->
-                    </div>
-        
-                </div>
+			<div role="tabpanel" class="tab-pane fade" id="annatokareva" aria-labelledby="annatokareva-tab">
+				<div class="intropara">
+					<h4>ANNA TOKAREVA</h4>
+					<p class="about4">
+						For its fifth exhibition External Pages collaborates with digital artist and designer
+						<u><a target="_blank" href="http://annatokareva.net/">Anna Tokareva</a></u> to display
+						<i>BYMG™</i>, a fictional pharmaceutical
+						company website. <br /><br />
+						Fade and slide animations, habitually implemented in commercial websites to reveal dramatic
+						background images and marketing
+						slideshows, are instead employed to unveil Tokareva’s graphics in <i>BYMG™</i>. Molecular
+						diagrams, schematic cell structures and
+						labeled bin-genome networks are mutated and modified, displaying colourful hyperreal imitations
+						of technical drawings. Various
+						illustrations appear and vanish on random mouse hover commands, while others ease in and out of
+						the window. <br /><br />
+						Baba Yaga Myco Glitch uses aesthetic means and promotional tactics from biotech companies that
+						seek to enhance their online
+						presence, to question their effect in producing vague company ethea and cryptic narratives. By
+						adapting a specific set of UI and UX
+						methods to increase website visibility, <i>BYMG™</i> explores how such SEO processes encourage a
+						fabrication of ambiguous tales
+						around medical research institutions. Tokareva has executed this through designing BYMG’s
+						website as a front for the ulterior
+						motives of the antagonistic Baba Yaga, a character often described in Slavic folklore as a
+						villainous witch with equivocal
+						intentions. <br /><br />
+						While this project aims to expose such storytelling procedures found in SEO management, Tokareva
+						has faith in <i>BYMG™</i>. Baba
+						Yaga’s intentions are routed in miscellaneous alchemic experimentation with chemical reactions,
+						generative codes and homespun
+						agency. The lab’s secret objectives lie in spreading their wild yeasts and self-growing cultures
+						to infect its users with
+						hallucinogenic visions of alternative futures. <br /><br />
+						Currently based in London and working in digital project management, Anna Tokareva
+						(Rostov-na-Donu, 1988) explores entanglements
+						between technoscience and contemporary mythologies, at micro and planetary scales. Her work has
+						been exhibited in Auckland,
+						Edinburgh and Madrid. Her essay “Nooscope: The Political Myth of Planetary Scale Computation”
+						was recently published by the Digital
+						Cultures Institute in New Zealand.
+						<br /><br /><small><a target="_blank" href="https://cedar-cornet.glitch.me/">⇝ View cover art
+							</a></small>
+						<a class="enter" href="http://externalpages.org/annatokareva/BYMG" target="_blank">
+							<b><i>Enter to exhibition</i></b>
+						</a>
+					</p>
+					<!-- ⟿ -->
+				</div>
+			</div>
 
-                <div role="tabpanel" class="tab-pane fade" id="acquavrzal" aria-labelledby="acquavrzal-tab">  
-    
-                    <div class="intropara">
-                        <h4>ACQUA VRZAL</h4>
-                        <p class="about4">
-                            23/08 — 29/10, 2018
-                            <br><br>
-                            In a translucid internet experience, <u><a target="_blank" href="https://perlaovale.tumblr.com/">Acqua Vrzal</a></u> presents us with <i>?/§nake/girl/?</i>, the second show by online exhibition space, External Pages.
-                            <br><br>
-                            Currently transitioning from visual to movement, dance and performance art in Berlin, Vrzal’s practice has largely consisted of anonymous admin work, graphic design, and self-portraiture that she “mutilated” by editing and collaging, published under multiple aliases.
-                            <br><br>
-                            This is explored further in the disfigurement of computer graphics or online photography in our first solo show with the interdisciplinary artist. Vrzal introduces us to six main digitally-manipulated pictures that have either been stockpiled from google images or shot through her webcam. They float around our browser in multilayered arrangements and twisted, gelatinous pulsations while little visual assemblages of moths or winged “fairies” are randomly scattered, hovering between the self-portraits like spirit animals. Normal maps are stretched and used as background sets or core elements of a composition while reptiles, aliens and insects append to her photographed skin. References of eggs crop up in a variety of symbols, poems, urls and selfies, which oppose the incessant question of “girl or boy” with “girl or snake”.
-                            <br><br>
-                            While the page is laid out in ways that reminds us of a tumblr blog code that’s been fucked with, the topic of the show rests on how the artist copes with dysphoria, accumulated from her “tumblr trans teenager times”. Mixing liquify filters and magic wand selection tools in Photoshop with glitches and lags in CSS animation filters, <i>?/§nake/girl/?</i> marries gentle fluid movements with distortion, and asks us what alternatives can be found in exploring the self via grainy DIY imagery and fantasy narratives.
-                            <br><br><small><a target="_blank" href="http://externalpages.org/coverart2.html">See cover art here.</a></small>
-                            <a class="enter" href="http://externalpages.org/acquavrzal.html" target="_blank"><b><i>Enter to<br>exhibition</i></b></a>
-                        </p> <!-- ⟿ -->
-                    </div>
+			<div role="tabpanel" class="tab-pane fade" id="naheekim" aria-labelledby="naheekim-tab">
+				<div class="intropara">
+					<h4>NAHEE KIM</h4>
+					<p class="about4">
+						External Pages presents it’s sixth online exhibition in collaboration with
+						<a target="_blank"
+							href="https://github.com/nahbee10/nahee.app/blob/master/Family.app/Family.js">Nahee.app</a>’s
+						family programming
+						series, titled <i>Daddy Residency</i>. Built by digital artist <u><a target="_blank"
+								href="https://nahee.app/">Nahee Kim</a></u>, the single-page site displays an “open call
+						for daddies”, where users are given the opportunity to apply for a co-parenting
+						experience with the artist. The residency will begin in 2025 when her planned pregnancy by
+						artificial insemination is expected to
+						start. <br /><br />
+						Using the faces of a hexagonal prism to set out the call’s content information, viewers are
+						guided through it’s sections via arrow
+						buttons. Animated reproductive cells and faintly glowing diagrams are tinted with soft hues of
+						pink and blue throughout Kim’s
+						background imagery. As we click through each paragraph, she states her conditions, expectations,
+						selection process and the
+						advantages of joining this experimental family “deployment”. She offers a stipend, her home as a
+						place of residence and the
+						priceless enlightenment of parenting experience, while requiring the applicant to be able and
+						willing to relocate, attend family
+						meetings and events, speak fluent English and Korean and be at least 30 years old by 2025.
+						<br /><br />
+						The ongoing <a target="_blank" href="https://esoteric.codes/blog/nahee-app">Nahee.app</a>
+						project explores sexual desires and
+						relationships in coded objects. A
+						<a target="_blank"
+							href="https://github.com/nahbee10/nahee.app/blob/master/Family.app/Family.js">JavaScript
+							version</a> of
+						<i>Daddy Residency</i>’s design, which maps out Kim’s entire family proposition and concept, can
+						be accessed when clicked on the
+						app’s icon at the bottom of the page. <br /><br />
+						Nahee Kim is an artist and a web developer exploring the programmability of human sexual
+						behavior, a former resident at
+						<a target="_blank" href="https://www.assetsforartists.org/studios-at-mass-moca">MassMOCA</a> and
+						member of
+						<a target="_blank"
+							href="https://techzinefair.org/2019/01/06/in-conversation-with-soft-surplus.html">Soft
+							Surplus</a> and
+						<a target="_blank" href="https://www.facebook.com/eobchae/">Eobchae</a>. Based in New York and
+						Seoul, she graduated from School for
+						Poetic Computation and now studies and teaches at Hunter College. <br /><br />
+						This show will continue as External Page’s featured exhibition until October 6th.
+						<br /><br /><small><a target="_blank" href="http://externalpages.org/coverart5">⇝ View cover art
+							</a></small>
+						<a class="enter" href="http://daddy-residency.com/" target="_blank">
+							<b><i>Enter to exhibition</i></b>
+						</a>
+					</p>
+					<!-- ⟿ -->
+				</div>
+			</div>
 
-                </div>
+			<div role="tabpanel" class="tab-pane fade" id="mazmurray" aria-labelledby="mazmurray-tab">
+				<div class="intropara">
+					<h4>MAZ MURRAY</h4>
+					<p class="about4">
+						External Pages is delighted to present <i>Maz</i>, which ran from the 3rd of November until the
+						begnning of February 2020. This
+						newly commissioned work represents a significant shift for the artist Maz Murray, who is working
+						in a web based context for the
+						first time to explore themes of gender identity and labour in the service industry. In contrast
+						to the tales of triumph that often
+						define much of emancipatory queer discourses in popular culture, this exhibition admits to
+						brittle uncertainties of bodies existing
+						and moving through time, as rooted in the experiences of the artist. This is the seventh
+						exhibition by the gallery, and as always is
+						accessible at any time from any browser. <br /><br />
+						The work invites visitors to click on ellipsis icons, which in turn reveal text and video. The
+						unfolding narrative describes a
+						non-linear progression of discovery through the artist’s gender identity. These interactive
+						elements play with the idea of a
+						personal journal entry, documenting a story that sits between confusion, guilt and shame.
+						Putting identity and work into
+						conversation is an intentional strategy by the artist, as they write, “this game has the
+						illusion of choice, you are along for the
+						ride - just like me!”
+						<br /><br />
+						Inspired by genres of trauma, porn and tragedy, <i>Maz</i> is connected with Andrea Long Chu’s
+						ideas of unwanted impulses “at a time
+						when I’m feeling very abducted by my own desires”. With overwhelming amounts of information on
+						the internet perplexing our reality,
+						Murray instead allows the viewer to breathe by documenting the personal: <br /><br />
+						“Interrogating my need to turn these thoughts into art to be deemed valid or useful - I don’t
+						have time to transition otherwise -
+						and using it to talk about the ways trans identities can be co-opted and/or destroyed by
+						neoliberal capitalism.”
+						<br /><br /><br />
+						<b>About the artist</b><br />
+						Maz Murray (they/he) makes trashy and hopeful films, performances, fiction and public facing
+						bits n bobs. Their work is about
+						queerness, working class culture and sense of place. Maz is currently making some trans satire
+						while waiting for new episodes of
+						Riverdale to come out.
+						<br /><br />
+						Previous projects include a short film “Laindon” which was recently premiered at ICA, selected
+						for London Short Film Festival 2019
+						and screened at Directions Bas 1, New Town Sounds and Mascara Film Club. They have collaborated
+						with Hava Carvajal on a critical
+						writing project <a target="_blank" href="https://www.therightlube.co.uk/">The Right Lube</a>,
+						and produced a tongue-in-cheek
+						research and performance project about compulsory heterosexuality and ethical consumption,
+						culminating in a
+						<a target="_blank" href="https://www.facebook.com/events/368302933988474/">public workshop</a>.
+						Maz’s video work has screened across
+						the UK as part of Playback Festival, at Focal Point Gallery, South London Gallery and Genesis
+						Cinema among others.
+						<br /><br /><small><a target="_blank" href="http://externalpages.org/coverart6">⇝ View cover art
+							</a></small>
+						<a class="enter" href="http://externalpages.org/mazmurray/maz" target="_blank">
+							<b><i>Enter to exhibition</i></b>
+						</a>
+					</p>
+					<!-- ⟿ -->
+				</div>
+			</div>
 
-                <div role="tabpanel" class="tab-pane fade" id="georginatyson" aria-labelledby="georginatyson-tab">  
+			<div role="tabpanel" class="tab-pane fade" id="sanjanavarghese" aria-labelledby="sanjanavarghese-tab">
+				<div class="intropara">
+					<h4>SANJANA VARGHESE</h4>
+					<p class="about4">
+						External Pages presents the first art exhibition by Sanjana Varghese in an online setting,
+						titled <i>Cityscape</i>. With an
+						interface that is reminiscent of a labyrinth game, Varghese encourages players/viewers to
+						maneuver across the screen to reach icons
+						of buildings that retain essays, articles, images and short voice notes in a random order. More
+						than 100 audio pieces have been sent
+						in from people across the globe, recording their environment and the space around them. As a
+						persistent researcher for her writing,
+						Varghese thinks about alternative methods of navigating information online; whether it is
+						possible for snippets of documentation to
+						be retrieved and transferred in a truly random way. Can the web be reflective of how we
+						accidentally run into places offline —
+						unmonitored, by chance, unexpected? What does it mean to go “off-track” in our current online
+						context - a world constructed by SEO,
+						ubiquitous recommenders and user behavior predictions? <br /><br />
+						<b>Notes from the artist</b><br />
+						I spend a lot of my time on the Internet, loosely configured. For better or for worse, I find
+						myself circulating around the same
+						websites, looking at the same kinds of photos and memes and blocks of text, and then I spend the
+						rest of my time - stretching,
+						drinking, talking, running, getting the bus, cleaning,- wondering if I spend too much time on
+						the Internet. I’ve been thinking a lot
+						about luck and randomness online too, particularly in relation to the world ‘offline’. In 1969,
+						the artist John Giorno created a
+						telephone line called Dial-A-Poem, where you could call a number and have someone recite a poem
+						back to you. (it’s been
+						decommissioned, and calling will take you to a nail salon in New York, who are probably really
+						annoyed)
+						<br /><a target="_blank" href="http://externalpages.org/sanjana-varghese/cityscape">→ continue
+							reading on the exhibition page</a>
+						<br /><br />
+						<b>About the artist</b><br />
+						<a href="https://sanjanavarghese.com/">Sanjana Varghese</a> is a journalist, researcher, editor
+						and writer based in London. She
+						writes about technology, culture, and the environment, particularly where they intersect. She
+						also works as a researcher on the
+						<a href="https://hbr.org/2019/04/podcast-exponential-view">Exponential View</a> podcast. Sanjana
+						has written for outlets such as
+						WIRED UK, New Statesman, VICE, The Guardian, Al Jazeera, The Observer, The Outline, Garage among
+						many others. <br /><br /><small><a target="_blank" href="http://externalpages.org/coverart7">⇝
+								View cover art </a></small>
+						<a class="enter" target="_blank" href="http://externalpages.org/sanjana-varghese/cityscape">
+							<b><i>Enter to exhibition</i></b>
+						</a>
+					</p>
+					<!-- ⟿ -->
+				</div>
+			</div>
 
-                    <div class="intropara">
-                        <h4>GEORGINA TYSON</h4>
-                        <p class="about4">
-                            30/10 — 17/03, 2019
-                            <br><br>
-                            Fully committing to gush out her browser content in <i>Overshare</i>, <u><a target="_blank" href="https://sites.google.com/view/georginatyson/home?authuser=0">Georgina Tyson</a></u> collaborates with External Pages to produce it's third exhibition of the year.
-                            <br><br>
-                            Between the 12th and 18th of June, 2018, Tyson shares the entirety of her online activity with us, that for some would seem too personal, to examine how we give out information that nobody asks for. Her internet history is completely disclosed and used as a structural basis for her video <i>Overshare</i>, which has been recreated as a website experience for External Pages. The virtual timeline demands to be scrolled through as short, private notes appear along the list of visited URLs, which vary from social media and online shopping services to sex work websites. Vines located next to these intimate logs automatically play only when visible, like reaction gifs on twitter, and alleviate her confidential entries from the contextual soreness of topics that cover emotional insecurity, mental health, and sex addiction.
-                            <br><br>
-                            The low-cost/brow/res multimedia artist showcased <i>Overshare</i> during September 7th — 13th at Chelsea College of Art, London, September 22nd at The Royal Standard as part of “Bye Hun!” for the School of the Damned handover show, and October 25th at Hotel Elephant as part of Micro Acts 4.
-                            <br><br>
-                            Georgina Tyson focuses on sex work, social class and the internet, and runs <a target="_blank" href="https://www.instagram.com/low_res_camera_roll/?hl=en">low_res_camera_roll</a>, an instagram residency account. She is currently looking at the fetishisation of food and working class culture via personal experiences in the sex industry and art academia.
-                            <br><br><small><a target="_blank" href="http://externalpages.org/coverart3.html">See cover art here.</a></small>
-                            <a class="enter" href="http://externalpages.org/georginatyson.html" target="_blank"><b><i>Enter to<br>exhibition</i></b></a>
-                        </p> <!-- ⟿ -->
-                    </div>
-            
-                </div>
+						<div role="tabpanel" class="tab-pane fade" id="legacyrussell" aria-labelledby="legacyrussell-tab">
+				<div class="intropara">
+					<h4>LEGACY RUSSELL</h4>
+					<p class="about4">
+						<b><i>BLACK MEME</i> opens on External Pages.<br>The founding theorist of Glitch Feminism
+							explores
+							the contributions of blackness to
+							digital space in newly exhibited work. External Pages is pleased to announce their eighth
+							exhibition, <i>BLACK MEME</i>, a show
+							of new work by award-winning writer, curator, and artist Legacy Russell</b>.</b>
+						<br /><br />--<br /><br />
+						The founding theorist of <a target="_blank"
+							href="https://www.penguinrandomhouse.com/books/646946/glitch-feminism-by-legacy-russell/">Glitch
+							Feminism</a>, Russell’s first book of the same name will be released this coming September
+						2020 with
+						Verso Books. This exhibition further explores the concerns that have established Russell as a
+						leading voice in debates surrounding
+						the politics of the Internet.
+						<br /><br />
+						<i>BLACK MEME</i> (2020) is, in the words of the artist, a “video essay” in an interactive
+						digital space, which explores questions
+						of black visual culture from 1900 to the present day. Through archival media and found footage,
+						Russell explores the construction,
+						culture and material of the “meme” and it’s relationship to blackness, black life, and black
+						social death.<br /><br />
+						<i>“Memes are not neutral. The labor enacted through black meme culture raises questions about
+							subjectivity, personhood, and the
+							ever-complicated fault lines of race, class, and gender performed both on- and offline. I
+							want to talk about the economy and
+							engine of this and perhaps push further a discussion about how we can hold ourselves
+							accountable to how this material is
+							produced and circulated.”</i>
+						<br />– Legacy Russell <br /><br />
+						Situated on a 3D interactive laptop which hovers against a black background, the video begins
+						with the question "what is a black
+						meme?” typed into Blackle, a website first launched by Google in 2007 that aims to save energy
+						by displaying a black background.
+						Working backwards in time from Beyoncé’s 2016 song “Formation”, key references include Rodney
+						King’s 1991 beating at the hands of
+						the LAPD, the documentation of which came to be known as the world’s “first viral video”;
+						Michael Jackson’s legendary 1983 music
+						video “Thriller”; and the 1913 film “Lime Kiln Field Day”, celebrated as the oldest surviving
+						film to feature black actors. Over its
+						20 min 51 sec duration, through pacing, distortion and abrupt edits, Russell weaves a considered
+						and unexpected story of black
+						culture and its impact on the Internet meme as we now know it.
+						<br /><br />
+						As an artwork, <i>BLACK MEME</i> posed design challenges for the online gallery, resulting in a
+						redesign of the website to reflect
+						the broader themes present in the video essay. The black background confronts widely held
+						assumptions about the “skin” of website
+						design – typically white – and creates a distinct environment for the artwork. Reflecting
+						debates within Net Art, the supposed
+						neutrality of these choices are exposed as reflecting deeper racial and political bias.
+						<br /><br />
+						Key to every External Pages exhibition is the technical ability to deliver ambitious digital
+						environments. The gallery doesn’t
+						require exhibiting artists to have the coding skills required to develop these complex
+						frameworks. Instead, they provide web
+						development support to artists in realising these ambitious digital projects.
+						<br /><br />
+						“It’s a vibrant time for digitally based projects, but there’s a lack of criticality in what is
+						being shown, how it is being
+						exhibited and why. As galleries and institutions rush to reimagine their programmes online, we
+						need to think of browsers as
+						seriously, and politically, as physical exhibition spaces. We can’t replace the white cube with
+						the white browser.”<br />
+						– Ana Meisel, curator of External Pages
+						<br><br>
+						<i>BLACK MEME</i> ran from Thursday 16 April to 18 June 2020. The video essay was previously
+						screened by <a target="_blank" href="https://www.oriartgallery.com/about-ori">Ori Gallery</a>
+						alongside
+						“Eulogy For A Black Mass” (2018) by Aria Dean, and at Pacific Northwest College of Art in
+						February 2020. Forthcoming
+						screenings will take place at Yale University as part of its Art and Media Project (AMP) and USC
+						Roski (dates to be
+						announced).
+						<br><br>
+						<b>About the artist</b><br />
+						<a target="_blank" href="http://www.legacyrussell.com">Legacy Russell</a> is a curator, writer,
+						and artist. Born and raised in New York City, she is the Associate Curator of
+						Exhibitions at The Studio Museum in Harlem. Recent curated exhibitions include Projects 110 :
+						Michael Armitage,
+						organized with Thelma Golden and The Studio Museum in Harlem at MoMA (2019); Dozie Kanu :
+						Function (2019); Chloë Bass :
+						Wayfinding (2019); Radical Reading Room (2019) at The Studio Museum in Harlem; and MOOD : Studio
+						Museum Artists in
+						Residence 2018-19 (2019) at MoMA PS1. Russell’s ongoing academic work and research focuses on
+						gender, performance,
+						digital selfdom, internet idolatry, and new media ritual. She is the recipient of the Thoma
+						Foundation 2019 Arts Writing
+						Award in Digital Art and a 2020 Rauschenberg Residency Fellow.<br />
+						<a target="_blank" href="https://www.instagram.com/ellerustle/">Instagram</a>, <a
+							target="_blank" href="https://twitter.com/legacyrussell">Twitter</a>
+						<br /><br /><small><a target="_blank" href="http://externalpages.org/coverart8">⇝ View cover art
+							</a></small>
+						<a class="enter" target="_blank" href="http://externalpages.org/legacy-russell/black-meme">
+							<b><i>Enter to exhibition</i></b>
+						</a>
+					</p>
+					<!-- ⟿ -->
+				</div>
+			</div>
 
-                <div role="tabpanel" class="tab-pane fade" id="mackenziedavidson" aria-labelledby="mackenziedavidson-tab">  
+			<div role="tabpanel" class="tab-pane fade" id="current" aria-labelledby="current-tab">
+				<h4>CURRENT EXHIBITION</h4>
+			</div>
 
-                    <div class="intropara">
-                        <h4>MACKENZIE DAVIDSON</h4>
-                        <p class="about4">
-                            18/03 — 31/05, 2019
-                            <br><br>
-                            External Pages presents its fourth exhibition titled <i>a memory</i>, built by Toronto-based artist and designer <u><a target="_blank" href="http://www.mackenzie.blue/">Mackenzie Davidson</a></u>.
-                            <br><br>
-                            Embedded in the centre of Davidson's web-page, a round-edged frame displays a poem which loses parts of itself every time the page is loaded. With each successive visit to this website, the poem renders a newly fragmented text, and the previous text is deleted permanently. This process repeats until the full poem is completely erased, predisposing a blankness that is collectively produced by site visits of past internet users. By viewing the poem, the visitor automatically agrees to participate in destroying it.
-                            <br><br>
-                            As a co-founder of the design and technology studio 4 us and 4 others (past: <a target="_blank" href="https://56.digital/">56</a>, Temporary Studio), Davidson continues to think about the impermanent connections between people and art — especially in digital contexts — and how that may reflect in personal relationships in general. Their multidisciplinary coding practice retains writing as a foundational medium, having published their first poem in <i>damp</i> (<a target="_blank" href="https://mwvd.github.io/damp/">archive</a>), a group web project that requires user interaction and object orientation to unveil texts. Davidson’s past work has been exhibited at Ambiguous Ardour, Furthermore, and <a target="_blank" href="https://www.centerfold.gallery/">Centerfold</a> Gallery, where they later became a creative director and partner.
-                            <br><br><small><a target="_blank" href="http://externalpages.org/coverart4.html">See cover art here.</a></small>
-                            <br><br>UPDATE: <i>a memory</i>'s poem is now entirely deleted due to a sufficient amount of site visits.
-                            <a class="enter" href="http://externalpages.org/mackenziedavidson.html" target="_blank"><b><i>Enter to<br>exhibition</i></b></a>
-                        </p> <!-- ⟿ -->
-                    </div>
-                
-                </div>
+			<div role="tabpanel" class="tab-pane fade" id="opencall" aria-labelledby="opencall-tab">
+				<div class="intropara">
+					<h4>SUBMISSIONS</h4>
+					<p class="about4">
+					<b>Open call for ambitious digital project proposals – Wednesday 1st of July</b>
+						<br /><br />--<br /><br />
+						External Pages is pleased to announce an open call for proposals of ambitious digital projects, which ends on midnight Wednesday 1st of July.
+						<br /><br />
+						We are welcoming proposals from artists which embody the context of Covid-19 and the activism of BLM, by embracing, reflecting or further contextualising recent developments, critical debates and political strategies. From navigating the logistics of forming protests, to galvanising groups around petitions, readings and donation links, recent events have heightened alternatives to capitalist modes of production as well as opposition to forms of oppression. Proposals should either directly address this as a subject, begin a dialogue with its wider themes or adopt these strategies directly. 
+						<br /><br />
+						External Pages was founded to advance critically and politically engaged thinking about capitalism, technology and society. Our most recent solo <a target="_blank" href="http://externalpages.org/legacy-russell/black-meme">exhibition</a> with Legacy Russell explored the contributions of blackness to digital space, presenting her video essay BLACK MEME in an immersive digital environment. The themes and presentation of the video challenged assumptions of web design to expose deeper political racial biases.
+						<br /><br />
+						Successful applicants will be provided with both curatorial and technical support to develop the project. The first exhibition will be featured on External Pages from August until October, but we are open to hearing proposals for future dates.
+						<br /><br />
+						Due to the support of a-n Bursaries, we offer an artist fee of £100.
+						<br /><br />
+						<b>About External Pages</b><br />
+						External Pages is an online exhibition space, presenting digital projects inspired by anti-capitalist and xenofeminist thought. Every other month, we showcase an artist or collective who push the potential of viewing art on our browsers. The exhibitions we host experiment with web development to question the placement of internet art in galleries, cheat curatorial hierarchies and look at how websites can be appropriated as an emancipatory technology.
+						<br /><br />
+						<b>How to Apply</b><br />
+						We welcome proposals which ambitiously engage with the focus of External Pages. We accept work in progress, a starting concept, or previously-made work that would benefit from a remodeling as a website. While applicants with coding experience are preferred, this exhibition may be an opportunity for artists with little to no coding skills to realise a project in a digital format as we do offer web development. 
+						<br /><br />
+						To submit, please fill out <b><a target="_blank" href="https://docs.google.com/forms/d/e/1FAIpQLSfx6hL7UI_QTwwZYvwu93kX4-WXFlJHc1ZuAhx0xuS2gBiBnw/viewform">this form</a></b>. The deadline is at midnight on Wednesday 1st of July. Due to the volume of applications, we aren’t always able to reply to every submission.
+						<br /><br />
+						UPDATE: This open call has now passed and we're working with an artist for the upcoming exhibition. If you've applied and haven't heard back, we'll get back to you soon! Thank you for taking the time to put in a submission. ❤️
+						<br /><br />
+					</p>
+					<!-- ⟿ -->
+				</div>
+			</div>
 
-                <div role="tabpanel" class="tab-pane fade" id="current" aria-labelledby="current-tab">
-                    <h4>CURRENT EXHIBITION</h4>
-                </div>
+			<script>
+				$(document).ready(function () {
+					var obj = document.createElement("audio")
+					obj.src = "audio1.mp3"
+					obj.volume = 0.4
+					obj.time = obj.autoPlay = false
+					obj.preLoad = true
+					$(".enter").click(function () {
+						obj.play()
+					})
+				})
+			</script>
 
-                <div role="tabpanel" class="tab-pane fade" id="annatokareva" aria-labelledby="annatokareva-tab">  
+			<div role="tabpanel" class="tab-pane fade" id="about-contact" aria-labelledby="about-contact-tab">
+				<div class="aboutpara">
+					<h4>ABOUT</h4>
+					<p class="about1">
+						External Pages is an online exhibition space, presenting digital projects inspired by
+						anti-capitalist and xenofeminist thought.
+						Every other month, we showcase an artist or collective who push the potential of viewing art on
+						our browsers. External Pages exists
+						on the outskirts of the Internet, where bottom-up approaches to public art can be explored.
+					</p>
+				</div>
 
-                    <div class="intropara">
-                        <h4>ANNA TOKAREVA</h4>
-                        <p class="about4">
-                            For its fifth exhibition External Pages collaborates with digital artist and designer <u><a target="_blank" href="http://annatokareva.net/">Anna Tokareva</a></u> to display <i>BYMG™</i>, a fictional pharmaceutical company website.
-                            <br><br>
-                            Fade and slide animations, habitually implemented in commercial websites to reveal dramatic background images and marketing slideshows, are instead employed to unveil Tokareva’s graphics in <i>BYMG™</i>. Molecular diagrams, schematic cell structures and labeled bin-genome networks are mutated and modified, displaying colourful hyperreal imitations of technical drawings. Various illustrations appear and vanish on random mouse hover commands, while others ease in and out of the window.
-                            <br><br>
-                            Baba Yaga Myco Glitch uses aesthetic means and promotional tactics from biotech companies that seek to enhance their online presence, to question their effect in producing vague company ethea and cryptic narratives. By adapting a specific set of UI and UX methods to increase website visibility, <i>BYMG™</i> explores how such SEO processes encourage a fabrication of ambiguous tales around medical research institutions. Tokareva has executed this through designing BYMG’s website as a front for the ulterior motives of the antagonistic Baba Yaga, a character often described in Slavic folklore as a villainous witch with equivocal intentions.
-                            <br><br>
-                            While this project aims to expose such storytelling procedures found in SEO management, Tokareva has faith in <i>BYMG™</i>. Baba Yaga’s intentions are routed in miscellaneous alchemic experimentation with chemical reactions, generative codes and homespun agency. The lab’s secret objectives lie in spreading their wild yeasts and self-growing cultures to infect its users with hallucinogenic visions of alternative futures.
-                            <br><br>
-                            Currently based in London and working in digital project management, Anna Tokareva (Rostov-na-Donu, 1988) explores entanglements between technoscience and contemporary mythologies, at micro and planetary scales. Her work has been exhibited in Auckland, Edinburgh and Madrid. Her essay “Nooscope: The Political Myth of Planetary Scale Computation” was recently published by the Digital Cultures Institute in New Zealand.
-                            <br><br>
-                            This exhibition will run until July 31st.
-                            <br><br><small><a target="_blank" href="https://cedar-cornet.glitch.me/">See cover art here.</a></small>
-                            <a class="enter" href="http://externalpages.org/annatokareva/BYMG.html" target="_blank">
-                                <b><i>Enter to exhibition</i></b>
-                            </a>
-                        </p> <!-- ⟿ -->
+				<div class="contactpara">
+					<h4>CONTACT</h4>
+					<p class="about">
+						We are always looking for artists, curators or collaborators that want to get involved. To ask
+						questions, talk about a project or
+						join External Pages, please do not hesitate to email <a class="fun" target="_blank"
+							href="https://ana.lol/">Ana</a> on
+						<a class="fun" href="mailto:hello@externalpages.org">hello@externalpages.org</a> or message us
+						on social media – we’re on
+						<a class="fun" target="_blank" href="https://twitter.com/external_pages">Twitter</a> and
+						<a class="fun" target="_blank" href="https://www.instagram.com/external_pages/">Instagram</a>.
+						So far, EP has received incredible
+						support through various means, such as: theory insight from
+						<a class="fun" target="_blank" href="https://twitter.com/_HSWND_">HSWND</a>, editing by
+						<a class="fun" target="_blank" href="https://tinyletter.com/chrishyzz/archive">Chris Hayes</a>
+						and direction and web development
+						help from <a class="fun" target="_blank" href="https://www.mackenzie.blue/">Mackenzie
+							Davidson</a>.<br />
+						All code: <a class="fun" target="_blank"
+							href="https://github.com/external-pages">Github</a>.<br />
+						Reading channel: <a class="fun" target="_blank"
+							href="https://www.are.na/external-pages/texts-fb-7tkfmn2k">Are.na</a>.<br />
+						Application to exhibit with us:
+						<a class="fun" target="_blank"
+							href="https://docs.google.com/forms/d/e/1FAIpQLSfuE7rAgEW6mYrFuxrVUdu2CnW6a9DuTeW2FLNGDTJYenNo-A/viewform?usp=sf_link">Google
+							Form</a>.
+					</p>
+				</div>
 
-                    </div>
-            
-                </div>
+				<div class="manifesto" id="b2">
+					<a><u>More</u> ⟴</a>
+				</div>
 
-                <script>
-                    $(document).ready(function() {
-                        var obj = document.createElement("audio");
-                        obj.src="audio1.mp3";
-                        obj.volume=0.40;
-                        obj.time=
-                        obj.autoPlay=false;
-                        obj.preLoad=true;       
-                        $(".enter").click(function() {
-                            obj.play();
-                        });
-                    });
-                </script>
-
-
-                <div role="tabpanel" class="tab-pane fade" id="about-contact" aria-labelledby="about-contact-tab">
-
-                    <div class="aboutpara">
-                        <h4>ABOUT</h4>
-                        <p class="about1">
-                            External Pages is an exhibition space that only exists online. Every other month, we showcase an artist or collective who push the potential of viewing art on our browsers, which we code ourselves in collaboration with the exhibitors. External Pages subsists on the outskirts of the Internet, where bottom up approaches to public space and access to art can be explored.
-                        </p>
-                    </div>
-
-                    <div class="contactpara">
-                        <h4>CONTACT</h4>
-                        <p class="about">
-                            We are always looking for artists, curators or collaborators that want to get involved. To ask questions, talk about a project or join External Pages, please do not hesitate to email Ana on <a class="fun" href="mailto:hello@externalpages.org">hello@externalpages.org</a>.</br> 
-                            Apply to exhibit by filling out this <a class="fun" target="_blank" href="https://docs.google.com/forms/d/e/1FAIpQLSfuE7rAgEW6mYrFuxrVUdu2CnW6a9DuTeW2FLNGDTJYenNo-A/viewform?usp=sf_link">application form</a>.<br>
-                            Access the code from any of the exhibitions via our <a class="fun" target="_blank" href="https://github.com/external-pages">Github</a> page.<br>
-                            Follow us on <a class="fun" target="_blank" href="https://twitter.com/external_pages">Twitter</a> and <a class="fun" target="_blank" href="https://www.instagram.com/external_pages/">Instagram</a> if you would like to keep up to date with what we're doing.<br><small>Dev help from <a class="fun" target="_blank" href="https://github.com/mwvd">Mackenzie Davidson.</a></small>
-                        </p>
-                    </div>
-
-                    <div class="manifesto" id="b2">
-                        <a><u>More</u> ⟴</a>
-                    </div>
-
-                        <div class="two">
-                            <!-- <div class="sections1">1. Cybernate
+				<div class="two">
+					<!-- <div class="sections1">1. Cybernate
                               <span class="some-element1">
                                 Our cyberfeminist influences
                               </span>
                             </div>
                             <br><br> -->
-                            <p>This is an online exhibition space that focuses to develop a new wave of net art influenced by anti-capitalist and <a class="references" target="_blank" href="http://www.laboriacuboniks.net/qx8bq.txt">xenofeminist</a> thought. Founded in 2017 by Ana Meisel, External Pages experiments with web coding to question the placement of internet art in galleries, cheat curatorial hierarchies and look at how websites can be appropriated as an emancipatory technology. Although the internet’s current state seems exhaustive and impenetrable, “<a class="references" target="_blank" href="https://libcom.org/files/[Mark_Fisher]_Capitalist_Realism_Is_There_no_Alte(BookZZ.org).pdf">from a situation in which nothing can happen, suddenly anything is possible again</a>”.<br>
-                            While using the conceptual breadths of art practice to subvert web-based functionalities, this organisation codes all the content for the artists, who have full control over how the show is curated.<br>
-                            External Pages is editable, downloadable, open source/access and <a class="references" target="_blank" href="http://beingres.org/2017/06/30/afterthefuture-helenhester/">post-cyberfeminist</a>.</p>
+					<p>Founded in 2018, External Pages experiments with web coding to question the placement of internet
+						art in galleries, cheat
+						curatorial hierarchies and look at how websites can be appropriated as an emancipatory
+						technology.
+						<!-- Although the internet’s current state seems
+                        exhaustive and impenetrable, “<a class="references" target="_blank"
+                            href="https://libcom.org/files/[Mark_Fisher]_Capitalist_Realism_Is_There_no_Alte(BookZZ.org).pdf">from
+                            a situation in which nothing can happen, suddenly anything is possible again</a>”.  -->
+						Using conceptual breadths of art practice to rethink web-based functionalities, this
+						organisation provides coding assistance for the
+						artists, who have full control over how the show is curated.<br />
+						<!-- External Pages is editable, downloadable, open source/access and <a class="references"
+                            target="_blank"
+                            href="http://beingres.org/2017/06/30/afterthefuture-helenhester/">post-cyberfeminist</a>. -->
+					</p>
 
-                            <div class="manifesto">
-                                <a href="https://docs.google.com/document/d/1BpFXaw9yyWs828MQHTT7pIxoHUedWQ4RGsczUVALoU8/edit?usp=sharing" target="_blank"><u>View GDOC</u> ⟿</a>
-                            </div>
-
-                            <div class="manifesto">
-                            <a href="https://docs.google.com/document/d/1BpFXaw9yyWs828MQHTT7pIxoHUedWQ4RGsczUVALoU8/export?format=doc" target="_blank"><u>Download DOCX</u> ⟱</a>
-                            </div>
-
+					<!-- <div class="manifesto">
+                        <a href="https://docs.google.com/document/d/1BpFXaw9yyWs828MQHTT7pIxoHUedWQ4RGsczUVALoU8/edit?usp=sharing"
+                            target="_blank"><u>View GDOC</u> ⟿</a>
                     </div>
 
-                    <!-- <div class="sections5">
+                    <div class="manifesto">
+                        <a href="https://docs.google.com/document/d/1BpFXaw9yyWs828MQHTT7pIxoHUedWQ4RGsczUVALoU8/export?format=doc"
+                            target="_blank"><u>Download DOCX</u> ⟱</a>
+                    </div> -->
+				</div>
+
+				<!-- <div class="sections5">
                             <span class="some-element2"></span>
                     </div>
 
                     <div class="sections6">
                         <span class="some-element3"></span>
                     </div> -->
+			</div>
 
-                </div>
-
-
-                <!-- <div role="tabpanel" class="tab-pane fade" id="support" aria-labelledby="support-tab">
+			<!-- <div role="tabpanel" class="tab-pane fade" id="support" aria-labelledby="support-tab">
 
                     <div class="supportpara">
                         <h4>SUPPORT</h4>
@@ -319,7 +822,7 @@
                         <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank" style="display: block; clear: both; float: right;">
                             <input type="hidden" name="cmd" value="_s-xclick">
                             <input type="hidden" name="hosted_button_id" value="Z5Y4J8TYBVGKA">
-                            <input type="image" src="https://s3.amazonaws.com/external-pages/images/donatebttn.png" border="0" name="submit" style="width: 100px; height: 55px; outline: 0;" alt="PayPal – The safer, easier way to pay online!">
+                            <input type="image" src="images/donatebttn.png" border="0" name="submit" style="width: 100px; height: 55px; outline: 0;" alt="PayPal – The safer, easier way to pay online!">
                             <img alt="" border="0" src="https://www.paypalobjects.com/en_GB/i/scr/pixel.gif">
                         </form>
                     </div>
@@ -330,44 +833,39 @@
                     </div>
 
                 </div> -->
+		</div><!-- Closed tab-content -->
+	</div><!-- closed bs-example -->
 
-            </div><!-- Closed tab-content -->
+	<script src="js/index.js"></script>
+	<script type="text/javascript" src="js/what-or-whom-we-love.min.js"></script>
+	<script type="text/javascript">
+		// rainbow text
 
-        </div><!-- closed bs-example -->
+		// whomWeLove({
+		//     howWeLove: "forever",
+		//     whereToShowVisibility: ".fun"
+		// });
+		// whomWeLove({
+		//     howWeLove: "forever",
+		//     whereToShowVisibility: ".references"
+		// });
+	</script>
 
-        <script src="/js/index.js"></script>
-        <script type="text/javascript" src="/js/what-or-whom-we-love.min.js"></script> 
-        <script type="text/javascript">
+	<script type="text/javascript">
+		// tab url function
 
-            // rainbow text
+		function gototab(reload) {
+			if (window.location.hash = '#home', '#proxymund', '#acquavrzal', '#about-contact', '#support',
+				'#georginatyson', '#mackenziedavidson', '#annatokareva', '#naheekim', '#mazmurray', '#sanjanavarghese'
+			) {
+				window.location.reload(true);
+			} else {
+				location.hash = '.nav-tabs';
+			}
 
-            whomWeLove({
-                howWeLove: "forever",
-                whereToShowVisibility: ".fun"
-            });
-            whomWeLove({
-                howWeLove: "forever",
-                whereToShowVisibility: ".references"
-            });
-
-        </script> 
-
-        <script type="text/javascript">
-
-            // tab url function
-
-            function gototab(reload) {
-                if (window.location.hash = '#home', '#proxymund', '#acquavrzal', '#about-contact', '#support', '#georginatyson', '#mackenziedavidson', '#annatokareva') {
-                    window.location.reload(true);
-                } else {
-                    location.hash = '.nav-tabs';
-                }
-
-            var audio1 = document.getElementById("audio1"), whoIsPlaying = null;
-            }
-
-        </script> 
-
-    </body>
+			var audio1 = document.getElementById("audio1"),
+				whoIsPlaying = null;
+	</script>
+</body>
 
 </html>
