@@ -1,1 +1,9 @@
-{}
+{
+  "version": 2,
+  "scope": "4-us-and-4-others",
+  "builds": [{ "src": "**/*", "use": "@now/static" }],
+  "routes": [{ "handle": "filesystem" }],
+  "github": {
+    "enabled": false
+  }
+}

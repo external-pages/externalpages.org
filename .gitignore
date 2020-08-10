@@ -1,2 +1,9 @@
+<<<<<<< HEAD
 .vercel
 images/georginatyson/Trisha.mp4
+=======
+.now*
+.vercel*
+node_modules
+.DS_Store
+>>>>>>> 2ccb2ed09333239e490a88e3967e6a2a2c1a70ae
