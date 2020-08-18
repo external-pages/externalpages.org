@@ -188,7 +188,7 @@
                     renderer = new THREE.WebGLRenderer({ alpha: true })
                     renderer.setClearColor(0x000000, 0)
                     renderer.setSize(window.innerWidth, window.innerHeight)
-                    renderer.setPixelRatio(window.devicePixelRatio)
+                    renderer.setPixelRatio(2)
                     document.body.appendChild(renderer.domElement)
 
                     controls = new THREE.OrbitControls(camera, renderer.domElement)
