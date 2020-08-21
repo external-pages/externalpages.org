@@ -8,16 +8,16 @@
         <link href="../images/favicon.ico" rel="shortcut icon" type="image/x-icon" />
 
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="http://externalpages.org/legacy-russell/black-meme" />
+        <meta property="og:url" content="https://externalpages.org/legacy-russell/black-meme" />
         <meta property="og:title" content="BLACK MEME" />
         <meta property="og:description" content="by Legacy Russell" />
-        <meta property="og:image" content="http://externalpages.org/legacy-russell/black-meme/stills/meta.png" />
+        <meta property="og:image" content="https://externalpages.org/legacy-russell/black-meme/stills/meta.png" />
 
         <meta property="twitter:card" content="summary_large_image" />
-        <meta property="twitter:url" content="http://externalpages.org/legacy-russell/black-meme" />
+        <meta property="twitter:url" content="https://externalpages.org/legacy-russell/black-meme" />
         <meta property="twitter:title" content="BLACK MEME" />
         <meta property="twitter:description" content="by Legacy Russell" />
-        <meta property="twitter:image" content="http://externalpages.org/legacy-russell/black-meme/stills/meta.png" />
+        <meta property="twitter:image" content="https://externalpages.org/legacy-russell/black-meme/stills/meta.png" />
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
@@ -192,7 +192,7 @@
 
             <button id="info"></button>
 
-            <video id="video" width="100%" loop controls webkit-playsinline playsinline style="display:none">
+            <video id="video" width="100%" loop controls webkit-playsinline playsinline style="display: none;">
                 <source
                     id="videosrc"
                     src="https://s3.amazonaws.com/external-pages/legacy-russell/BLACK_MEME_2020_VOL.mp4"
@@ -219,10 +219,9 @@
                 ><span> <div id="myText"></div> </span
             ></p>
 
-            <video id="fullscreen-video" width="100%" controls webkit-playsinline playsinline style="display:none">
+            <video id="fullscreen-video" width="100%" controls webkit-playsinline playsinline style="display: none;">
                 <source
                     id="videosrc"
-
                     src="https://s3.amazonaws.com/external-pages/legacy-russell/BLACK_MEME_2020_VOL.mp4"
                     loop
                     controls
@@ -249,8 +248,8 @@
             }
 
             //fullscreen
-            $(document).ready(function() {
-                $(".fullscreen-btn").click(function() {
+            $(document).ready(function () {
+                $(".fullscreen-btn").click(function () {
                     $("#fullscreen-video").toggle()
                     $(".buttons").toggle()
                     var video = $("#video").get(0)
@@ -259,12 +258,12 @@
                     }
                     return false
                 })
-                $(".fullscreen-btn-exit").click(function() {
+                $(".fullscreen-btn-exit").click(function () {
                     $("#fullscreen-video").toggle()
                     $(".buttons").toggle()
                     $(".fullscreen-video-bckg").toggle()
                 })
-                $(".buttons-fs").on("click", function() {
+                $(".buttons-fs").on("click", function () {
                     $(".fullscreen-btn, .fullscreen-btn-exit").toggle()
                 })
             })
@@ -274,7 +273,7 @@
             console.log(vid)
             document.getElementById("info").addEventListener(
                 "click",
-                function(e) {
+                function (e) {
                     this.style.display = "none"
                     vid.play()
                     $(".play, .pause").toggle()
@@ -290,10 +289,10 @@
             function pauseVid() {
                 video.pause()
             }
-            $(".buttons").on("click", function() {
+            $(".buttons").on("click", function () {
                 $(".play, .pause").toggle()
             })
-            vidClip.onended = function(e) {
+            vidClip.onended = function (e) {
                 $(".play, .pause").toggle()
             }
 
@@ -328,7 +327,7 @@
                 texture.format = THREE.RGBFormat
                 ;(material = new THREE.MeshBasicMaterial({
                     map: texture,
-                    side: THREE.DoubleSide
+                    side: THREE.DoubleSide,
                 })),
                     (plane = new THREE.Mesh(geometry, material))
                 plane.rotation.x = 0
@@ -340,7 +339,7 @@
                 var planeGeometry2 = new THREE.PlaneGeometry(420, 40, 1)
                 var texture2 = new THREE.TextureLoader().load("9.png")
                 var planeMaterial2 = new THREE.MeshLambertMaterial({
-                    map: texture2
+                    map: texture2,
                 })
                 var loading = new THREE.Mesh(planeGeometry2, planeMaterial2)
                 loading.position.set(0, 265, -15) //z: negative goes closer
@@ -371,7 +370,7 @@
                 var colour = new THREE.Color(0x1e1e1e)
 
                 function loadModel() {
-                    object.traverse(function(child) {
+                    object.traverse(function (child) {
                         if (child.isMesh) {
                             child.material.ambient = pointLight
                             child.material.color = colour
@@ -386,12 +385,12 @@
 
                 var loading = new THREE.LoadingManager()
 
-                var onError = function(xhr) {}
+                var onError = function (xhr) {}
 
                 var loader = new THREE.OBJLoader(manager, loading)
                 loader.load(
                     "models/laptop-edited-rotated-3.obj",
-                    function(obj) {
+                    function (obj) {
                         object = obj
                         scene.add(obj)
                     },
@@ -399,11 +398,11 @@
                     onError
                 )
 
-                manager.onProgress = function(item, loaded, total) {
+                manager.onProgress = function (item, loaded, total) {
                     console.log(item, loaded, total)
                 }
 
-                var onProgress = function(xhr) {
+                var onProgress = function (xhr) {
                     if (xhr.lengthComputable) {
                         var percentComplete = (xhr.loaded / xhr.total) * 100
                         if (percentComplete < 100) {
