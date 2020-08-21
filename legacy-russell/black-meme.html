@@ -19,7 +19,7 @@
         <meta property="twitter:description" content="by Legacy Russell" />
         <meta property="twitter:image" content="https://externalpages.org/legacy-russell/black-meme/stills/meta.png" />
 
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="../js/_lib/jquery-3-2-1.min.js"></script>
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
 
         <style>
@@ -178,13 +178,6 @@
     </head>
 
     <body>
-        <script src="../three.js-master/build/three.js"></script>
-        <script src="../three.js-master/examples/js/controls/OrbitControls.js"></script>
-        <script src="../three.js-master/examples/js/Stats.js"></script>
-        <script src="../three.js-master/examples/js/libs/stats.min.js"></script>
-        <script src="../three.js-master/examples/js/loaders/OBJLoader.js"></script>
-        <script src="../three.js-master/examples/js/controls/TrackballControls.js"></script>
-
         <div class="html-stuff">
             <div id="fullscreen-video-phone">
                 <p>Your browser might not support HTML5 videos or 3D scenes. Please view on desktop instead.</p>
@@ -238,6 +231,13 @@
             </div>
         </div>
 
+        <script src="../js/_lib/three.js/r97/build/three.min.js"></script>
+        <script src="../js/_lib/three.js/r97/examples/js/controls/OrbitControls.js"></script>
+        <script src="../js/_lib/three.js/r97/examples/js/Stats.js"></script>
+        <script src="../js/_lib/three.js/r97/examples/js/libs/stats.min.js"></script>
+        <script src="../js/_lib/three.js/r97/examples/js/loaders/OBJLoader.js"></script>
+        <script src="../js/_lib/three.js/r97/examples/js/controls/TrackballControls.js"></script>
+
         <script>
             // iOS iframe auto-resize workaround
             if (/(iPad|iPhone|iPod)/g.test(navigator.userAgent)) {
@@ -247,7 +247,7 @@
                 scene.setAttribute("scrolling", "no")
             }
 
-            //fullscreen
+            // fullscreen
             $(document).ready(function () {
                 $(".fullscreen-btn").click(function () {
                     $("#fullscreen-video").toggle()
