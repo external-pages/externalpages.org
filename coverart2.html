@@ -87,7 +87,7 @@
                     // texture
 
                     var textureLoader = new THREE.TextureLoader(manager)
-                    var texture = textureLoader.load("js/_lib/three.js/r97/examples/textures/waternormals.jpg")
+                    var texture = textureLoader.load("https://s3.amazonaws.com/external-pages/images/acquaimages/waternormals.jpg")
 
                     // model
 
@@ -107,7 +107,7 @@
 
                     var loader = new THREE.OBJLoader(manager)
                     loader.load(
-                        "js/_lib/three.js/r97/examples/models/obj/coral/10010_Coral_v1_L3.obj",
+                        "https://s3.amazonaws.com/external-pages/images/acquaimages/10010_Coral_v1_L3.obj",
                         function (obj) {
                             object = obj
                         },
@@ -157,9 +157,9 @@
                     // skybox
 
                     var cubeTextureLoader = new THREE.CubeTextureLoader()
-                    cubeTextureLoader.setPath("js/_lib/three.js/r97/examples/textures/cube/Acqua/new/")
+                    // cubeTextureLoader.setPath("js/_lib/three.js/r97/examples/textures/cube/Acqua/new/")
 
-                    var cubeTexture = cubeTextureLoader.load(["px.jpg", "nx.jpg", "py.jpg", "ny.jpg", "pz.jpg", "nz.jpg"])
+                    var cubeTexture = cubeTextureLoader.load(["https://s3.amazonaws.com/external-pages/images/acquaimages/px.jpg", "https://s3.amazonaws.com/external-pages/images/acquaimages/nx.jpg", "https://s3.amazonaws.com/external-pages/images/acquaimages/py.jpg", "https://s3.amazonaws.com/external-pages/images/acquaimages/ny.jpg", "https://s3.amazonaws.com/external-pages/images/acquaimages/pz.jpg", "https://s3.amazonaws.com/external-pages/images/acquaimages/nz.jpg"])
 
                     var cubeShader = THREE.ShaderLib["cube"]
                     cubeShader.uniforms["tCube"].value = cubeTexture
