@@ -239,6 +239,15 @@
         <script src="../js/_lib/three.js/r97/examples/js/controls/TrackballControls.js"></script>
 
         <script>
+        async function getMediaURLForTrack(texture_to_update, passed_url) {
+            await fetch(passed_url, {
+                method: 'HEAD'
+            })
+            .then((response) => {
+                texture_to_update.src = response.url
+            });
+        }
+
             // iOS iframe auto-resize workaround
             if (/(iPad|iPhone|iPod)/g.test(navigator.userAgent)) {
                 var scene = document.getElementById("scene")
