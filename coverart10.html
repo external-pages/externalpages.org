@@ -8,15 +8,28 @@
                 width: 100vw;
                 height: 100vh;
                 overflow: hidden;
+                background-color: #55341e;
             }
             .bg-circular {
-                position: absolute;
+                position: fixed;
                 margin: 0;
                 top: 0;
                 left: 0;
                 height: 100vh;
                 width: auto;
                 overflow: hidden;
+                background-color: #55341e;
+                opacity: 1;
+                animation: incoming 1s ease-in-out;
+            }
+
+            @keyframes incoming {
+                from {
+                    opacity: 0;
+                }
+                to {
+                    opacity: 1;
+                }
             }
 
             .circular {
