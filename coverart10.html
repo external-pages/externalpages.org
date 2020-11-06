@@ -3,58 +3,57 @@
         <title>Uchronia et Uchromia</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
         <style>
-        body {
-            margin: 0;
-            width: 100vw;
-            height: 100vh;
-            overflow: hidden;
-        }
-        .bg-circular {
-            position: absolute;
-            margin: 0;
-            top: 0;
-            left: 0;
-            height: 100vh;
-            width: auto;
-            overflow: hidden;
-        }
-
-        .circular {
-            position: absolute;
-            /*height: 60vh;*/
-            top: 50%;
-            left: 50%;
-            margin-right: -50%;
-            transform: translate(-50%, -50%);
-            animation: rotation 120s infinite linear;
-        }
-
-        @keyframes rotation {
-            from {
-                transform: rotate(0deg);
+            body {
+                margin: 0;
+                width: 100vw;
+                height: 100vh;
+                overflow: hidden;
             }
-            to {
-                transform: rotate(359deg);
+            .bg-circular {
+                position: absolute;
+                margin: 0;
+                top: 0;
+                left: 0;
+                height: 100vh;
+                width: auto;
+                overflow: hidden;
             }
-        }
 
-        .circular img {
-            position: absolute;
-            height: 90vh;
-            top: 50%;
-            left: 50%;
-            margin-right: -50%;
-            transform: translate(-50%, -50%);
-        }
+            .circular {
+                position: absolute;
+                /*height: 60vh;*/
+                top: 50%;
+                left: 50%;
+                margin-right: -50%;
+                transform: translate(-50%, -50%);
+                animation: rotation 120s infinite linear;
+            }
+
+            @keyframes rotation {
+                from {
+                    transform: rotate(0deg);
+                }
+                to {
+                    transform: rotate(359deg);
+                }
+            }
+
+            .circular img {
+                position: absolute;
+                height: 90vh;
+                top: 50%;
+                left: 50%;
+                margin-right: -50%;
+                transform: translate(-50%, -50%);
+            }
         </style>
     </head>
     <body>
         <div class="bg-circular">
-            <img src="https://s3.amazonaws.com/external-pages/rhea-dillon/rheaimages/external-pages_rhea-dillon_background.png"/>
+            <img src="https://s3.amazonaws.com/external-pages/rhea-dillon/rheaimages/external-pages_rhea-dillon_background.png" />
         </div>
         <div class="circular">
-            <img src="https://s3.amazonaws.com/external-pages/rhea-dillon/rheaimages/rhea-circle.png"/>
+            <img src="https://s3.amazonaws.com/external-pages/rhea-dillon/rheaimages/rhea-circle.png" />
         </div>
     </body>
-
 </html>
