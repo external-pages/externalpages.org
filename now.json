@@ -4,7 +4,7 @@
   "builds": [{ "src": "**/*", "use": "@now/static" }],
   "routes": [
     { "src": "/coverart10", "dest": "/coverart10.html" },
-    { "src": "/coverart10-2", "dest": "/coverart10-2.html" },
+    { "src": "/rhea-dillon", "dest": "/rhea-dillon.html" },
     { "handle": "filesystem" }
   ],
   "github": {
