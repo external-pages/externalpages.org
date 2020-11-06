@@ -2,7 +2,11 @@
   "version": 2,
   "scope": "4-us-and-4-others",
   "builds": [{ "src": "**/*", "use": "@now/static" }],
-  "routes": [{ "handle": "filesystem" }],
+  "routes": [
+    { "src": "/coverart10", "dest": "/coverart10.html" },
+    { "src": "/coverart10-2", "dest": "/coverart10-2.html" },
+    { "handle": "filesystem" }
+  ],
   "github": {
     "enabled": false
   }
