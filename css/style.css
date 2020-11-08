@@ -417,18 +417,41 @@ p.about1 {
 
 .two {
 	display: none;
-}
-
-.two p {
 	width: 60vw;
 	font-family: Arial;
 	color: #9c9c9c;
 	float: left;
-	margin-right: 200px;
+	margin-left: 10px;
+	margin-right: 210px;
 	margin-bottom: 20px;
 	/* background: linear-gradient(to left, Yellow, Pink, Plum);
 	; */
 	line-height: 1.6em;
+}
+
+.manifesto .fun {
+	font-size: 1.5em;
+}
+
+.news-date {
+	font-weight: bold;
+	color: green;
+	background-color: DarkBlue;
+	margin: 0;
+	display: inline-block;
+}
+
+.news-about {
+	display: inline-block;
+	margin-left: -10px;
+	color: black;
+	background: rgba(255, 255, 255, 0.2);
+	box-shadow: 0px 0px 10px 10px rgba(255, 255, 255, 0.2);
+	padding: 0 10px 0 10px;
+	border-radius: 25px;
+	max-width: 35vw;
+	text-align: justify;
+	z-index: -1;
 }
 
 .box .threee {
