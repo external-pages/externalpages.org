@@ -11,7 +11,11 @@
 }
 
 body {
-	background-color: black;
+	background-image: url("https://s3.amazonaws.com/external-pages/rhea-dillon/rheaimages/background.png");
+	background-color: #55341e;
+	background-size: 100vw 100vh;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
 }
 
 body,
