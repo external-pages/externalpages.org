@@ -454,6 +454,19 @@ p.about1 {
 	z-index: -1;
 }
 
+.news-link {
+	font-weight: bold;
+}
+
+.news-link:hover {
+	color: yellow;
+}
+
+sup {
+	color: yellow;
+	font-style: italic;
+}
+
 .box .threee {
 	width: 60vw;
 	font-family: Arial;
