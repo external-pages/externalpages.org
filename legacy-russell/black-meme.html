@@ -118,7 +118,7 @@
                 margin-top: 0px;
             }
 
-            iframe#fullscreen-video {
+            #fullscreen-video {
                 display: none;
                 position: absolute;
                 margin-top: 0px;
@@ -133,7 +133,7 @@
                 height: 100vh;
             }
 
-            iframe#fullscreen-video-phone {
+            #fullscreen-video-phone {
                 display: none;
                 position: absolute;
             }
@@ -158,14 +158,14 @@
                     margin-top: 75vh;
                 }
 
-                iframe#fullscreen-video-phone {
+                #fullscreen-video-phone {
                     display: block;
                     position: absolute;
                     width: 100%;
                     text-align: center;
                 }
 
-                iframe#fullscreen-video-phone p {
+                #fullscreen-video-phone p {
                     display: block;
                     z-index: 999999;
                     color: green;
@@ -185,10 +185,10 @@
 
             <button id="info"></button>
 
-            <iframe id="video" width="100%" loop controls webkit-playsinline playsinline style="display: none;" src="https://s3.amazonaws.com/external-pages/legacy-russell/BLACK_MEME_2020_VOL.mp4">
-                <!-- <source
+            <video id="video" width="100%" loop controls webkit-playsinline playsinline style="display: none;">
+                <source
                     id="videosrc"
-                    src="https://s3.amazonaws.com/external-pages/legacy-russell/BLACK_MEME_2020_VOL.mp4"
+                    src="BLACK_MEME_2020_VOL_640w.mp4"
                     loop
                     controls
                     webkit-playsinline
@@ -196,8 +196,8 @@
                     type="video/mp4"
                     crossorigin="anonymous"
                 />
-                <p>"Sorry, your browser doesn't support HTML5 video."</p> -->
-            </iframe>
+                <p>"Sorry, your browser doesn't support HTML5 video."</p>
+            </video>
 
             <div class="buttons">
                 <button class="uk-button uk-button-primary play" onclick="playVid()" type="button">
@@ -212,8 +212,8 @@
                 ><span> <div id="myText"></div> </span
             ></p>
 
-            <iframe id="fullscreen-video" width="100%" controls webkit-playsinline playsinline style="display: none;" src="https://s3.amazonaws.com/external-pages/legacy-russell/BLACK_MEME_2020_VOL.mp4">
-                <!-- <source
+            <video id="fullscreen-video" width="100%" controls webkit-playsinline playsinline style="display: none;">
+                <source
                     id="videosrc"
                     src="https://s3.amazonaws.com/external-pages/legacy-russell/BLACK_MEME_2020_VOL.mp4"
                     loop
@@ -222,8 +222,8 @@
                     playsinline
                     type="video/mp4"
                     crossorigin="anonymous"
-                /> -->
-            </iframe>
+                />
+            </video>
 
             <div class="buttons-fs">
                 <button class="fullscreen-btn">Fullscreen Toggle</button>
