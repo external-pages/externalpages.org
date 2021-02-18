@@ -11,9 +11,11 @@
 }
 
 body {
+	background-image: url("http://external-pages.s3.amazonaws.com/camila-galaz/iMac%20-%201.png");
 /*	background-image: url("https://s3.amazonaws.com/external-pages/rhea-dillon/rheaimages/background.png");
-*/	background-color: #4c4c4c;
+*/	/*background-color: #4c4c4c; */ /*seedling colour*/
 	background-size: 100vw 100vh;
+	background-color: #1b1b1b;
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 }
@@ -209,19 +211,22 @@ p.date {
 	line-height: 0.9rem;
 }
 
-/*.notframe iframe {
+
+.notframe iframe {
 	position: fixed;
 	padding: 0px !important;
 	z-index: 0.000001;
 	background-size: cover;
 	background-repeat: no-repeat;
-	width: calc(100% + 10px);
-	height: calc(100% + 10px);
+	width: calc(100vw + 10px);
+	height: calc(100vh + 10px);
 	top: -10px;
 	left: -10px;
-}*/
+}
 
-.notframe {
+/*bottom two blocks is when i had the seedling*/
+
+/*.notframe {
 	text-align: center;
     margin: 0;
     padding: 0;
@@ -230,11 +235,11 @@ p.date {
     left: 50%;
     margin-right: -50%;
     transform: translate(-50%, -50%); 
-}
+}*/
 
-.notframe iframe {
+/*.notframe iframe {
     width: 40%;
-}
+}*/
 
 /* tabs */
 
@@ -321,6 +326,12 @@ p.about4 {
 	background: linear-gradient(-90deg, DarkBlue, transparent, #666666);
 	background-size: 400% 400%;
 	animation: gradient 200s ease infinite;
+}
+
+.redes-inline {
+	width: 24vw;
+	display: inline-block;
+	font-style: italic;
 }
 
 @keyframes gradient {
