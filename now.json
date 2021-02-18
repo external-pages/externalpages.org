@@ -5,7 +5,7 @@
   "routes": [
     { "src": "/coverart10", "dest": "/coverart10.html" },
     { "src": "/rhea-dillon", "dest": "/rhea-dillon.html" },
-    { "src": "/camila-galaz", "dest": "/camila-galaz/build/$1" },
+    { "src": "/camila-galaz", "dest": "/camila-galaz/index.html" },
     { "handle": "filesystem" }
   ],
   "github": {
