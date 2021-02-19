@@ -628,6 +628,12 @@ button#mute {
 		width: 100%;
 	}
 
+	.redes-inline {
+		width: 48%;
+		display: inline-block;
+		font-style: italic;
+	}
+
 	a.colon {
 		/* very bad work around for aligning */
 		width: 87px;
