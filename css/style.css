@@ -334,6 +334,14 @@ p.about4 {
 	font-style: italic;
 }
 
+#bibliRedes {
+	cursor: pointer;
+}
+
+#bibliRedes:hover {
+	color: black
+}
+
 @keyframes gradient {
 	0% {
 		background-position: 0% 50%;

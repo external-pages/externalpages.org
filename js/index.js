@@ -55,6 +55,10 @@ $(document).ready(function(){
 		$(this).find('.date').css('visibility', 'hidden');
 	});
 
+	$('.bibli-redes').hide()
+	$('#bibliRedes').click(function () {
+		$('.bibli-redes').toggle()
+	})
 	// (phone) check if you support touch
 
 $(window).resize(function(){
