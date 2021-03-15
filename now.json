@@ -6,6 +6,7 @@
     { "src": "/coverart10", "dest": "/coverart10.html" },
     { "src": "/rhea-dillon", "dest": "/rhea-dillon.html" },
     { "src": "/camila-galaz", "dest": "/camila-galaz.html" },
+    { "src": "/yacht-metaphor", "dest": "/yacht-metaphor.html" },
     { "handle": "filesystem" }
   ],
   "github": {
