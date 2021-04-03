@@ -11,11 +11,12 @@
 }
 
 body {
-	background-image: url("http://external-pages.s3.amazonaws.com/camila-galaz/iMac%20-%201.png");
+	/*background-image: url("http://external-pages.s3.amazonaws.com/camila-galaz/iMac%20-%201.png");*/
 /*	background-image: url("https://s3.amazonaws.com/external-pages/rhea-dillon/rheaimages/background.png");
 */	/*background-color: #4c4c4c; */ /*seedling colour*/
 	background-size: 100vw 100vh;
-	background-color: #1b1b1b;
+	/*background-color: #1b1b1b;*/
+	background-color: #2a3a69;
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 }
@@ -72,7 +73,8 @@ p {
 	letter-spacing: 5px;
 	text-transform: uppercase;
 	font-style: italic;
-	color: #9c9c9c;
+	/*color: #9c9c9c;*/
+	color: rgba(255,255,255,0.8);
 	text-shadow: 3px 3px 4px DeepSkyBlue;
 	margin: 25px;
 }
@@ -609,6 +611,44 @@ button#mute {
 	border-radius: 4px;
 	font-style: italic;
 	background-color: #9c9c9c;
+}
+
+/*yacht metaphor */
+
+#gallery-video-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  z-index: 0;
+}
+
+#gallery-video-container > video {
+  display: block;
+  position: absolute;
+  left: 50%;
+  /* top: 50%; */
+  top: 0;
+  transform: translate(-50%, 0);
+  /* z-index: 1; */
+}
+@media screen and (max-aspect-ratio: 1920/1080) {
+  #gallery-video-container > video {
+    height: 100%;
+  }
+}
+@media screen and (min-aspect-ratio: 1920/1080) {
+  #gallery-video-container > video {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 880px) {
+  #gallery-video-container > video {
+    height: 100%!important;
+  }
 }
 
 /* media queries */
