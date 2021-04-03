@@ -664,11 +664,11 @@ button#mute {
 @media (max-width: 500px) {
 
 	.pages {
-		width: 100px;
+		width: 125px;
 	}
 
 	.tab-content {
-		margin-right: 100px;
+		margin-right: 125px;
 		/* = .pages width */
 	}
 
