@@ -360,7 +360,7 @@ p.about4 {
 
 p.about4 a {
     font-family: Arial;
-    font-style: italic;
+    /* font-style: italic; */
     color: darkblue;
 }
 
