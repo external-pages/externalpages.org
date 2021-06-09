@@ -174,7 +174,7 @@ h6 {
     background: rgba(237, 233, 231, 0.9);
     box-shadow: 0px 0px 20px 0px rgba(237, 233, 231, 1);
     /* padding: 0 10px 0 10px; */
-    border-radius: 25px;
+    border-radius: 15px;
 }
 
 .pages li {
@@ -632,6 +632,7 @@ button#mute {
     height: 100vh;
     overflow: hidden;
     z-index: 0;
+    animation: incoming 1s ease-in-out;
 }
 
 #gallery-video-container > video {
@@ -669,6 +670,15 @@ button#mute {
     height: auto;
     overflow: hidden;
     z-index: 0;
+}
+
+@keyframes incoming {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
 /* media queries */
