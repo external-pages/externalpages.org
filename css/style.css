@@ -675,12 +675,14 @@ button#mute {
 
 @media (max-width: 650px) {
     #katherine-cover-art img {
-        position: absolute;
+        position: fixed;
+        overflow: hidden;
         left: 50%;
         top: 50%;
         transform: translate(-50%, -50%);
         height: 100vh;
         width: auto;
+        z-index: 0;
     }
 
     .pages {
@@ -696,7 +698,7 @@ button#mute {
 
 @media (max-width: 500px) {
     .pages {
-        width: 125px;
+        width: 115px;
     }
 
     .tab-content {
