@@ -21,6 +21,7 @@
 
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+	<link rel="stylesheet" href="css/blurry-load.min.css">
 	<link href="images/favicon.ico" rel="shortcut icon" type="image/x-icon" />
 	<link href="css/style.css" title="compact" rel="stylesheet" type="text/css" />
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -175,9 +176,9 @@
 			        </video>
 			    </div> -->
 
-				<div id="gallery-video-container">
-					<img src="bouquet-toss/Cover Art.png" loading="lazy" alt="Kathrine Frazer"/>
-			    </div>
+				<div id="katherine-cover-art">
+					<img class="blurry-load" src="bouquet-toss/Cover Art small.png" data-large="bouquet-toss/Cover Art.png"/>
+				</div>
 
 				<script>
 					// iOS iframe auto-resize workaround
@@ -981,6 +982,7 @@
 	<script src="js/index.js"></script>
 	<script src="camila-galaz/redes-google.js"></script>
 	<script type="text/javascript" src="js/what-or-whom-we-love.min.js"></script>
+	<script src="js/blurry-load.min.js"></script>
 	<script type="text/javascript">
 		// rainbow text
 
@@ -992,6 +994,9 @@
 		    howWeLove: "forever",
 		    whereToShowVisibility: ".references"
 		});
+
+		const blurryImageLoad = new BlurryImageLoad();
+		blurryImageLoad.load();
 	</script>
 
 	<script type="text/javascript">
@@ -1008,6 +1013,8 @@
 
 			var audio1 = document.getElementById("audio1"),
 				whoIsPlaying = null;
+
+				
 	</script>
 </body>
 

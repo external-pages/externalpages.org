@@ -336,7 +336,7 @@ p.about4 {
     margin-top: 17px;
     /*background: linear-gradient(to right, #002600, #003300, black);
 	;*/
-    background: linear-gradient(-90deg, DarkBlue, transparent, #666666);
+    background: linear-gradient(-90deg, rgba(0, 0, 139, 0.75), transparent, #666666);
     background-size: 400% 400%;
     animation: gradient 200s ease infinite;
 }
@@ -632,7 +632,6 @@ button#mute {
     height: 100vh;
     overflow: hidden;
     z-index: 0;
-    animation: incoming 1s ease-in-out;
 }
 
 #gallery-video-container > video {
@@ -661,30 +660,21 @@ button#mute {
     }
 }
 
-#gallery-video-container img {
+#katherine-cover-art img {
     position: absolute;
+    overflow: hidden;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
     width: 100vw;
     height: auto;
-    overflow: hidden;
     z-index: 0;
-}
-
-@keyframes incoming {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
 }
 
 /* media queries */
 
 @media (max-width: 650px) {
-    #gallery-video-container img {
+    #katherine-cover-art img {
         position: absolute;
         left: 50%;
         top: 50%;
