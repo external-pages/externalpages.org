@@ -1,6 +1,6 @@
 <p align="center"><img src="images/readme-logo.png"/></p>
 
-### <center>externalpages.org
+<h3 align="center"><a href="externalpages.org">externalpages.org</a></h3>
 
 ---
 
