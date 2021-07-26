@@ -4,3 +4,4 @@ images/georginatyson/Trisha.mp4
 .vercel*
 node_modules
 .DS_Store
+*.icloud
