@@ -1,8 +1,6 @@
 <p align="center"><img src="images/readme-logo.png"/></p>
 
-<h3 align="center"><a href="externalpages.org">externalpages.org</a></h3>
-
----
+<h2><a href="externalpages.org">externalpages.org</a></h2>
 
 source code ( ͡° ͜ʖ ͡°)
 
