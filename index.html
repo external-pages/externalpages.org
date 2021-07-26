@@ -1,26 +1,27 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
 	<title>External Pages</title>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, maximum-scale=0.9, initial-scale=0.9" />
-	<meta name="description" content="Open call for ambitious digital project proposals – Wednesday 1st of July." />
+	<meta name="description" content="Online exhibition space for new net art. Currently showing '∞ bouquet ∞ toss ∞ feeling, it’s just for you' by Katherine Frazer, 2021" />
 
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content="http://externalpages.org/" />
 	<meta property="og:title" content="External Pages" />
-	<meta property="og:description" content="Open Call" />
-	<meta property="og:image" content="http://externalpages.org/open-call-july/assets/meta-open-call.png" />
+	<meta property="og:description" content="Online exhibition space for new net art. Currently showing '∞ bouquet ∞ toss ∞ feeling, it’s just for you' by Katherine Frazer, 2021" />
+	<meta property="og:image" content="https://external-pages.s3.amazonaws.com/katherine-frazer/meta.png" />
 
 	<meta property="twitter:card" content="summary_large_image" />
 	<meta property="twitter:url" content="http://externalpages.org/" />
 	<meta property="twitter:title" content="External Pages" />
-	<meta property="twitter:description" content="Open Call" />
-	<meta property="twitter:image" content="http://externalpages.org/open-call-july/assets/meta-open-call.png" />
+	<meta property="twitter:description" content="Online exhibition space for new net art. Currently showing '∞ bouquet ∞ toss ∞ feeling, it’s just for you' by Katherine Frazer, 2021" />
+	<meta property="twitter:image" content="https://external-pages.s3.amazonaws.com/katherine-frazer/meta.png" />
 
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+	<link rel="stylesheet" href="css/blurry-load.min.css">
 	<link href="images/favicon.ico" rel="shortcut icon" type="image/x-icon" />
 	<link href="css/style.css" title="compact" rel="stylesheet" type="text/css" />
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -52,11 +53,11 @@
 				<div class="pages">
 					<li role="presentation">
 						<h6>
-							<a class="visiblebox" data-href="#opencall" href="#opencall"
-								id="opencall-tab" role="tab" data-toggle="tab"
-								aria-controls="opencall">News:<br />
-								<p class="date">07/2020</p>
-								<i><u>Open Call</u></i>
+							<a class="visiblebox" data-href="#katherine-frazer" href="#katherine-frazer"
+								id="katherine-frazer-tab" role="tab" data-toggle="tab"
+								aria-controls="katherine-frazer">Current Exhibition:<br />
+								<p class="date">06/2021</p>
+								<i><u>Katherine Frazer</u></i>
 							</a>
 						</h6>
 					</li>
@@ -65,6 +66,24 @@
 						<h6>
 							<a id="b1">Past Exhibitions
 								<a class="colon">:</a>
+							</a>
+							<a class="box" data-href="#cory-in-the-abyss" href="#cory-in-the-abyss" role="tab"
+								id="cory-in-the-abyss-tab" data-toggle="tab" aria-controls="cory-in-the-abyss" data-target="#cory-in-the-abyss,
+                                #cory-in-the-abyss">
+								<p class="date">04/2021</p>
+								<i><u>Cory In The Abyss</u></i>
+							</a>
+							<a class="box" data-href="#camila-galaz" href="#camila-galaz" role="tab"
+								id="camila-galaz-tab" data-toggle="tab" aria-controls="camila-galaz" data-target="#camila-galaz,
+                                #camila-galaz">
+								<p class="date">02/2021</p>
+								<i><u>Camila Galaz</u></i>
+							</a>
+							<a class="box" data-href="#rhea-dillon" href="#rhea-dillon" role="tab"
+								id="rhea-dillon-tab" data-toggle="tab" aria-controls="rhea-dillon" data-target="#rhea-dillon,
+                                #rhea-dillon">
+								<p class="date">11/2020</p>
+								<i><u>Rhea Dillon</u></i>
 							</a>
 							<a class="box" data-href="#legacyrussell" href="#legacyrussell" role="tab"
 								id="legacyrussell-tab" data-toggle="tab" aria-controls="legacyrussell" data-target="#legacyrussell,
@@ -122,7 +141,7 @@
 
 					<li role="presentation">
 						<h6><a data-href="#about-contact" href="#about-contact" id="about-contact-tab" role="tab"
-								data-toggle="tab" aria-controls="about-contact">About + Contact</a></h6>
+								data-toggle="tab" aria-controls="about-contact">About + Contact<br>+ News</a></h6>
 					</li>
 
 					<!-- <li role="presentation">
@@ -146,9 +165,20 @@
                   <button type="button" id="unmute"><i class="material-icons">volume_off</i></button>
                 </div> -->
 
-				<div class="notframe">
-					<iframe id="scene" scrolling="no" src="open-call-july/open-call.html" frameborder="0"></iframe>
-					<!-- <div class="lilnotice"><p>cover art isn't compatible with your screen size sorry :(</p></div> -->
+				<!-- <div class="notframe">
+					<iframe id="scene" scrolling="no" src="https://camila-galaz.vercel.app/coverart11.html" frameborder="0"></iframe>
+				</div> -->
+
+				<!-- <div id="gallery-video-container">
+			        <video id="gallery-video" muted autoplay loop webkit-playsinline playsinline>
+			            <source src="images/coryintheabyss/undadasea.webm" type="video/mp4" autoplay loop>
+			            <source src="images/coryintheabyss/undadasea.mp4" type="video/mp4" autoplay loop>
+			        </video>
+			    </div> -->
+
+				<div id="katherine-cover-art">
+					<!-- <img class="blurry-load" src="bouquet-toss/Cover Art small.png" data-large="bouquet-toss/Cover Art.png"/> -->
+					<img src="bouquet-toss/Cover Art.png"/>
 				</div>
 
 				<script>
@@ -577,7 +607,7 @@
 				</div>
 			</div>
 
-						<div role="tabpanel" class="tab-pane fade" id="legacyrussell" aria-labelledby="legacyrussell-tab">
+			<div role="tabpanel" class="tab-pane fade" id="legacyrussell" aria-labelledby="legacyrussell-tab">
 				<div class="intropara">
 					<h4>LEGACY RUSSELL</h4>
 					<p class="about4">
@@ -681,38 +711,181 @@
 				</div>
 			</div>
 
-			<div role="tabpanel" class="tab-pane fade" id="current" aria-labelledby="current-tab">
+			<div role="tabpanel" class="tab-pane fade" id="rhea-dillon" aria-labelledby="rhea-dillon">
+				<div class="intropara">
+					<h4>RHEA DILLON</h4>
+					<p class="about4">
+					<b>External Pages’ tenth exhibition takes the form of a questionnaire</b>
+						<br /><br />--<br /><br />
+						<i>“The purpose of art is to lay bare the questions hidden by the answers”</i><br>
+						– James Baldwin (1962)
+						<br><br>
+						<i>“The moment you begin to paint, you begin to construct. Art has to be the quest for something.”</i>
+						– Sam Gilliam (2007) <br>
+						<br><br>
+						External Pages is delighted to present their tenth exhibition of a newly commissioned piece by <a href="https://dillonrhea.com/Contact">Rhea Dillon</a> titled Uchronia et Uchromia which runs from 8 November – 21 December 2020.
+						<br><br>
+						Uchronia et Uchromia is a new interactive artwork by Rhea Dillon. By taking the form of an online questionnaire, the net artwork highlights the process of being questioned in the context of the Black experience today.
+						<br><br>
+						This title combines ‘Uchronia’, meaning an alternate history or hypothetical time period, with François Laruelle’s ‘Uchromia’ which is “to learn to think from the point of view of Black as what infuses color, in the last instance, rather than what limits it.” There's a phonetical resonance too, as it sounds like uchronia ‘ate’ uchromia, which suggests the violence Black people are subject to as well as the ways in which Black culture is exploited.
+						<br><br>
+						Questionnaires are a tool used by many institutions across society such as entrance exams in education, which operate as gatekeeping mechanisms. By adopting this framework, ideas of power, control and inequality come to the fore. Referencing how her own experiences shaped the artwork, Dillon emphases that the endless supply of questions that demand existential and fugitive thinking represents “the interrogation of a Black person in our society: there are hardly ever any answers, or information.” 
+						<br><br>
+						The interactivity of the artwork speaks to Françoise Vergès writing on the invisibility of the Black and Brown cleaners in the capitalocene: “The performing male neoliberal body has another kind of “phantom” body that enables his limitless performance.” The questionnaire acts as its own kind of limitless performance, as to experience the exhibition the viewer is required to answer questions with no indication of the quantity or duration ahead.
+						<br><br>
+						Once the viewer completes the questionnaire, they can download a personalised poster of (their own) fragmented language, referencing the composition of asemic and concrete poetry. A custom-made font, ‘Nemesis’, has also been produced for the piece by graphic artist and designer <a href="https://www.instagram.com/effiie.cc/">Effie Crompton</a>.
+						<br><br>
+						The beginning of this text quotes two great practitioners. Dillon engages with other artists and thinkers throughout the questionnaire in this plight for her own questions deserving answers as well as those left unanswered in books, papers and poetry from the likes of Pope.L to Mildred Howard to Bhanu Kapil. Dillon’s questions are an inescapable confrontation between the ontology and the ontic of each individual sitter. It is not merely to get answers but to encourage discussion to grow and expand filtering into your homes as an ever present, ever aware and eye opening probe for the fundamental question: when you don't know where to begin, where do you start?
+						<br><br>
+						<b>About the artist</b><br>
+						Rhea Dillon is an artist and writer based in London. Using video, installation, images, painting and olfaction, she examines and abstracts her intrigue of the ‘rules of representation’ as a device to undermine contemporary Western culture. She is particularly interested in the self coined phrase ‘humane afrofuturism’ to describe a practice of bringing forward the humane and equality-led perspectives on how we visualise Black bodies. Her work has been exhibited at Almine Rech, London; DRABL, Paris; The British Film Institute, London; Mimosa House, London; and Sanam Archive, Accra Ghana, to name a few.<br>
+						She is an Associate Lecturer at Central Saint Martins, London.
+						<br /><br />
+						<small><a target="_blank" href="coverart10.html">⇝ View cover art</a></small>
+						<a class="enter" target="_blank" href="https://externalpages.org/rhea-dillon">
+							<b><i>Enter to exhibition</i></b>
+						</a>
+					</p>
+					<!-- ⟿ -->
+				</div>
+			</div>
+
+			<div role="tabpanel" class="tab-pane fade" id="camila-galaz" aria-labelledby="camila-galaz">
+				<div class="intropara">
+					<h4>CAMILA GALAZ</h4>
+					<p class="about4">
+						<span class="redes-inline">Hay que parar al que no quiera<br>
+						que el pueblo gane esta pelea.<br>
+						Hay que juntar toda la ciencia<br>
+						antes que acabe la paciencia<br>
+						de los millones que esperan.<br>
+						Pan y justicia en la tierra.</span>
+						<span class="redes-inline">(We must stop those who do not want<br>
+						the people to win this fight.<br>
+						We must bring together all of science<br>
+						before the patience runs out<br>
+						of the millions waiting.<br>
+						Bread and justice on earth.)</span><br><br>
+					‘Letanía para una computadora y para un niño que va a nacer’, Ángel Parra<br>
+					(‘Litany for a Computer and a Baby About to Be Born’)<br>
+					<br>
+					--<br>
+					<br>
+					External Pages is excited to announce the launch of <i>REDES: bread and justice, peaches and bananas</i> by Camila Galaz, featured on External Pages from 19 February – 31 March 2021.<br>
+					<br>
+					<i>REDES: bread and justice, peaches and bananas</i> is an interactive video exhibition exploring political ideals expressed through network communication during two periods of change in Chilean history. Focusing on the impact of COVID-19 on the current Estallido Social movement, the research is displayed through the interface of Project Cybersyn, a socialist cybernetics project from the early 70s Allende period.<br>
+					<br>
+					Audiences navigate the show via a control panel interface found on the classic Tulip chairs of the Cybersyn Opsroom. Based on a viable system model, Cybersyn aimed to level hierarchies and improve communication through computer technologies in a manner aligned with Allende’s socialist ideals. With the backdrop of the Opsroom, the work highlights the awkward evolution of network communication: demonstrators using the tools of modern social media apps that are a consequence of neoliberalism - an ideology that protesters are in fact challenging in the face of austerity. <br>
+					<br>
+					“Redes”, translates to “networks” from Spanish. The subtitle comes from an introduction to a lecture by Fernando Flores (Minister of Economics and Finance during the Allende Government and in charge of Project Cybersyn) in which the speaker describes carrying around a book by Flores so much that it was covered in rotten peaches and bananas from the bottom of his backpack. Food shortages, hunger, and the shutting down of community soup kitchens (ollas comunas), are recurring issues in Chile. Against the spoiled peaches, “bread and justice” comes from ‘Litany for a Computer and a Baby About to Be Born’, a song created to promote Project Cybersyn: <i>pan y justicia en la tierra</i> (bread and justice on earth).<br>
+					<br>
+					<i>REDES: bread and justice, peaches and bananas</i><br>
+					Camila Galaz, 2021<br>
+					approx. 15min<br>
+					Made with assistance and coding from the team at External Pages, graphic design from <a target="_blank" href="https://www.instagram.com/effiiie/">Effie Crompton</a>, and CGI from <a target="_blank" href="https://beldocherty.com/">Bel Docherty</a>.<br>
+					Included: messages from UK-based journalist Naomi Larsson Piñeda; audio messages, video, and Instagram posts from the team at @18.10aprueba; embedded livestream from Galería CIMA; music from Cristóbal Jofré.<br>
+					The artist thanks Naomi Larsson Piñeda, the team at @18.10aprueba, Cristóbal Jofré, Galería CIMA, Eden Medina, and Baird Campbell.<br>
+					<br>
+					<b>About the artist</b><br>
+					Camila Galaz is a Chilean-Australian visual artist and filmmaker based in Los Angeles, California (Tovaangar). Working in video, text, and across digital platforms, her multimodal practice looks to understand how intimate connections to history exist through personal narratives, social media, collective memory, and cultural texts. Recent commissions include the Digital Writers’ Festival, Sister Gallery, Outback Arthouse, and West Space. She is the recipient of the 2018 M-Power Scholarship from the National Gallery of Victoria and the 2019-2021 Australia Council EMPAC New York Residency. Her current work is supported through an LA County Vibrant Cities Arts Grant.<br>
+					<a target="_blank" href="http://www.camilagalaz.com/">www.camilagalaz.com</a><br>
+					@_camilagalaz<br><br>
+					<span id="bibliRedes"><b>Resources ⟴</b></span>
+					<span class="bibli-redes"><br><br>
+						<b>References and research:</b><br><a href="https://www.are.na/camila-galaz/redes-bread-and-justice-peaches-and-bananas">Are.na channel</a><br><br>
+						<b>Selected Bibliography:</b><br>
+						Abbate, Janet. 'What and where is the Internet? (Re)defining Internet histories'. Internet Histories Vol. 1 No. 1-2 (March 2017)<br>
+						Arriagada, Arturo, and Sherman, Andrés, and Valenzuela, Sebastián. 'The Social Media Basis of Youth Protest Behavior: The Case of Chile'. Journal of Communication Vol 62 Iss 2 (February 2012)<br>
+						Beckett, Andy. 'Santiago Dreaming'. The Guardian 8 September 2003<br>
+						Bulow, Marisa von, and Vilaça, Luiz, and Abelin, Pedro Henrique. 'Varieties of digital activist practices: students and mobilization in Chile'. Information, Communication & Society Vol. 22 No. 12 (2019)<br>
+						Campbell, Baird. Personal Interview. 24 September 2020<br>
+						Campbell, Baird, and Haynes, Nell. 'Before They Erase It: memory and the social media archive' Platypus The CASTAC Blog 2019<br>
+						Carter, Erik. 'How Instagram became a destination for the protest movement'. NBC News 28 June 2020<br>
+						Centre of Digital Culture and International Sociological Association Research Committee on Social Classes & Social Movements. 'Digital activism seminar'. King's College London May 2020<br>
+						Chenoweth, Erica, and Choi-Fitzpatrick, Austin, and Pressman, Jeremy, and Santos, Felipe G, and Ulfelder, Jay. 'The global pandemic has spawned new forms of activism - and they’re flourishing'. The Guardian 20 April 2020<br>
+						Dennis, Michael A. 'Scientific and technical knowledge and the making of political order'. History and Technology Vol. 28 No. 4 (December 2012)<br>
+						Dorfman, Ariel. 'Confronting the Pandemic in a Time of Revolt: Voices From Chile'. The Nation 6 April 2020<br>
+						Eaton, George. 'Project Cybersyn: the afterlife of Chile’s socialist internet'. New Statesman August 2018<br>
+						Eduardo Bonnin, Juan. 'Rethinking populist discourse from Latin America: Algorithmic Activism and the Constitution of a People in Chile'. Trabalhos em Linguística Aplicada Vol. 59 No. 1 (2020)<br>
+						Evgeny, Morozov. 'The Planning Machine'. The New Yorker Vol. 90, Iss. 31 (October 2014)<br>
+						Fablab Santiago ed. ‘The Counterculture Room’. Pavilion of Chile at the London Design Biennale 2016<br>
+						Faiola, Anthony, and Mahtani, Shibani, and Wessel, Lindzi. 'Coronavirus chills protests from Chile to Hong Kong to Iraq, forcing activists to innovate'. The Washington Post 4 April 2020<br>
+						Fuentes, Marcela A. 'Performance Constellations: Memory and Event in Digitally Enabled Protests in the Americas.' Text and Performance Quarterly Vol. 35 No. 1 (January 2015)<br>
+						Gerbaudo, Paolo. 'Tweets and the Streets: Social Media and Contemporary Activism'. Pluto Press 2012<br>
+						Joyce, Mary ed. 'Digital Activism Decoded: The New Mechanics of Change'. International Debate Education Association 2010<br>
+						Larsson, Naomi. Personal Interview 19 November 2020<br>
+						Larsson, Naomi, and McGowan, Charis. 'Chile police using Covid-19 quarantine as pretext to crush protest, activists say'. The Guardian 25 August 2020<br>
+						Loeber, Katherina. 'Big Data, Algorithmic Regulation, and the History of the Cybersyn Project in Chile, 1971-1973'. Social Sciences 7, no.4:65 (April 2018)<br>
+						Medina, Eden. 'Computer Memory, Collective Memory: Recovering History through Chilean Computing'. IEEE Annals of the History of Computing October-December 2005<br>
+						Medina, Eden. 'Cybernetic Revolutionaries: Technology and Politics in Allende’s Chile'. MIT Press, 2011<br>
+						Medina, Eden. 'Designing Freedom, Regulating a Nation: Socialist Cybernetics in Allende’s Chile '. Journal of Latin American Studies Vol. 38 Iss. 3 (August 2006)<br>
+						Medina, Eden. Personal Interview. 5 November 2020<br>
+						Parker, Angus. 'Coronavirus: the protests that can’t take place and what that might mean'. Geographical 2020<br>
+						Poblete, Juan. 'Reviewed Works: Cybernetic Revolutionaries: Technology and Politics in Allende’s Chile by Eden Medina '. Revista Hispanica Moderna June 2013<br>
+						Rice-Aguilar, Camila. 'The COVID-19 Virtual Revolution: A New Era for Youth Activists in Chile'. Harvard Re-Vista 2020<br>
+						Scherman, Andrés, and Arriagada, Arturo, and Valenzuela, Sebastián, 'Student and Environmental Protests in Chile: The Role of Social Media'. Politics Vol. 25 No. 2 (2015)<br>
+						Sheikh Moussa, Lynn. 'Protests halt, but activism persists despite pandemic'. Beirut Today 8 April 2020<br>
+						Valenzuela, S., Somma, N.M., Scherman, A. and Arriagada, A. 'Social media in Latin America: deepening or bridging gaps in protest participation?'. Online Information Review Vol. 40 No. 5, pp. 695-711 (2016)<br>
+						18.10informa, Personal Interview. 19 September 2020
+					</span>
+					<br /><br />
+						<small><a target="_blank" href="https://camila-galaz.vercel.app/coverart11.html">⇝ View cover art</a></small>
+						<a class="enter" target="_blank" href="https://camila-galaz.vercel.app/">
+							<b><i>Enter to exhibition</i></b>
+						</a>
+					</p>
+				</div>
+			</div>
+
+			<div role="tabpanel" class="tab-pane fade" id="cory-in-the-abyss" aria-labelledby="cory-in-the-abyss">
+				<div class="intropara">
+					<h4>CORY IN THE ABYSS</h4>
+					<p class="about4">
+					<i>Yacht Metaphor: The Collected Works of @CoryInTheAbyss</i> is a browser-based
+					exhibition that explores the work of artist, poet, and meme creator Jenson Leonard (b. 1990). This online showcase presents a selection of internet memes created between 2015 and 2021 under the artist’s alias, <a target="_blank" href="https://www.instagram.com/coryintheabyss/">@CoryInTheAbyss</a>. Through a custom-made website designed by the artist, the exhibition invites visitors to engage with these memes both as contemporary net art and as an unexpected educational entryway into complex social and political theory.<br><br>
+					--<br>
+					<br>
+					While most meme artists create work that feeds off the daily news cycle and viral online trends, Leonard instead focuses on creating what he calls “evergreen” images—content that remains consistently relevant over a long period of time. Embracing the appearance of an almost absurdly high production value, <a target="_blank" href="https://www.instagram.com/coryintheabyss/">@CoryInTheAbyss</a> memes mine the visual language of mainstream news media, advertising, and mass entertainment. These carefully constructed images pit American visual culture against itself through pastiche and satire, subverting pop culture imagery that ranges from Hollywood film posters to ’90s hip-hop T-shirt aesthetics in order to address topics such as class consciousness, white liberal identity, police brutality, and the predatory nature of racial capitalism.<br><br>
+					Co-hosted by online exhibition platform External Pages, Yacht Metaphor exhibits a selection of Leonard’s most iconic meme works, accompanied by the artist’s annotations and an extended text by artist and poet manuel arturo abreu. The website, which functions as an artwork in itself, presents an interactive underwater seascape that allows visitors the opportunity to pause their infinite scroll and explore the abyss.<br><br>
+					In conjunction with the project, you can also view Leonard’s work on a billboard located in the Hudson Valley (~1309 U.S. Route 9, Tivoli, N.Y.), made possible by the generous support of Baltimore-based arts collaborative <a target="_blank" href="https://nomunomu.org/">NoMüNoMü</a>.<br><br>
+					This exhibition is curated by <a target="_blank" href="https://www.instagram.com/gopayne/">Georgie Payne</a> and developed by <a target="_blank" href="https://www.instagram.com/djpoodleemoji/">Clay Colonna</a>.
+					<br><br>
+					<i>Yacht Metaphor: The Collected Works of @CoryInTheAbyss</i> will be featured on External Pages from April 3rd until May 14th.
+					<br /><br />
+						<!-- <small><a target="_blank" href="https://camila-galaz.vercel.app/coverart11.html">⇝ View cover art</a></small> -->
+						<a class="enter" target="_blank" href="https://externalpages.org/yacht-metaphor">
+							<b><i>Enter to exhibition</i></b>
+						</a>
+					</p>
+				</div>
+			</div>
+
+			<div role="tabpanel" class="tab-pane fade" id="current" aria-labelledby="current-tab" >
 				<h4>CURRENT EXHIBITION</h4>
 			</div>
 
-			<div role="tabpanel" class="tab-pane fade" id="opencall" aria-labelledby="opencall-tab">
+			<div role="tabpanel" class="tab-pane fade" id="katherine-frazer" aria-labelledby="katherine-frazer">
 				<div class="intropara">
-					<h4>SUBMISSIONS</h4>
+					<h4>KATHERINE FRAZER</h4>
 					<p class="about4">
-					<b>Open call for ambitious digital project proposals – Wednesday 1st of July</b>
-						<br /><br />--<br /><br />
-						External Pages is pleased to announce an open call for proposals of ambitious digital projects, which ends on midnight Wednesday 1st of July.
+						External Pages is pleased to present <i>∞ bouquet ∞ toss ∞ feeling, it’s just for you</i>, an exhibition of new digital paintings by <a href="https://www.katherinefrazer.com/" target="_blank">Katherine Frazer</a> which runs from 7 June – 25 July 2021.<br /><br />
+						Frazer's exhibition explores the possibility of creating an “infinite” painting, embracing aspects unique to its digital context such as the endless scroll, and heightens this artistic question with imagery of “foreverness” as playfully suggested by the gesture of the bouquet toss. Each time a viewer visits the website, a new sequence of bouquets are generated on the screen. The bouquets are positioned randomly, as if they are being thrown, and rearranged in new ways as the viewer continues to scroll.<br /><br />
+						By transforming the bouquets into digital artifacts, Frazer is highlighting questions of time, attention and portraiture. These digital flowers will not decay, yet they will disappear once the browser session has ended. Their status as paintings is at once permanent and ephemeral. Additionally, the instantaneous gesture of the bouquet throw is held in time, bringing forward ideas of timeless commitment and boundless love. Explaining the generative nature of the digital paintings, suggestive of the propagative nature of weddings, marriage, birth, Frazer explains, “by engaging with the artwork, the audience is also involved in its creation, propagating a unique version each time.”<br /><br />
+						In English 15th century tradition, a wedding ceremony would typically end with guests ripping off parts of the bridal dress as a means to obtain good luck. As wedding attire became more expensive over time, bouquets, carried by the bride, came to replace the dress’ sacrificial role. Attendees would grab pieces of the flowers, sparing the dress from intentional damage. As a societal ritual, the bouquet toss embodies a poetic tension between hope and competition, as well as the delicacy of love, lust for fortune and the contractual nature of marriage.<br /><br />
+						Frazer’s process involves purchasing real bouquets and capturing intentionally crude 3D models using the iOS app Polycam, which are then collaged using Keynote, Apple's presentation software. Fragments of the bouquets are later generated in Javascript to create separate petals. Each painting is made up of auto-generated pieces that repeat endlessly as the webpage scrolls. Visitors are able to select from an indexed homepage to view six unique paintings, followed by a seventh piece which combines all bouquet arrangements.<br /><br />
+						Frazer’s paintings portray representations of love and associated cultural rituals, as well as touching on key themes of the history of painting through her background working with technology. Frazer's paintings are digitally-native, incorporating scrolling, slide shows and source files as viewing contexts. Having worked at Apple on the Keynote design team for 5 years, Frazer is now using the programme as a tool to splice out, collate and deconstruct her 3D scans. She also continues to use her knowledge from Ikebana training, the Japanese art of flower arrangement, in her practice, advancing in experimentation via digital graphics.<br /><br />
+						A series of seven digital paintings will be released at regular intervals throughout the exhibition, and are available to purchase on <a href="https://foundation.app/katherine" target="_blank">Foundation</a>. Playing on the idea of infinity, each piece is named after an angel number with the exception of the last piece: <i>333</i>, <i>444</i>, <i>666</i>, <i>777</i>, <i>888</i>, <i>999</i>, <i>∞∞∞</i>. The first painting will go live for auction on Monday 7 June, the opening of <i>∞ bouquet ∞ toss ∞ feeling, it’s just for you</i>. The following paintings will be consecutively sold every Monday, with the final, combined painting being available for sale on Monday 19 July, the closing week of the exhibition. One third of all proceeds will be going to the funding of future exhibitions on External Pages (more info about this <a href="https://www.katherinefrazer.com/bouquet_toss.html" target="_blank">here</a>).<br />
+						<i>∞ bouquet ∞ toss ∞ feeling, it’s just for you</i> is developed by <a href="http://mackenzie.blue/" target="_blank">Mackenzie Davidson</a>.
+						<br /><br /><br />
+						<b>About the artist</b><br />
+						Katherine Frazer is an artist based in Brooklyn, NY.<br />
+						Known for her exploration of the social implications of consumer technology, her work investigates how modern memory is the product of the relay within distributed systems, both human and nonhuman. Her work has been accessioned in Rhizome’s ArtBase, featured in Foundation’s blog, Dazed Digital, PAPER Magazine, & Codame Festival, as well as commissioned by NewHive & MTV.
 						<br /><br />
-						We are welcoming proposals from artists which embody the context of Covid-19 and the activism of BLM, by embracing, reflecting or further contextualising recent developments, critical debates and political strategies. From navigating the logistics of forming protests, to galvanising groups around petitions, readings and donation links, recent events have heightened alternatives to capitalist modes of production as well as opposition to forms of oppression. Proposals should either directly address this as a subject, begin a dialogue with its wider themes or adopt these strategies directly. 
-						<br /><br />
-						External Pages was founded to advance critically and politically engaged thinking about capitalism, technology and society. Our most recent solo <a target="_blank" href="legacy-russell/black-meme.html">exhibition</a> with Legacy Russell explored the contributions of blackness to digital space, presenting her video essay BLACK MEME in an immersive digital environment. The themes and presentation of the video challenged assumptions of web design to expose deeper political racial biases.
-						<br /><br />
-						Successful applicants will be provided with both curatorial and technical support to develop the project. The first exhibition will be featured on External Pages from August until October, but we are open to hearing proposals for future dates.
-						<br /><br />
-						Due to the support of a-n Bursaries, we offer an artist fee of £100.
-						<br /><br />
-						<b>About External Pages</b><br />
-						External Pages is an online exhibition space, presenting digital projects inspired by anti-capitalist and xenofeminist thought. Every other month, we showcase an artist or collective who push the potential of viewing art on our browsers. The exhibitions we host experiment with web development to question the placement of internet art in galleries, cheat curatorial hierarchies and look at how websites can be appropriated as an emancipatory technology.
-						<br /><br />
-						<b>How to Apply</b><br />
-						We welcome proposals which ambitiously engage with the focus of External Pages. We accept work in progress, a starting concept, or previously-made work that would benefit from a remodeling as a website. While applicants with coding experience are preferred, this exhibition may be an opportunity for artists with little to no coding skills to realise a project in a digital format as we do offer web development. 
-						<br /><br />
-						To submit, please fill out <b><a target="_blank" href="https://docs.google.com/forms/d/e/1FAIpQLSfx6hL7UI_QTwwZYvwu93kX4-WXFlJHc1ZuAhx0xuS2gBiBnw/viewform">this form</a></b>. The deadline is at midnight on Wednesday 1st of July. Due to the volume of applications, we aren’t always able to reply to every submission.
-						<br /><br />
-						UPDATE: This open call has now passed and we're working with an artist for the upcoming exhibition. If you've applied and haven't heard back, we'll get back to you soon! Thank you for taking the time to put in a submission. ❤️
-						<br /><br />
+						<!-- <small><a target="_blank" href="https://camila-galaz.vercel.app/coverart11.html">⇝ View cover art</a></small> -->
+						<a class="enter" target="_blank" href="https://externalpages.org/katherine-frazer">
+							<b><i>Enter to exhibition</i></b>
+						</a>
 					</p>
-					<!-- ⟿ -->
 				</div>
 			</div>
 
@@ -737,7 +910,9 @@
 						anti-capitalist and xenofeminist thought.
 						Every other month, we showcase an artist or collective who push the potential of viewing art on
 						our browsers. External Pages exists
-						on the outskirts of the Internet, where bottom-up approaches to public art can be explored.
+						on the outskirts of the Internet, where bottom-up approaches to public art can be explored.<br><br>
+						Our projects experiment with web coding to question the placement of internet art in galleries, cheat
+						curatorial hierarchies and look at how websites can be appropriated as an emancipatory technology. Encouraging the use of art practice to rethink web-based functionalities, we provide any coding assistance for the artists who have full control over how the show is curated.
 					</p>
 				</div>
 
@@ -746,117 +921,83 @@
 					<p class="about">
 						We are always looking for artists, curators or collaborators that want to get involved. To ask
 						questions, talk about a project or
-						join External Pages, please do not hesitate to email <a class="fun" target="_blank"
-							href="https://ana.lol/">Ana</a> on
-						<a class="fun" href="mailto:hello@externalpages.org">hello@externalpages.org</a> or message us
+						join External Pages, please do not hesitate to email <a target="_blank"
+							href="mailto:aanameisell@gmail.com">Ana</a> or message us
 						on social media – we’re on
-						<a class="fun" target="_blank" href="https://twitter.com/external_pages">Twitter</a> and
-						<a class="fun" target="_blank" href="https://www.instagram.com/external_pages/">Instagram</a>.
+						<a target="_blank" href="https://twitter.com/external_pages">Twitter</a> and
+						<a target="_blank" href="https://www.instagram.com/external_pages/">Instagram</a>.
 						So far, EP has received incredible
 						support through various means, such as: theory insight from
-						<a class="fun" target="_blank" href="https://twitter.com/_HSWND_">HSWND</a>, editing by
-						<a class="fun" target="_blank" href="https://tinyletter.com/chrishyzz/archive">Chris Hayes</a>
+						<a target="_blank" href="https://twitter.com/_HSWND_">HSWND</a>, graphics by <a href="https://www.instagram.com/effiiie/">Effie Crompton</a>, editing by
+						<a target="_blank" href="https://tinyletter.com/chrishyzz/archive">Chris Hayes</a>
 						and direction and web development
-						help from <a class="fun" target="_blank" href="https://www.mackenzie.blue/">Mackenzie
+						help from <a target="_blank" href="https://www.mackenzie.blue/">Mackenzie
 							Davidson</a>.<br />
-						All code: <a class="fun" target="_blank"
+						All code: <a target="_blank"
 							href="https://github.com/external-pages">Github</a>.<br />
-						Reading channel: <a class="fun" target="_blank"
+						Reading channel: <a target="_blank"
 							href="https://www.are.na/external-pages/texts-fb-7tkfmn2k">Are.na</a>.<br />
-						Application to exhibit with us:
-						<a class="fun" target="_blank"
+						Rolling application to exhibit with us:
+						<a target="_blank"
 							href="https://docs.google.com/forms/d/e/1FAIpQLSfuE7rAgEW6mYrFuxrVUdu2CnW6a9DuTeW2FLNGDTJYenNo-A/viewform?usp=sf_link">Google
 							Form</a>.
 					</p>
 				</div>
 
 				<div class="manifesto" id="b2">
-					<a><u>More</u> ⟴</a>
+					<a class="fun">News ⟴</a>
 				</div>
 
-				<div class="two">
-					<!-- <div class="sections1">1. Cybernate
-                              <span class="some-element1">
-                                Our cyberfeminist influences
-                              </span>
-                            </div>
-                            <br><br> -->
-					<p>Founded in 2018, External Pages experiments with web coding to question the placement of internet
-						art in galleries, cheat
-						curatorial hierarchies and look at how websites can be appropriated as an emancipatory
-						technology.
-						<!-- Although the internet’s current state seems
-                        exhaustive and impenetrable, “<a class="references" target="_blank"
-                            href="https://libcom.org/files/[Mark_Fisher]_Capitalist_Realism_Is_There_no_Alte(BookZZ.org).pdf">from
-                            a situation in which nothing can happen, suddenly anything is possible again</a>”.  -->
-						Using conceptual breadths of art practice to rethink web-based functionalities, this
-						organisation provides coding assistance for the
-						artists, who have full control over how the show is curated.<br />
-						<!-- External Pages is editable, downloadable, open source/access and <a class="references"
-                            target="_blank"
-                            href="http://beingres.org/2017/06/30/afterthefuture-helenhester/">post-cyberfeminist</a>. -->
+				<div class="two"><p>
+					<div class="news-date">March 11, 2021</div> <sup>Interview</sup><br>
+					<div class="news-about">External Pages</div><br>
+					<i>Charlie Mills</i>, Coeval Magazine<br>
+					<a class="news-link" href="https://www.coeval-magazine.com/coeval/external-pages">Link</a>
+
+					<br><br>
+					<div class="news-date">February 27, 2021</div> <sup>Article</sup><br>
+					<div class="news-about">Imagining the Future</div><br>
+					<i>Melania Parzonka & Scott Wagner</i>, INTERZINE<br>
+					for <i>REDES: bread and justice, peaches and bananas</i> <small><a class="news-box" data-href="#camila-galaz" href="#camila-galaz" role="tab" data-toggle="tab" aria-controls="camila-galaz" data-target="#camila-galaz, #camila-galaz">⇝ See exhibition</a></small><br>
+					<a class="news-link" href="https://interzine.org/2021/02/27/imagining-the-future/">Link</a>
+
+					<br><br>
+					<div class="news-date">June 2, 2020</div> <sup>Review</sup><br>
+					<div class="news-about">Legacy Russell: BLACK MEME</div><br>
+					<i>Clara Nissim</i>, thisistomorrow<br>
+					for <i>BLACK MEME</i> <small><a class="news-box" data-href="#legacyrussell" href="#legacyrussell" role="tab" data-toggle="tab" aria-controls="legacyrussell" data-target="#legacyrussell, #legacyrussell">⇝ See exhibition</a></small><br>
+					<a class="news-link" href="http://thisistomorrow.info/articles/legacy-russell-black-meme">Link</a>
+
+					<br><br>
+					<div class="news-date">July 22, 2019</div> <sup>Research</sup><br>
+					<div class="news-about">Beneath the Facade</div><br>
+					<i>Ana Meisel</i>, Cyborgology<br>
+					for <i>Baba Yaga Myco Glitch™</i> <small><a class="news-box" data-href="#annatokareva" href="#annatokareva" role="tab" id="annatokareva-tab" data-toggle="tab" aria-controls="annatokareva" data-target="#annatokareva, #annatokareva">⇝ See exhibition</a></small><br>
+					<a class="news-link" href="https://thesocietypages.org/cyborgology/2019/07/22/beneath-the-facade/">Link</a>
 					</p>
-
-					<!-- <div class="manifesto">
-                        <a href="https://docs.google.com/document/d/1BpFXaw9yyWs828MQHTT7pIxoHUedWQ4RGsczUVALoU8/edit?usp=sharing"
-                            target="_blank"><u>View GDOC</u> ⟿</a>
-                    </div>
-
-                    <div class="manifesto">
-                        <a href="https://docs.google.com/document/d/1BpFXaw9yyWs828MQHTT7pIxoHUedWQ4RGsczUVALoU8/export?format=doc"
-                            target="_blank"><u>Download DOCX</u> ⟱</a>
-                    </div> -->
 				</div>
-
-				<!-- <div class="sections5">
-                            <span class="some-element2"></span>
-                    </div>
-
-                    <div class="sections6">
-                        <span class="some-element3"></span>
-                    </div> -->
 			</div>
-
-			<!-- <div role="tabpanel" class="tab-pane fade" id="support" aria-labelledby="support-tab">
-
-                    <div class="supportpara">
-                        <h4>SUPPORT</h4>
-                        <p class="about3">
-                            We are a small baby organisation that would like to pay our artists through any possible donations, merchandise, and outside finance. You can help us stay public and independent by making a donation or buying some of our products.
-                        </p>
-                    </div>
-
-                    <div class="donatebutton">
-                        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank" style="display: block; clear: both; float: right;">
-                            <input type="hidden" name="cmd" value="_s-xclick">
-                            <input type="hidden" name="hosted_button_id" value="Z5Y4J8TYBVGKA">
-                            <input type="image" src="images/donatebttn.png" border="0" name="submit" style="width: 100px; height: 55px; outline: 0;" alt="PayPal – The safer, easier way to pay online!">
-                            <img alt="" border="0" src="https://www.paypalobjects.com/en_GB/i/scr/pixel.gif">
-                        </form>
-                    </div>
-
-                    <div class="notice">
-                        <p>posters and postcards coming soon</p>
-                        <div class="emoji1">💸</div>
-                    </div>
-
-                </div> -->
 		</div><!-- Closed tab-content -->
 	</div><!-- closed bs-example -->
 
 	<script src="js/index.js"></script>
+	<script src="camila-galaz/redes-google.js"></script>
 	<script type="text/javascript" src="js/what-or-whom-we-love.min.js"></script>
+	<script src="js/blurry-load.min.js"></script>
 	<script type="text/javascript">
 		// rainbow text
 
-		// whomWeLove({
-		//     howWeLove: "forever",
-		//     whereToShowVisibility: ".fun"
-		// });
-		// whomWeLove({
-		//     howWeLove: "forever",
-		//     whereToShowVisibility: ".references"
-		// });
+		whomWeLove({
+		    howWeLove: "forever",
+		    whereToShowVisibility: ".fun"
+		});
+		whomWeLove({
+		    howWeLove: "forever",
+		    whereToShowVisibility: ".references"
+		});
+
+		const blurryImageLoad = new BlurryImageLoad();
+		blurryImageLoad.load();
 	</script>
 
 	<script type="text/javascript">
@@ -864,7 +1005,7 @@
 
 		function gototab(reload) {
 			if (window.location.hash = '#home', '#proxymund', '#acquavrzal', '#about-contact', '#support',
-				'#georginatyson', '#mackenziedavidson', '#annatokareva', '#naheekim', '#mazmurray', '#sanjanavarghese'
+				'#georginatyson', '#mackenziedavidson', '#annatokareva', '#naheekim', '#mazmurray', '#sanjanavarghese', '#legacyrussell', '#rhea-dillon'
 			) {
 				window.location.reload(true);
 			} else {
@@ -873,6 +1014,8 @@
 
 			var audio1 = document.getElementById("audio1"),
 				whoIsPlaying = null;
+
+				
 	</script>
 </body>
 

@@ -5,6 +5,9 @@
   "routes": [
     { "src": "/coverart10", "dest": "/coverart10.html" },
     { "src": "/rhea-dillon", "dest": "/rhea-dillon.html" },
+    { "src": "/camila-galaz", "dest": "/camila-galaz.html" },
+    { "src": "/yacht-metaphor", "dest": "/yacht-metaphor.html" },
+    { "src": "/katherine-frazer", "dest": "/katherine-frazer.html" },
     { "handle": "filesystem" }
   ],
   "github": {
