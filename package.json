@@ -19,12 +19,11 @@
   "homepage": "https://github.com/external-pages/externalpages.org#readme",
   "dependencies": {},
   "devDependencies": {
-    "eslint": "^7.6.0",
-    "eslint-config-airbnb-base": "^14.2.0",
-    "eslint-config-prettier": "^6.11.0",
-    "eslint-plugin-import": "^2.22.0",
-    "eslint-plugin-prettier": "^3.1.4",
-    "prettier": "2.0.5"
+    "eslint": "^7.27.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.23.3",
+    "prettier": "2.3.0"
   },
   "prettier": {
     "printWidth": 160,
@@ -81,9 +80,6 @@
       "airbnb-base",
       "prettier"
     ],
-    "plugins": [
-      "prettier"
-    ],
     "rules": {
       "array-bracket-spacing": [
         0,
@@ -113,15 +109,14 @@
       ],
       "prefer-destructuring": [
         0
-      ],
-      "prettier/prettier": [
-        1
       ]
     }
   },
   "eslintIgnore": [
-    "js/_lib*",
+    "js/lib*",
     "assets*",
-    "fonts*"
+    "fonts*",
+    "node_modules",
+    "three.js-master"
   ]
 }
