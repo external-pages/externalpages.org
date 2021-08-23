@@ -11,12 +11,11 @@
 }
 
 body {
-    /*background-image: url("http://external-pages.s3.amazonaws.com/camila-galaz/iMac%20-%201.png");*/
-    /*	background-image: url("https://s3.amazonaws.com/external-pages/rhea-dillon/rheaimages/background.png");
-*/ /*background-color: #4c4c4c; */ /*seedling colour*/
-    background-size: 100vw 100vh;
+    /* background-image: url("http://external-pages.s3.amazonaws.com/camila-galaz/iMac%20-%201.png"); */
+    /*	background-image: url("https://s3.amazonaws.com/external-pages/rhea-dillon/rheaimages/background.png");*/
+    background-color: #4c4c4c; /*seedling colour*/
     /*background-color: #1b1b1b;*/
-    background-color: #ede9e7;
+    /* background-color: #ede9e7; */
     background-repeat: no-repeat;
     background-attachment: fixed;
 }
@@ -36,11 +35,11 @@ textarea {
 a {
     text-decoration: none;
     cursor: pointer;
-    color: #fa8b02;
+    color: coral;
 }
 
 a:hover {
-    color: #0f4e0a;
+    color: green;
 }
 
 li {
@@ -66,6 +65,15 @@ p {
     transform: translate(-50%, -50%);
 }
 
+img.lilnoticeimg {
+    width: 8vw;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+}
+
 /* logo */
 
 .logo h1 {
@@ -75,8 +83,7 @@ p {
     font-style: italic;
     /*color: #9c9c9c;*/
     color: rgba(255, 255, 255, 0.8);
-    text-shadow: 3px 3px 4px #0f4e0a;
-    /* used to be DeepSkyBlue */
+    text-shadow: 3px 3px 4px DeepSkyBlue;
     margin: 25px;
 }
 
@@ -171,10 +178,9 @@ h6 {
 
     /* background-color: #ede9e7; */
 
-    background: rgba(237, 233, 231, 0.9);
+    /* background: rgba(237, 233, 231, 0.9);
     box-shadow: 0px 0px 20px 0px rgba(237, 233, 231, 1);
-    /* padding: 0 10px 0 10px; */
-    border-radius: 15px;
+    border-radius: 15px; */
 }
 
 .pages li {
@@ -182,18 +188,18 @@ h6 {
 }
 
 #b1 {
-    color: #fa8b02;
+    color: coral;
     display: inline-block;
 }
 
 #b1:hover {
-    color: #0f4e0a;
+    color: green;
 }
 
 .colon {
     display: none;
     position: absolute;
-    color: #fa8b02;
+    color: coral;
 }
 
 #b1:hover .colon {
@@ -454,18 +460,19 @@ p.about1 {
 
 .manifesto a {
     font-family: Arial;
-    color: #0f4e0a;
+    color: green;
 }
 
 .manifesto a:hover {
-    color: #fa8b02;
+    color: coral;
 }
 
 .two {
     display: none;
     width: 60vw;
     font-family: Arial;
-    color: #0f4e0a;
+    font-weight: lighter;
+    color: yellow;
     float: left;
     margin-left: 10px;
     margin-right: 210px;
@@ -534,7 +541,7 @@ a.references {
 }
 
 a.references:hover {
-    color: #0f4e0a;
+    color: green;
 }
 
 /* support */

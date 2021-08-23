@@ -5,19 +5,19 @@
 	<title>External Pages</title>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, maximum-scale=0.9, initial-scale=0.9" />
-	<meta name="description" content="Online exhibition space for new net art. Currently showing '∞ bouquet ∞ toss ∞ feeling, it’s just for you' by Katherine Frazer, 2021" />
+	<meta name="description" content="Online exhibition space for new net art." />
 
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content="http://externalpages.org/" />
 	<meta property="og:title" content="External Pages" />
-	<meta property="og:description" content="Online exhibition space for new net art. Currently showing '∞ bouquet ∞ toss ∞ feeling, it’s just for you' by Katherine Frazer, 2021" />
-	<meta property="og:image" content="https://external-pages.s3.amazonaws.com/katherine-frazer/meta.png" />
+	<meta property="og:description" content="Online exhibition space for new net art." />
+	<!-- <meta property="og:image" content="https://external-pages.s3.amazonaws.com/katherine-frazer/meta.png" /> -->
 
 	<meta property="twitter:card" content="summary_large_image" />
 	<meta property="twitter:url" content="http://externalpages.org/" />
 	<meta property="twitter:title" content="External Pages" />
-	<meta property="twitter:description" content="Online exhibition space for new net art. Currently showing '∞ bouquet ∞ toss ∞ feeling, it’s just for you' by Katherine Frazer, 2021" />
-	<meta property="twitter:image" content="https://external-pages.s3.amazonaws.com/katherine-frazer/meta.png" />
+	<meta property="twitter:description" content="Online exhibition space for new net art." />
+	<!-- <meta property="twitter:image" content="https://external-pages.s3.amazonaws.com/katherine-frazer/meta.png" /> -->
 
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
@@ -53,11 +53,14 @@
 				<div class="pages">
 					<li role="presentation">
 						<h6>
-							<a class="visiblebox" data-href="#katherine-frazer" href="#katherine-frazer"
+							<!-- <a class="visiblebox" data-href="#katherine-frazer" href="#katherine-frazer"
 								id="katherine-frazer-tab" role="tab" data-toggle="tab"
 								aria-controls="katherine-frazer">Current Exhibition:<br />
 								<p class="date">06/2021</p>
 								<i><u>Katherine Frazer</u></i>
+							</a> -->
+							<a class="visiblebox" style="pointer-events: none; cursor: default" role="tab" data-toggle="tab">Next exhibition<br />
+								<i><u>in progress</u></i>
 							</a>
 						</h6>
 					</li>
@@ -66,6 +69,12 @@
 						<h6>
 							<a id="b1">Past Exhibitions
 								<a class="colon">:</a>
+							</a>
+							<a class="box" data-href="#katherine-frazer" href="#katherine-frazer" role="tab"
+								id="katherine-frazer-tab" data-toggle="tab" aria-controls="katherine-frazer" data-target="#katherine-frazer,
+                                #katherine-frazer">
+								<p class="date">06/2021</p>
+								<i><u>Katherine Frazer</u></i>
 							</a>
 							<a class="box" data-href="#cory-in-the-abyss" href="#cory-in-the-abyss" role="tab"
 								id="cory-in-the-abyss-tab" data-toggle="tab" aria-controls="cory-in-the-abyss" data-target="#cory-in-the-abyss,
@@ -158,6 +167,9 @@
 
 		<div id="myTabContent" class="tab-content">
 			<div role="tabpanel" class="tab-pane fade in active" id="home" aria-labelledby="home-tab">
+
+				<img class="lilnoticeimg" width="8vw" src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/160/apple/81/seedling_1f331.png"/>
+
 				<!-- <div id="video-controls">
                   <button type="button" id="play"><i class="material-icons">pause</i></button>
                   <button type="button" id="pause"><i class="material-icons">play_arrow</i></button>
@@ -176,10 +188,10 @@
 			        </video>
 			    </div> -->
 
-				<div id="katherine-cover-art">
-					<!-- <img class="blurry-load" src="bouquet-toss/Cover Art small.png" data-large="bouquet-toss/Cover Art.png"/> -->
+				<!-- <div id="katherine-cover-art">
+					<img class="blurry-load" src="bouquet-toss/Cover Art small.png" data-large="bouquet-toss/Cover Art.png"/>
 					<img src="bouquet-toss/Cover Art.png"/>
-				</div>
+				</div> -->
 
 				<script>
 					// iOS iframe auto-resize workaround
@@ -860,10 +872,6 @@
 				</div>
 			</div>
 
-			<div role="tabpanel" class="tab-pane fade" id="current" aria-labelledby="current-tab" >
-				<h4>CURRENT EXHIBITION</h4>
-			</div>
-
 			<div role="tabpanel" class="tab-pane fade" id="katherine-frazer" aria-labelledby="katherine-frazer">
 				<div class="intropara">
 					<h4>KATHERINE FRAZER</h4>
@@ -888,6 +896,18 @@
 					</p>
 				</div>
 			</div>
+
+			<!-- <div role="tabpanel" class="tab-pane fade" id="current" aria-labelledby="current-tab" >
+				<h4>CURRENT EXHIBITION</h4>
+			</div>
+
+			<div role="tabpanel" class="tab-pane fade" id="katherine-frazer" aria-labelledby="katherine-frazer">
+				<div class="intropara">
+					<h4>ARTIST</h4>
+					<p class="about4">
+					</p>
+				</div>
+			</div> -->
 
 			<script>
 				$(document).ready(function () {
