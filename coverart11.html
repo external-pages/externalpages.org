@@ -120,10 +120,12 @@
 
                             object.position.y = 0
                             object.position.x = 0
-                            object.scale.x = 99
-                            object.scale.y = 99
-                            object.scale.z = 99
-                            mesh.rotation.x = 2
+                            object.position.z = -100
+                            object.scale.x = 100
+                            object.scale.y = 100
+                            object.scale.z = 100
+                            // object.rotation.x = 99
+                            // object.rotation.set(-10, 0, 0)
                             scene.add(object)
                         },
                         onProgress,
@@ -136,7 +138,7 @@
                     controls.enablePan = false
 
                     renderer = new THREE.WebGLRenderer({ alpha: true })
-                    renderer.setClearColor(0x000000, 0)
+                    renderer.setClearColor(0x574f4e, 1)
                     renderer.setPixelRatio(2)
                     renderer.setSize(window.innerWidth, window.innerHeight)
                     container.appendChild(renderer.domElement)
