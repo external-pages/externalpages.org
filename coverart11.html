@@ -32,6 +32,11 @@
                 margin-right: -50%;
                 transform: translate(-50%, -50%);
             }
+            div {
+                top: 0;
+                left: 0;
+                position: absolute;
+            }
         </style>
     </head>
 
@@ -74,13 +79,13 @@
                     // texture
 
                     var manager = new THREE.LoadingManager()
-                    manager.onProgress = function (item, loaded, total) {
+                    manager.onProgress = function(item, loaded, total) {
                         console.log(item, loaded, total)
                     }
 
                     var texture = new THREE.Texture()
 
-                    var onProgress = function (xhr) {
+                    var onProgress = function(xhr) {
                         if (xhr.lengthComputable) {
                             var percentComplete = (xhr.loaded / xhr.total) * 100
                             if (percentComplete < 100) {
@@ -92,10 +97,10 @@
                         }
                     }
 
-                    var onError = function (xhr) {}
+                    var onError = function(xhr) {}
 
                     var loader = new THREE.ImageLoader(manager)
-                    loader.load("https://s3.amazonaws.com/external-pages/data-blood/rose.png", function (image) {
+                    loader.load("https://s3.amazonaws.com/external-pages/data-blood/rose.png", function(image) {
                         texture.image = image
                         texture.needsUpdate = true
                     })
@@ -105,8 +110,8 @@
                     var loader = new THREE.OBJLoader(manager)
                     loader.load(
                         "https://s3.amazonaws.com/external-pages/data-blood/data-blood.obj",
-                        function (object) {
-                            object.traverse(function (child) {
+                        function(object) {
+                            object.traverse(function(child) {
                                 if (child instanceof THREE.Mesh) {
                                     child.material.map = texture
                                     child.material.side = THREE.DoubleSide
@@ -115,9 +120,10 @@
 
                             object.position.y = 0
                             object.position.x = 0
-                            object.scale.x = 100
-                            object.scale.y = 100
-                            object.scale.z = 100
+                            object.scale.x = 99
+                            object.scale.y = 99
+                            object.scale.z = 99
+                            mesh.rotation.x = 2
                             scene.add(object)
                         },
                         onProgress,
