@@ -1,0 +1,323 @@
+@font-face {
+    font-family: "accedent";
+    src: url("../assets/fonts/Accedent_v1.ttf") format("truetype");
+}
+body {
+    background: transparent;
+    margin-top: 0px;
+    margin-left: 0px;
+    background-color: #574f4e;
+}
+
+img.glow {
+    position: absolute;
+    top: 0;
+    width: 100vw;
+    height: 50%;
+    overflow-y: hidden;
+}
+
+.background img {
+    position: absolute;
+    width: 100vw;
+}
+
+.layers img {
+    position: absolute;
+}
+
+img.funghi-table,
+img.heart-table,
+video.tv,
+img.ipad-table,
+img.arch-right,
+img.flower-table,
+img.arch-left,
+img.plant-table {
+    position: absolute;
+}
+
+.funghi-table {
+    right: 15vw;
+    top: 42vh;
+    width: 30%;
+}
+
+/* .heart-table {
+    left: 20vw;
+    top: 40vh;
+    width: 35%;
+} */
+
+video.tv {
+    top: 0;
+    left: 0;
+    margin: 0;
+    width: 18vw !important;
+    height: 22vh !important;
+}
+
+#tv {
+    position: absolute;
+    top: 12vh;
+    left: 13vw;
+    margin: 0.5vw;
+    width: 18vw;
+    height: 22vh;
+    border: 1.5vw solid black;
+    overflow: hidden;
+    background-color: black;
+}
+
+@media screen and (max-device-width: 1231px) {
+    #tv {
+        top: 10vh;
+    }
+}
+
+@media screen and (max-device-width: 1054px) {
+    #tv {
+        top: 9vh;
+    }
+}
+
+@media screen and (max-device-width: 948px) {
+    #tv {
+        top: 8vh;
+    }
+}
+
+@media screen and (min-device-width: 1573px) {
+    #tv {
+        top: 14vh;
+    }
+}
+
+@media screen and (min-device-width: 1721px) {
+    #tv {
+        top: 16vh;
+    }
+}
+
+@media screen and (min-device-width: 1825px) {
+    #tv {
+        /* top: 18vh; */
+        top: 8vh;
+        height: 24vh;
+    }
+    video.tv {
+        height: 24vh !important;
+    }
+}
+
+.wrap {
+    position: absolute;
+    margin: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+video.big-tv {
+    position: absolute;
+    margin: 0;
+    width: 100vw !important;
+    height: auto !important;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+}
+
+.enter a {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    font-family: "accedent";
+    font-size: 3em;
+    z-index: 2;
+    text-decoration: none;
+    color: black;
+}
+
+/* .tv, */
+.heart-table {
+    top: 0;
+    left: 18vw;
+    width: 48%;
+}
+
+.ipad-table {
+    top: 55vh;
+    left: 30vw;
+    width: 7%;
+}
+
+.arch-right {
+    right: 2vw;
+    top: 60vh;
+    width: 15%;
+}
+
+.flower-table {
+    left: 2vw;
+    top: 25vh;
+    width: 33%;
+}
+
+.arch-left {
+    left: 5vw;
+    top: 80vh;
+    width: 28%;
+}
+
+/* .plant-table {
+    top: 60vh;
+    left: 40vw;
+    width: 40%;
+} */
+
+.plant-table {
+    top: 85vh;
+    left: 45vw;
+    width: 40%;
+}
+
+.plant-on-table {
+    top: 63vh;
+    left: 70vw;
+    width: 15%;
+}
+
+.layers img:hover {
+    cursor: pointer;
+    /* border-radius: 25px;
+    box-shadow: 0 0 10px 10px rgba(210, 16, 22, 0.25);
+    background-color: rgba(210, 16, 22, 0.25); */
+}
+
+.shadow {
+    /* border-radius: 25px;
+    box-shadow: 0 0 10px 10px rgba(210, 16, 22, 0.25);
+    background-color: rgba(210, 16, 22, 0.25); */
+}
+
+p {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 25px;
+}
+
+/* .filtered img {
+    filter: saturate(10) hue-rotate(270deg);
+
+ } */
+
+/* .manifesto1,
+.manifesto2,
+.manifesto3,
+.manifesto4,
+.manifesto5,
+.manifesto6,
+.manifesto7,
+.manifesto8 {
+    display: none;
+    pointer-events: none;
+} */
+
+/* .manifesto {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+} */
+
+#container {
+    /* display: none; */
+    top: 0;
+    left: left;
+    position: fixed;
+    /* top: 0px;
+    left: 0px; */
+    width: 100vw;
+    height: 100vh;
+    /* background-color: red; */
+    z-index: 6;
+    pointer-events: none;
+    /* border: 1px solid rgba(210, 16, 22, 1);
+    box-shadow: 0 0 40px rgba(210, 16, 22, 0.5), inset 0 0 40px rgba(210, 16, 22, 0.5); */
+}
+
+.color {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100%;
+    pointer-events: none;
+    opacity: 0.4;
+    z-index: 2;
+}
+
+.purple {
+    background: linear-gradient(to right, purple, 10%, transparent);
+}
+
+.red {
+    background: linear-gradient(to left, red, 10%, transparent);
+}
+
+.blue {
+    background: linear-gradient(to top, blue, 10%, transparent);
+}
+
+.green {
+    background: linear-gradient(to bottom, darkgreen, 10%, transparent);
+}
+
+.grey {
+    background: linear-gradient(to right, black, 10%, transparent);
+}
+
+.orange {
+    background: linear-gradient(to left, darkorange, 10%, transparent);
+}
+
+.darkblue {
+    background: linear-gradient(to top, darkblue, 10%, transparent);
+}
+
+.notice {
+    display: none;
+}
+
+@media only screen and (max-device-width: 829px) and (-webkit-min-device-pixel-ratio: 2) {
+    .notice {
+        display: block;
+        position: fixed;
+        top: 0;
+        left: 0;
+        background: url("../assets/rose.png");
+        background-size: cover;
+        width: 100vw;
+        height: 100vh;
+        z-index: 9999;
+    }
+
+    .notice p {
+        font-family: "accedent";
+        font-size: 2em;
+        text-decoration: none;
+        color: black;
+        position: absolute;
+        width: 50vw;
+        top: 50%;
+        left: 50%;
+        margin-right: -50%;
+        transform: translate(-50%, -50%);
+    }
+}
