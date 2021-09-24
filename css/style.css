@@ -13,7 +13,8 @@
 body {
     /* background-image: url("http://external-pages.s3.amazonaws.com/camila-galaz/iMac%20-%201.png"); */
     /*	background-image: url("https://s3.amazonaws.com/external-pages/rhea-dillon/rheaimages/background.png");*/
-    background-color: #4c4c4c; /*seedling colour*/
+    /* background-color: #4c4c4c; seedling colour */
+    background-color: #574f4e;
     /*background-color: #1b1b1b;*/
     /* background-color: #ede9e7; */
     background-repeat: no-repeat;
@@ -342,7 +343,8 @@ p.about4 {
     margin-top: 17px;
     /*background: linear-gradient(to right, #002600, #003300, black);
 	;*/
-    background: linear-gradient(-90deg, rgba(0, 0, 139, 0.75), transparent, #666666);
+    background: linear-gradient(-90deg, rgba(0, 0, 139, 0.75), transparent, #574f4e);
+    /* #574f4e used to be #666666 */
     background-size: 400% 400%;
     animation: gradient 200s ease infinite;
 }
@@ -415,8 +417,10 @@ p.about {
     margin-right: 0px;
     margin-bottom: 20px;
     margin-top: 17px;
-    background: linear-gradient(to right, #666666, #323232, #4c4c4c);
+    background: linear-gradient(to right, #574f4e, #323232, #4c4c4c);
 }
+
+/* #574f4e used to be #666666 */
 
 p.about1 {
     width: 50vw;

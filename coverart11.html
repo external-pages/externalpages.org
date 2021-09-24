@@ -22,6 +22,9 @@
         <script src="/js/_lib/jquery-3-2-1.min.js"></script>
         <script src="/js/_lib/jquery-ui-1-10-0.min.js"></script>
         <style>
+            body {
+                background-color: #574f4e;
+            }
             p {
                 visibility: visible;
                 position: absolute;
@@ -36,6 +39,8 @@
                 top: 0;
                 left: 0;
                 position: absolute;
+                width: 100vw;
+                height: 100vh;
             }
         </style>
     </head>
@@ -63,7 +68,7 @@
                     document.body.appendChild(container)
 
                     camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 1, 80000)
-                    camera.position.z = 600
+                    camera.position.set(0, 0, 500)
 
                     // scene
 
@@ -76,16 +81,20 @@
                     directionalLight.position.set(0, 0, 1)
                     scene.add(directionalLight)
 
+                    var directionalLight2 = new THREE.DirectionalLight(0xffeedd, 0.1)
+                    directionalLight2.position.set(0, 0, -1)
+                    scene.add(directionalLight2)
+
                     // texture
 
                     var manager = new THREE.LoadingManager()
-                    manager.onProgress = function(item, loaded, total) {
+                    manager.onProgress = function (item, loaded, total) {
                         console.log(item, loaded, total)
                     }
 
                     var texture = new THREE.Texture()
 
-                    var onProgress = function(xhr) {
+                    var onProgress = function (xhr) {
                         if (xhr.lengthComputable) {
                             var percentComplete = (xhr.loaded / xhr.total) * 100
                             if (percentComplete < 100) {
@@ -97,10 +106,10 @@
                         }
                     }
 
-                    var onError = function(xhr) {}
+                    var onError = function (xhr) {}
 
                     var loader = new THREE.ImageLoader(manager)
-                    loader.load("https://s3.amazonaws.com/external-pages/data-blood/rose.png", function(image) {
+                    loader.load("https://s3.amazonaws.com/external-pages/data-blood/rose.png", function (image) {
                         texture.image = image
                         texture.needsUpdate = true
                     })
@@ -109,21 +118,22 @@
 
                     var loader = new THREE.OBJLoader(manager)
                     loader.load(
-                        "https://s3.amazonaws.com/external-pages/data-blood/data-blood.obj",
-                        function(object) {
-                            object.traverse(function(child) {
+                        "https://s3.amazonaws.com/external-pages/data-blood/db6.obj",
+                        function (object) {
+                            object.traverse(function (child) {
                                 if (child instanceof THREE.Mesh) {
                                     child.material.map = texture
                                     child.material.side = THREE.DoubleSide
                                 }
                             })
 
-                            object.position.y = 0
-                            object.position.x = 0
-                            object.position.z = -100
+                            object.position.y = -180
+                            // object.position.x = 0
+
                             object.scale.x = 100
                             object.scale.y = 100
                             object.scale.z = 100
+
                             // object.rotation.x = 99
                             // object.rotation.set(-10, 0, 0)
                             scene.add(object)
@@ -134,8 +144,10 @@
 
                     controls = new THREE.OrbitControls(camera)
                     controls.enableZoom = true
-                    controls.enableRotate = true
-                    controls.enablePan = false
+                    controls.enableRotate = false
+                    controls.enablePan = true
+                    controls.autoRotate = true
+                    controls.autoRotateSpeed = 2
 
                     renderer = new THREE.WebGLRenderer({ alpha: true })
                     renderer.setClearColor(0x574f4e, 1)
@@ -147,8 +159,8 @@
                 }
 
                 function onWindowResize() {
-                    windowHalfX = window.innerWidth / 2
-                    windowHalfY = window.innerHeight / 2
+                    // windowHalfX = window.innerWidth / 2
+                    // windowHalfY = window.innerHeight / 2
 
                     camera.aspect = window.innerWidth / window.innerHeight
                     camera.updateProjectionMatrix()
@@ -156,23 +168,24 @@
                     renderer.setSize(window.innerWidth, window.innerHeight)
                 }
 
-                function onDocumentMouseMove(event) {
-                    mouseX = (event.clientX - windowHalfX) / 2
-                    mouseY = (event.clientY - windowHalfY) / 2
-                }
+                // function onDocumentMouseMove(event) {
+                //     mouseX = (event.clientX - windowHalfX) / 2
+                //     mouseY = (event.clientY - windowHalfY) / 2
+                // }
 
                 function animate() {
                     requestAnimationFrame(animate)
-                    render()
-                }
-
-                function render() {
-                    camera.position.x += (mouseX - camera.position.x) * 0.003
-                    camera.position.y += (-mouseY - camera.position.y) * 0.003
-                    camera.lookAt(scene.position)
-
+                    controls.update()
                     renderer.render(scene, camera)
                 }
+
+                // function render() {
+                //     camera.position.x += (mouseX - camera.position.x) * 0.003
+                //     camera.position.y += (-mouseY - camera.position.y) * 0.003
+                //     camera.lookAt(scene.position)
+
+                //     renderer.render(scene, camera)
+                // }
             </script>
 
             <p><span id="myText"></span></p>
