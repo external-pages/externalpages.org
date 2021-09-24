@@ -9,7 +9,7 @@
     { "src": "/yacht-metaphor", "dest": "/yacht-metaphor.html" },
     { "src": "/katherine-frazer", "dest": "/katherine-frazer.html" },
     { "src": "/data-blood", "dest": "/data-blood.html" },
-    { "src": "/data-blood-III", "dest": "/data-blood-III.html" },
+    { "src": "/data-blood/data-blood-III", "dest": "/data-blood/data-blood-III.html" },
     { "handle": "filesystem" }
   ],
   "github": {
