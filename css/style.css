@@ -14,7 +14,7 @@ body {
     /* background-image: url("http://external-pages.s3.amazonaws.com/camila-galaz/iMac%20-%201.png"); */
     /*	background-image: url("https://s3.amazonaws.com/external-pages/rhea-dillon/rheaimages/background.png");*/
     /* background-color: #4c4c4c; seedling colour */
-    background-color: grey;
+    background-color: rgb(102, 102, 102);
     /*background-color: #1b1b1b;*/
     /* background-color: #ede9e7; */
     background-repeat: no-repeat;
@@ -498,6 +498,23 @@ p.about1 {
     display: inline-block;
 }
 
+.news-title {
+    background: rgba(255, 255, 255, 1);
+    box-shadow: 0px 0px 20px 10px rgba(255, 255, 255, 0.5);
+    padding: 0 10px 0 10px;
+    border-radius: 25px;
+    display: inline-block;
+    z-index: -1;
+}
+
+@keyframes animatedBackground {
+    0%{background-position:0% 0%}
+    50%{background-position:100% 0%}
+    100%{background-position:200% 0%}
+}
+
+#animated { background-size: 200% 100%; -webkit-animation: animatedBackground 3s linear infinite; }
+
 .news-about {
     display: inline-block;
     margin-left: -10px;
@@ -516,13 +533,17 @@ p.about1 {
 }
 
 .news-link:hover {
-    color: #dd475a;
+    color: #ac1c2f;
 }
 
 sup {
-    color: #dd475a;
+    color: lightgreen;
     font-style: italic;
 }
+
+/* a.news-link, small a {
+    color: #ac1c2f !important;
+} */
 
 .box .threee {
     width: 60vw;
@@ -669,6 +690,15 @@ button#mute {
     #gallery-video-container > video {
         height: 100% !important;
     }
+}
+
+#katherine-cover-art {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
 }
 
 #katherine-cover-art img {
