@@ -1,0 +1,29 @@
+{
+  "version": 2,
+  "scope": "4-us-and-4-others",
+  "builds": [{ "src": "**/*", "use": "@now/static" }],
+  "routes": [
+    { "src": "/coverart10", "dest": "/coverart10.html" },
+    { "src": "/rhea-dillon", "dest": "/rhea-dillon.html" },
+    { "src": "/camila-galaz", "dest": "/camila-galaz.html" },
+    { "src": "/yacht-metaphor", "dest": "/yacht-metaphor.html" },
+    { "src": "/katherine-frazer", "dest": "/katherine-frazer.html" },
+    { "src": "/data-blood", "dest": "/data-blood.html" },
+    { "src": "/data-blood/data-blood-III", "dest": "/data-blood/data-blood-III.html" },
+    { "src": "/daisy-jones", "dest": "/daisy-jones.html" },
+    { "src": "/prestidigital-67/center", "dest": "/prestidigital-67/center.html" },
+    { "src": "/prestidigital-67/contact", "dest": "/prestidigital-67/contact.html" },
+    { "src": "/prestidigital-67/crown", "dest": "/prestidigital-67/crown.html" },
+    { "src": "/prestidigital-67/land", "dest": "/prestidigital-67/land.html" },
+    { "src": "/prestidigital-67/light", "dest": "/prestidigital-67/light.html" },
+    { "src": "/prestidigital-67/pit", "dest": "/prestidigital-67/pit.html" },
+    { "src": "/prestidigital-67/point", "dest": "/prestidigital-67/point.html" },
+    { "src": "/prestidigital-67/screen", "dest": "/prestidigital-67/screen.html" },
+    { "src": "/prestidigital-67/sex", "dest": "/prestidigital-67/sex.html" },
+    { "src": "/prestidigital-67/stand", "dest": "/prestidigital-67/stand.html" },
+    { "handle": "filesystem" }
+  ],
+  "github": {
+    "enabled": false
+  }
+}
