@@ -1,0 +1,252 @@
+
+    
+    <html>
+        <head>
+          <title>Prestidigital *67 by Theo Ellin Ballew</title>
+          <meta name="description" content="Made for External Pages, Prestidigital *67 by Theo Ellin Ballew is a mystical hypertext about nothing becoming something.">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">   
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel&family=Cormorant+Garamond&family=Labrada:wght@100;200&family=Noticia+Text:ital@0;1&family=Playfair+Display&family=Space+Grotesk:wght@300&family=Spectral:wght@200&display=swap" rel="stylesheet">
+            
+            <style>
+         #weed {
+            position: relative; 
+            height:660vh;
+            width: 6vw; 
+            left:30vw;
+            top:-2vh; 
+            z-index: -1; 
+            opacity: .75;  
+         }
+         
+         body {
+            height: 600vh; 
+            cursor: none; 
+            margin:0; 
+            font-family: 'Cormorant Garamond';
+            /* font-family: 'Space Grotesk'; */
+            /* font-family: 'Labrada';
+            text-transform: uppercase; */
+            font-size: 15px;
+            line-height: 12px; 
+      }
+
+/* https://css-tricks.com/lets-create-a-custom-audio-player/ */
+/* https://blogs.perficient.com/2017/12/19/how-to-customize-your-own-html5-audio-player/ */
+
+
+    .x, .y {
+      z-index: 100; 
+      top: 10vh; 
+      left: 10vw;
+      width: 150px;
+      position: fixed; 
+      cursor: move;
+      text-align: justify;
+      color: rgb(254, 159, 249);
+    }
+
+
+/* .x {
+  animation: x 6s ease-in infinite alternate;
+}
+
+.y {
+  animation: y 9s ease-in infinite alternate;
+} */
+
+.x {
+  animation: x 6s cubic-bezier(0.1, 0.6, 0.15, 0) infinite alternate;
+}
+
+.y {
+  animation: y 9s cubic-bezier(0.15, 0.6, 0.9, 0) infinite alternate;
+}
+
+
+.ytiferet {
+    animation: y 1s cubic-bezier(0, 0.6, 0.6, .15) infinite alternate;
+}
+
+.ybinah {
+  animation: y 3s cubic-bezier(0.15, 0.6, 0.3, 3) infinite alternate;
+}
+
+.ychokmah {
+  animation: y 9s cubic-bezier(0.15, 0.9, 0.15, 0) infinite alternate;
+}
+
+@keyframes x {
+  100% {
+    transform: translateX( calc(45vw - 150px) );
+  }
+}
+
+@keyframes y {
+  100% {
+    transform: translateY( calc(45vh - 150px) );
+  }
+}
+    
+    body::-webkit-scrollbar {
+      display: none;
+    }
+    
+    .scrollfun {
+      position: fixed; 
+      left: 20vw;
+      width: 60vw;
+      background-color: black; 
+      color: white;
+      transform: scale(0.001);  
+      opacity: .6;  
+    }
+
+    #scrolltwo {
+        bottom: 15vh; 
+    }
+    #scrollthree {
+        bottom: 3vh; 
+    }
+
+
+
+    .scrollfun:hover{
+        filter: invert(100%); }
+         
+
+
+/* this works but i can't get it to go to the other side where it belogns? */
+         /* #tiferet {
+            margin-right: 150px;
+            width: 150px; 
+            /* display: none;  */
+    
+
+   
+         .nexts {
+            display:none;
+            background-color: white;  
+         }
+
+
+
+            </style>
+    
+    
+        </head>
+        <body>
+
+            <script>
+                window.addEventListener('scroll', function(){
+                scrollone.setAttribute('style', 'transform: scale('+pageYOffset*0.0003+');');
+                scrolltwo.setAttribute('style', 'transform: scale('+pageYOffset*0.0003+');');       
+                scrollthree.setAttribute('style', 'transform: scale('+pageYOffset*0.0003+');');            
+   
+            })
+            </script>
+
+    
+<div class="x">
+<div class="y">
+  
+  topmost queen's crown or THE most hidden of all things or colorless compassion (over our heads); unfeelable regime that surrounds and circles ashamed///to look at its cause; looks down; first&highest&loftiest&&&most concealed///PURPOSE of any world; wedged into its end, end wedged into it; generator-activator of all else; everything and///we cannot understand; bedrock of "wish"; not yet the body; can't face it; TOP of the middle axis; ceiling connected///by six hundred and TWENTY pillars of light to the floor; face///wrapped over the three-headed one who’s MOST ancient, in days;///elongated head (it surrounds); HEAD of nothingness (a crown); unknowable head (we wait); the nowhere from where all comes
+
+</div>
+</div>
+
+
+<div class="x">
+<div class="ytiferet">
+<div class="nexts" id="tiferet">
+center</div>
+</div>
+</div>
+
+
+<div class="x">
+<div class="ybinah">
+<div class="nexts" id="binah">
+
+pit
+</div>
+</div>
+</div>
+
+<div class="x">
+<div class="ychokmah">
+<div class="nexts" id="chokmah">
+
+point
+</div>
+</div>
+</div>
+
+
+
+
+
+            <a href="center.html"><image class= "scrollfun" id="scrollone" src="vidsgifs/weed9.gif" ></a>
+            <a href="point.html"><image class= "scrollfun" id="scrolltwo" src="vidsgifs/weed9.gif" ></a>
+            <a href="pit.html"><image class= "scrollfun" id="scrollthree" src="vidsgifs/weed9.gif" ></a>
+ 
+            <img id="weed" src="vidsgifs/weed9.gif">
+
+            
+            <script src="https://cdn.jsdelivr.net/npm/p5@1.4.1/lib/p5.js"></script>
+            <script src="crown-p5.js">  </script> 
+    
+   
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+    <script>
+    $(document).ready(function() {
+    
+
+        $( ".x, .y" ).draggable();
+        
+  
+        $(".scrollfun").hover(function() {
+            $(this).css('bottom', Math.floor(Math.random() * 570));
+            $(this).css('left', Math.floor(Math.random() * 900));
+            $(this).css('z-index', Math.floor(Math.random() * 90));
+            });
+        
+
+        $(".scrollfun").each(function() {
+            $(this).css('bottom', Math.floor(Math.random() * 570));
+            $(this).css('left', Math.floor(Math.random() * 900));
+            });
+
+
+            $("#scrollone").mouseenter(function () {
+            $("#tiferet").show()
+            })
+
+            $("#scrollone").mouseout(function () {
+            $("#tiferet").hide()
+            })
+
+            $("#scrolltwo").mouseenter(function () {
+            $("#chokmah").show()
+            })
+
+            $("#scrolltwo").mouseout(function () {
+            $("#chokmah").hide()
+            })
+
+            $("#scrollthree").mouseenter(function () {
+            $("#binah").show()
+            })
+
+            $("#scrollthree").mouseout(function () {
+            $("#binah").hide()
+            })
+
+     });
+    </script>
+    
+        </body>
+    </htmL>
