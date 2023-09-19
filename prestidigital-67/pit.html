@@ -68,17 +68,6 @@
                   animation: y 3s cubic-bezier(0.15, 0.6, 0.9, 0) infinite alternate;
                    }
 
-                @keyframes x {
-                  100% {
-                    transform: translateX( calc(45vw - 150px) );
-                    }
-                  }
-
-                @keyframes y {
-                  100% {
-                    transform: translateY( calc(45vh - 150px) );
-                      }
-                    }
     
                   body::-webkit-scrollbar {
                     display: none;
@@ -123,6 +112,59 @@
                       background-color: white; 
                        }
 
+
+                       @media only screen and (min-width: 600px) {
+
+@keyframes x {
+              100% {
+                transform: translateX( calc(45vw - 150px) );
+                }
+              }
+}
+@keyframes y {
+              100% {
+                transform: translateY( calc(45vh - 150px) );
+                  }
+                }
+/* phone */
+
+@media only screen and (max-width: 600px) {
+
+  #scrolla {
+      bottom: 45vh; 
+  }
+
+  #scrollb {
+      bottom: 15vh; 
+  }
+
+  #scrollc {
+      bottom: 0vh; 
+  }
+
+  #scrolld {
+      bottom: 60vh; 
+  }
+
+.x, .y {
+
+              left: 0vw;
+              top: 0vh; 
+} 
+
+@keyframes x {
+             100% {
+               transform: translateX( calc(100vw - 150px) );
+               }
+             }
+
+@keyframes y {
+              100% {
+                transform: translateY( calc(100vh - 390px) );
+                  }
+                }
+}
+
             </style>
   </head>
 
@@ -161,10 +203,10 @@
                 </div>
                 </div>
 <!-- change: gifs and links -->
-            <a href="crown"><image class= "scrollfun" id="scrolla" src="vidsgifs/weed12.gif" ></a>
+            <div class="phone-gifs"><a href="crown"><image class= "scrollfun" id="scrolla" src="vidsgifs/weed12.gif" ></a>
             <a href="point"><image class= "scrollfun" id="scrollb" src="vidsgifs/weed12.gif" ></a>
             <a href="center"><image class= "scrollfun" id="scrollc" src="vidsgifs/weed12.gif" ></a>
-            <a href="screen"><image class= "scrollfun" id="scrolld" src="vidsgifs/weed12.gif" ></a>
+            <a href="screen"><image class= "scrollfun" id="scrolld" src="vidsgifs/weed12.gif" ></a></div>
 
             <img id="weed" src="vidsgifs/weed12.gif">
             
@@ -187,18 +229,24 @@
             <script>
                 $(document).ready(function() {
 
-                $( ".x, .y" ).draggable();
-          
-                $(".scrollfun").hover(function() {
-                    $(this).css('bottom', Math.floor(Math.random() * -570));
-                    $(this).css('left', Math.floor(Math.random() * 600));
-                    $(this).css('z-index', Math.floor(Math.random() * 90));
-                    });
+                  const isPhone = window.innerWidth < 600
+if (isPhone) {
 
-                $(".scrollfun").each(function() {
-                    $(this).css('bottom', Math.floor(Math.random() * -570));
-                    $(this).css('left', Math.floor(Math.random() * 600));
-                    });
+
+} else {
+                        $( ".x, .y" ).draggable();
+
+                        $(".scrollfun").hover(function() {
+                              $(this).css('bottom', Math.floor(Math.random() * -570));
+                              $(this).css('left', Math.floor(Math.random() * 600));
+                              $(this).css('z-index', Math.floor(Math.random() * 90));
+                              });
+
+                    }
+                        $(".scrollfun").each(function() {
+                                  $(this).css('z-index', Math.floor(Math.random() * 90));
+});
+
 
 
                     $("#scrolla").mouseenter(function () {

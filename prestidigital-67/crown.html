@@ -79,18 +79,20 @@
   animation: y 9s cubic-bezier(0.15, 0.9, 0.15, 0) infinite alternate;
 }
 
-@keyframes x {
-  100% {
-    transform: translateX( calc(45vw - 150px) );
-  }
-}
+@media only screen and (min-width: 600px) {
 
-@keyframes y {
-  100% {
-    transform: translateY( calc(45vh - 150px) );
-  }
+@keyframes x {
+              100% {
+                transform: translateX( calc(45vw - 150px) );
+                }
+              }
 }
-    
+@keyframes y {
+              100% {
+                transform: translateY( calc(45vh - 150px) );
+                  }
+                }
+
     body::-webkit-scrollbar {
       display: none;
     }
@@ -132,6 +134,28 @@
             background-color: white;  
          }
 
+         /* phone */
+
+@media only screen and (max-width: 600px) {
+
+.x, .y {
+
+              left: 0vw;
+              top: 0vh; 
+} 
+
+@keyframes x {
+             100% {
+               transform: translateX( calc(100vw - 150px) );
+               }
+             }
+
+@keyframes y {
+              100% {
+                transform: translateY( calc(100vh - 390px) );
+                  }
+                }
+}
 
 
             </style>
@@ -206,20 +230,24 @@ point
     $(document).ready(function() {
     
 
-        $( ".x, .y" ).draggable();
-        
-  
-        $(".scrollfun").hover(function() {
-            $(this).css('bottom', Math.floor(Math.random() * 570));
-            $(this).css('left', Math.floor(Math.random() * 900));
-            $(this).css('z-index', Math.floor(Math.random() * 90));
-            });
-        
+      const isPhone = window.innerWidth < 600
+if (isPhone) {
 
-        $(".scrollfun").each(function() {
-            $(this).css('bottom', Math.floor(Math.random() * 570));
-            $(this).css('left', Math.floor(Math.random() * 900));
-            });
+
+} else {
+                        $( ".x, .y" ).draggable();
+
+                        $(".scrollfun").hover(function() {
+                              $(this).css('bottom', Math.floor(Math.random() * 570));
+                              $(this).css('left', Math.floor(Math.random() * 900));
+                              $(this).css('z-index', Math.floor(Math.random() * 90));
+                              });
+
+                    }
+                        $(".scrollfun").each(function() {
+                                  $(this).css('z-index', Math.floor(Math.random() * 90));
+});
+
 
 
             $("#scrollone").mouseenter(function () {
