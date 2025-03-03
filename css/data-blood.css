@@ -1,6 +1,6 @@
 @font-face {
     font-family: "accedent";
-    src: url("../assets/fonts/Accedent_v1.ttf") format("truetype");
+    src: url("https://external-pages.s3.amazonaws.com/data-blood/assets/fonts/Accedent_v1.ttf") format("truetype");
 }
 body {
     background: transparent;
@@ -301,7 +301,7 @@ p {
         position: fixed;
         top: 0;
         left: 0;
-        background: url("../assets/rose.png");
+        background: url("https://external-pages.s3.amazonaws.com/data-blood/assets/rose.png");
         background-size: cover;
         width: 100vw;
         height: 100vh;
