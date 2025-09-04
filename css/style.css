@@ -692,7 +692,7 @@ button#mute {
     }
 }
 
-#katherine-cover-art {
+#main-cover-art {
     position: absolute;
     top: 0;
     left: 0;
@@ -701,7 +701,7 @@ button#mute {
     overflow: hidden;
 }
 
-#katherine-cover-art img {
+#main-cover-art img {
     position: absolute;
     overflow: hidden;
     left: 50%;
@@ -715,7 +715,7 @@ button#mute {
 /* media queries */
 
 @media (max-width: 650px) {
-    #katherine-cover-art img {
+    #main-cover-art img {
         position: fixed;
         overflow: hidden;
         left: 50%;
