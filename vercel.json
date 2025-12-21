@@ -22,6 +22,7 @@
     { "src": "/prestidigital-67/screen", "dest": "/prestidigital-67/screen.html" },
     { "src": "/prestidigital-67/sex", "dest": "/prestidigital-67/sex.html" },
     { "src": "/prestidigital-67/shout", "dest": "/prestidigital-67/shout.html" },
+    { "src": "/first-light-emergence", "dest": "/first-light-emergence/index.html" },
     { "handle": "filesystem" }
   ],
   "github": {
