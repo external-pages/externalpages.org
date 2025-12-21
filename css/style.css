@@ -343,7 +343,7 @@ p.about4 {
     margin-top: 17px;
     /*background: linear-gradient(to right, #002600, #003300, black);
 	;*/
-    background: linear-gradient(-90deg, rgba(0, 0, 139, 0.75), transparent, #574f4e);
+    background: linear-gradient(-90deg, rgba(71, 71, 194, 0.75), transparent, #bababa);
     /* #574f4e used to be #666666 */
     background-size: 400% 400%;
     animation: gradient 200s ease infinite;
