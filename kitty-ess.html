@@ -1,0 +1,787 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Cute Girl Collage Maker</title>
+        <style>
+            @font-face {
+                font-family: "Cherry Bomb One";
+                src: url("https://external-pages.s3.amazonaws.com/kitty-ess/assets/fonts/Cherry_Bomb_One/CherryBombOne-Regular.ttf") format("truetype");
+            }
+
+            * {
+                box-sizing: border-box;
+                margin: 0;
+                padding: 0;
+            }
+
+            body {
+                font-family: "Cherry Bomb One", cursive;
+                background: #ffd6e8;
+                min-height: 100vh;
+                padding: 20px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                user-select: none;
+            }
+
+            .app {
+                width: 100%;
+                /* background: #ffeaf3;
+        border: 4px solid #ff7eb6;
+        border-radius: 22px; */
+                padding: 18px;
+                /* box-shadow:
+          0 6px 0 #ff7eb6,
+          0 10px 30px rgba(255, 126, 182, 0.25); */
+            }
+
+            .header {
+                text-align: center;
+                color: #ff5fa2;
+                font-size: 28px;
+                margin-bottom: 14px;
+                letter-spacing: 1px;
+                text-shadow: 2px 2px 0 #fff;
+            }
+
+            .header .heart {
+                color: #ff5fa2;
+                margin: 0 8px;
+            }
+
+            .workspace {
+                display: grid;
+                grid-template-columns: 100px 1fr 500px;
+                gap: 14px;
+            }
+
+            /* sidebar */
+            .sidebar {
+                background: #fff;
+                border: 1px solid #ff5fa2;
+                border-radius: 16px;
+                padding: 10px 6px;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-evenly;
+                align-items: center;
+            }
+
+            .tool {
+                width: 80px;
+                height: 60px;
+                background: #ff8cc0;
+                border: 1px solid #ff5fa2;
+                border-radius: 10px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                cursor: pointer;
+                font-family: "Cherry Bomb One", cursive;
+                color: #fff;
+                font-size: 15px;
+                line-height: 1;
+                transition: transform 0.1s;
+                padding: 2px;
+            }
+            /* .tool:hover {
+        transform: scale(1.08);
+        background: #fff0f7;
+      } */
+            .tool:active {
+                transform: scale(0.95);
+            }
+            .tool svg {
+                width: 23px;
+                height: 23px;
+                margin-bottom: 2px;
+            }
+
+            /* canvas */
+            .canvas-wrap {
+                background: #fff;
+                border: 1px solid #ff5fa2;
+                border-radius: 16px;
+                position: relative;
+                overflow: scroll;
+                min-height: 550px;
+            }
+
+            .canvas {
+                position: relative;
+                width: 100%;
+                height: 550px;
+                background:
+                    linear-gradient(135deg, rgba(255, 255, 255, 0.5), rgba(255, 222, 236, 0.5)), repeating-linear-gradient(45deg, #fff 0 8px, #ffeaf3 8px 16px);
+                overflow: scroll;
+            }
+
+            .piece {
+                position: absolute;
+                cursor: grab;
+                filter: drop-shadow(1px 2px 2px rgba(0, 0, 0, 0.15));
+                touch-action: none;
+            }
+            .piece:active {
+                cursor: grabbing;
+            }
+            .piece.selected {
+                outline: 1px solid #ff5fa2;
+                outline-offset: 2px;
+            }
+            .piece img {
+                width: 100%;
+                height: 100%;
+                pointer-events: none;
+                display: block;
+            }
+            .resize-handle {
+                position: absolute;
+                bottom: -5px;
+                right: -5px;
+                width: 14px;
+                height: 14px;
+                background: #ff5fa2;
+                border: 2px solid #fff;
+                border-radius: 50%;
+                cursor: se-resize;
+                display: none;
+                touch-action: none;
+                z-index: 10000;
+            }
+
+            .piece.selected .resize-handle {
+                display: block;
+            }
+
+            /* right panel */
+            .panel {
+                /* background: #ff8cc0; */
+                background: #fff;
+                border: 1px solid #ff5fa2;
+                border-radius: 16px;
+                padding: 8px;
+                display: flex;
+                flex-direction: column;
+            }
+
+            .tabs {
+                display: flex;
+                gap: 4px;
+                margin-bottom: -8px;
+                overflow-x: auto;
+            }
+            .tab {
+                flex: 1;
+                min-width: 0;
+                background: #ff8cc0;
+                border: 1px solid #ff5fa2;
+                border-radius: 8px 8px 0 0;
+                padding-top: 4px;
+                padding-bottom: 12px;
+                font-family: "Cherry Bomb One", cursive;
+                font-size: 15px;
+                color: #fff;
+                cursor: pointer;
+                text-align: center;
+                transition: background 0.15s;
+            }
+            /* .tab.active {
+        background: #fff;
+      }
+      .tab:hover {
+        background: #fff0f7;
+      } */
+
+            .library {
+                background: #ffd2e5;
+                border: 1px solid #ff5fa2;
+                border-radius: 12px;
+                padding: 8px;
+                flex: 1;
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                gap: 6px;
+                align-content: start;
+                overflow-y: auto;
+                max-height: 500px;
+            }
+
+            .item {
+                aspect-ratio: 1;
+                background: #fff;
+                /* border: 1.5px solid #ffb6d5; */
+                border-radius: 8px;
+                padding: 4px;
+                cursor: grab;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                transition:
+                    transform 0.1s,
+                    background 0.15s;
+            }
+            /* .item:hover {
+        transform: scale(1.05);
+        background: #ffe0ee;
+      } */
+            .item:active {
+                cursor: grabbing;
+            }
+            .item img {
+                max-width: 100%;
+                max-height: 100%;
+                pointer-events: none;
+                object-fit: contain;
+            }
+
+            /* scrollbar pretty */
+            .library::-webkit-scrollbar {
+                width: 8px;
+            }
+            .library::-webkit-scrollbar-track {
+                background: #ffeaf3;
+                border-radius: 8px;
+            }
+            .library::-webkit-scrollbar-thumb {
+                background: #ff8cc0;
+                border-radius: 8px;
+            }
+
+            @media (max-width: 800px) {
+                .workspace {
+                    grid-template-columns: 50px 1fr;
+                }
+                .panel {
+                    grid-column: 1 / -1;
+                }
+                .library {
+                    grid-template-columns: repeat(6, 1fr);
+                    max-height: 220px;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="app">
+            <div class="header"> <span class="heart">♥</span>Cute Girl Collage Maker<span class="heart">♥</span> </div>
+
+            <div class="workspace">
+                <div class="sidebar">
+                    <button class="tool" id="undoBtn" title="Undo">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M9 14L4 9l5-5" />
+                            <path d="M4 9h11a5 5 0 0 1 0 10h-3" />
+                        </svg>
+                        Undo
+                    </button>
+                    <button class="tool" id="redoBtn" title="Redo">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M15 14l5-5-5-5" />
+                            <path d="M20 9H9a5 5 0 0 0 0 10h3" />
+                        </svg>
+                        Redo
+                    </button>
+                    <button class="tool" id="saveBtn" title="Save">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 3v12" />
+                            <path d="M7 10l5 5 5-5" />
+                            <path d="M5 21h14" />
+                        </svg>
+                        Save
+                    </button>
+                    <button class="tool" id="frontBtn" title="Bring to front">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="3" y="3" width="12" height="12" rx="2" />
+                            <rect x="9" y="9" width="12" height="12" rx="2" fill="#ffd6e8" />
+                        </svg>
+                        Top
+                    </button>
+                    <button class="tool" id="glitchBtn" title="Glitch">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M13 2L4.5 13.5H12L11 22L19.5 10.5H12L13 2Z" />
+                        </svg>
+                        Glitch
+                    </button>
+                    <button class="tool" id="deleteBtn" title="Delete selected">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M4 7h16" />
+                            <path d="M10 11v6" />
+                            <path d="M14 11v6" />
+                            <path d="M6 7l1 13a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2l1-13" />
+                            <path d="M9 7V4h6v3" />
+                        </svg>
+                        Bin
+                    </button>
+                    <button class="tool" id="clearBtn" title="Clear all">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="9" />
+                            <path d="M8 12h8" />
+                        </svg>
+                        Clear
+                    </button>
+                    <button class="tool" id="helpBtn" title="Help">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="9" />
+                            <path d="M9.5 9a2.5 2.5 0 1 1 3.5 2.3c-1 .5-1.5 1.2-1.5 2.2" />
+                            <circle cx="12" cy="17" r="0.6" fill="#fff" />
+                        </svg>
+                        Help
+                    </button>
+                </div>
+
+                <!-- CANVAS -->
+                <div class="canvas-wrap">
+                    <div class="canvas" id="canvas"></div>
+                </div>
+
+                <!-- RIGHT PANEL -->
+                <div class="panel">
+                    <div class="tabs" id="tabs"></div>
+                    <div class="library" id="library"></div>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            const CATEGORIES = {
+                Scraps: {
+                    folder: "scraps",
+                    files: [
+                        "bff.png",
+                        "birds.png",
+                        "bluedots.png",
+                        "bluefloral.png",
+                        "bubblewrap.png",
+                        "butterfly.png",
+                        "cloud.png",
+                        "collage.png",
+                        "crystal.png",
+                        "doodle.png",
+                        "dotfabric.png",
+                        "dots.png",
+                        "flowerpaper.png",
+                        "flowers.png",
+                        "fruitella.png",
+                        "funstickers.png",
+                        "gingham.png",
+                        "glitter.png",
+                        "green.png",
+                        "greenlines.png",
+                        "label.png",
+                        "lemonfabric.png",
+                        "necklace.png",
+                        "net.png",
+                        "notepaper.png",
+                        "notepaper2.png",
+                        "orbeez.png",
+                        "pink.png",
+                        "pinklines.png",
+                        "pinkplastic.png",
+                        "purple.png",
+                        "purplesparkle.png",
+                        "rainbow.png",
+                        "shiny.png",
+                        "shiny2.png",
+                        "stars.png",
+                        "stripes.png",
+                        "stripes2.png",
+                        "sweets1.png",
+                        "tag.png",
+                        "text.png",
+                        "yellowlines.png",
+                        "yellowplastic.png",
+                    ],
+                },
+                Flowers: {
+                    folder: "flowers",
+                    files: [
+                        "bouquet.png",
+                        "flower1.png",
+                        "flower2.png",
+                        "flower3.png",
+                        "flower4.png",
+                        "flower5.png",
+                        "flower6.png",
+                        "flower7.png",
+                        "flower9.png",
+                    ],
+                },
+                Bows: { folder: "bows", files: ["bow1.png", "bow2.png", "bow3.png"] },
+                Stickers: {
+                    folder: "stickers",
+                    files: [
+                        "dino_sticker_green.png",
+                        "dino_sticker_purple.png",
+                        "dino_sticker_yellow.png",
+                        "eye.png",
+                        "flower_sequin1.png",
+                        "flower_sequin2.png",
+                        "heart.png",
+                        "heart_blue.png",
+                        "heart_pink.png",
+                        "heart_purple.png",
+                        "jewel2.png",
+                        "jewel_heart2.png",
+                        "jewel_heart_blue2.png",
+                        "jewel_heart_pink.png",
+                        "jewel_round.png",
+                        "jewel_round_blue.png",
+                        "jewel_round_purple.png",
+                        "jewel_star.png",
+                        "jewel_star_pink.png",
+                        "jewel_star_purple.png",
+                        "lollipop.png",
+                        "pudding.png",
+                        "smileygreen.png",
+                        "smileyorange.png",
+                        "smileyyellow.png",
+                        "star_blue.png",
+                        "star_pink.png",
+                        "star_purple.png",
+                        "sticker_bear.png",
+                        "sticker_butterfly.png",
+                        "sticker_heart.png",
+                        "sticker_mirror.png",
+                        "strawberry.png",
+                    ],
+                },
+                Buttons: {
+                    folder: "buttons",
+                    files: [
+                        "button_blue.png",
+                        "button_blue2.png",
+                        "button_green.png",
+                        "button_heart.png",
+                        "button_pink.png",
+                        "button_star.png",
+                        "button_yellow.png",
+                    ],
+                },
+                Lace: {
+                    folder: "lace",
+                    files: ["lace1.png", "lace2.png", "lace3.png", "lace4.png", "lace5.png", "lace6.png", "lace7.png", "pinkgingham.png", "pompomtrim.png"],
+                },
+                Letters: {
+                    folder: "letters",
+                    files: ["B.png", "H.png", "J.png", "N.png", "O.png", "P.png", "T.png", "V.png", "Y.png", "Z.png", "exclamation.png"],
+                },
+            }
+
+            const DEFAULT_SIZE = {
+                Scraps: 200,
+                Flowers: 200,
+                Bows: 200,
+                Stickers: 200,
+                Buttons: 200,
+                Lace: 200,
+                Letters: 200,
+            }
+
+            const canvas = document.getElementById("canvas")
+            const library = document.getElementById("library")
+            const tabsEl = document.getElementById("tabs")
+
+            let activeCategory = "Scraps"
+            let zCounter = 1
+            let selectedPiece = null
+            const history = []
+            const redoStack = []
+
+            // Build tabs
+            Object.keys(CATEGORIES).forEach((name, i) => {
+                const tab = document.createElement("button")
+                tab.className = "tab" + (i === 0 ? " active" : "")
+                tab.textContent = name
+                tab.onclick = () => {
+                    activeCategory = name
+                    document.querySelectorAll(".tab").forEach((t) => t.classList.remove("active"))
+                    tab.classList.add("active")
+                    renderLibrary()
+                }
+                tabsEl.appendChild(tab)
+            })
+
+            function renderLibrary() {
+                library.innerHTML = ""
+                const { folder, files } = CATEGORIES[activeCategory]
+                files.forEach((file) => {
+                    const item = document.createElement("div")
+                    item.className = "item"
+                    const src = `https://external-pages.s3.amazonaws.com/kitty-ess/assets/images/${folder}/${file}`
+                    item.innerHTML = `<img src="${src}" alt="${file}" draggable="false">`
+                    item.onclick = () => addPiece(src, DEFAULT_SIZE[activeCategory])
+                    // also allow drag from library to canvas
+                    item.addEventListener("mousedown", (e) => startDragFromLibrary(e, src, DEFAULT_SIZE[activeCategory]))
+                    item.addEventListener("touchstart", (e) => startDragFromLibrary(e, src, DEFAULT_SIZE[activeCategory]), { passive: false })
+                    library.appendChild(item)
+                })
+            }
+            renderLibrary()
+
+            function pushHistory() {
+                const snapshot = Array.from(canvas.children).map((p) => ({
+                    src: p.querySelector("img").src,
+                    left: p.style.left,
+                    top: p.style.top,
+                    width: p.style.width,
+                    height: p.style.height,
+                    transform: p.style.transform,
+                    z: p.style.zIndex,
+                }))
+                history.push(snapshot)
+                if (history.length > 40) history.shift()
+                redoStack.length = 0
+            }
+
+            function restoreSnapshot(snap) {
+                canvas.innerHTML = ""
+                selectedPiece = null
+                snap.forEach((p) => {
+                    const piece = createPieceEl(p.src)
+                    piece.style.left = p.left
+                    piece.style.top = p.top
+                    piece.style.width = p.width
+                    piece.style.height = p.height
+                    piece.style.transform = p.transform
+                    piece.style.zIndex = p.z
+                    canvas.appendChild(piece)
+                })
+            }
+
+            function createPieceEl(src) {
+                const piece = document.createElement("div")
+                piece.className = "piece"
+                piece.dataset.rot = "0"
+                piece.innerHTML = `<img src="${src}" draggable="false"><div class="resize-handle"></div>`
+                attachPieceDrag(piece)
+                attachResizeHandle(piece)
+                return piece
+            }
+
+            function addPiece(src, size, x, y) {
+                pushHistory()
+                const piece = createPieceEl(src)
+                piece.style.width = size + "px"
+                piece.style.height = "auto"
+                const rect = canvas.getBoundingClientRect()
+                const cx = (x ?? rect.width / 2) - size / 2
+                const cy = (y ?? rect.height / 2) - size / 2
+                piece.style.left = Math.max(0, Math.min(rect.width - 20, cx)) + "px"
+                piece.style.top = Math.max(0, Math.min(rect.height - 20, cy)) + "px"
+                piece.style.zIndex = ++zCounter
+                canvas.appendChild(piece)
+                selectPiece(piece)
+                return piece
+            }
+
+            function selectPiece(piece) {
+                if (selectedPiece) selectedPiece.classList.remove("selected")
+                selectedPiece = piece
+                if (piece) piece.classList.add("selected")
+            }
+
+            canvas.addEventListener("mousedown", (e) => {
+                if (e.target === canvas) selectPiece(null)
+            })
+
+            function attachPieceDrag(piece) {
+                let startX,
+                    startY,
+                    origX,
+                    origY,
+                    dragging = false
+
+                const onDown = (e) => {
+                    e.preventDefault()
+                    const t = e.touches ? e.touches[0] : e
+                    selectPiece(piece)
+                    piece.style.zIndex = ++zCounter
+                    startX = t.clientX
+                    startY = t.clientY
+                    origX = parseFloat(piece.style.left)
+                    origY = parseFloat(piece.style.top)
+                    dragging = true
+                    document.addEventListener("mousemove", onMove)
+                    document.addEventListener("mouseup", onUp)
+                    document.addEventListener("touchmove", onMove, { passive: false })
+                    document.addEventListener("touchend", onUp)
+                }
+                const onMove = (e) => {
+                    if (!dragging) return
+                    e.preventDefault()
+                    const t = e.touches ? e.touches[0] : e
+                    piece.style.left = origX + t.clientX - startX + "px"
+                    piece.style.top = origY + t.clientY - startY + "px"
+                }
+                const onUp = () => {
+                    if (dragging) {
+                        dragging = false
+                        pushHistory()
+                    }
+                    document.removeEventListener("mousemove", onMove)
+                    document.removeEventListener("mouseup", onUp)
+                    document.removeEventListener("touchmove", onMove)
+                    document.removeEventListener("touchend", onUp)
+                }
+                piece.addEventListener("mousedown", onDown)
+                piece.addEventListener("touchstart", onDown, { passive: false })
+            }
+
+            function attachResizeHandle(piece) {
+                const handle = piece.querySelector(".resize-handle")
+
+                const onDown = (e) => {
+                    e.preventDefault()
+                    e.stopPropagation()
+                    const t = e.touches ? e.touches[0] : e
+                    const startX = t.clientX
+                    const startW = piece.offsetWidth
+                    const startH = piece.offsetHeight
+                    const aspectRatio = startW / startH
+
+                    const onMove = (e) => {
+                        e.preventDefault()
+                        const t = e.touches ? e.touches[0] : e
+                        const newW = Math.max(20, startW + (t.clientX - startX))
+                        piece.style.width = newW + "px"
+                        piece.style.height = newW / aspectRatio + "px"
+                    }
+
+                    const onUp = () => {
+                        pushHistory()
+                        document.removeEventListener("mousemove", onMove)
+                        document.removeEventListener("mouseup", onUp)
+                        document.removeEventListener("touchmove", onMove)
+                        document.removeEventListener("touchend", onUp)
+                    }
+
+                    document.addEventListener("mousemove", onMove)
+                    document.addEventListener("mouseup", onUp)
+                    document.addEventListener("touchmove", onMove, { passive: false })
+                    document.addEventListener("touchend", onUp)
+                }
+
+                handle.addEventListener("mousedown", onDown)
+                handle.addEventListener("touchstart", onDown, { passive: false })
+            }
+
+            // Drag from library straight onto canvas
+            function startDragFromLibrary(e, src, size) {
+                e.preventDefault()
+                const ghost = document.createElement("img")
+                ghost.src = src
+                ghost.style.position = "fixed"
+                ghost.style.width = size + "px"
+                ghost.style.pointerEvents = "none"
+                ghost.style.opacity = "0.8"
+                ghost.style.zIndex = "9999"
+                document.body.appendChild(ghost)
+
+                const move = (ev) => {
+                    const t = ev.touches ? ev.touches[0] : ev
+                    ghost.style.left = t.clientX - size / 2 + "px"
+                    ghost.style.top = t.clientY - size / 2 + "px"
+                }
+                const up = (ev) => {
+                    const t = ev.changedTouches ? ev.changedTouches[0] : ev
+                    const rect = canvas.getBoundingClientRect()
+                    if (t.clientX >= rect.left && t.clientX <= rect.right && t.clientY >= rect.top && t.clientY <= rect.bottom) {
+                        addPiece(src, size, t.clientX - rect.left, t.clientY - rect.top)
+                    }
+                    document.body.removeChild(ghost)
+                    document.removeEventListener("mousemove", move)
+                    document.removeEventListener("mouseup", up)
+                    document.removeEventListener("touchmove", move)
+                    document.removeEventListener("touchend", up)
+                }
+                move(e)
+                document.addEventListener("mousemove", move)
+                document.addEventListener("mouseup", up)
+                document.addEventListener("touchmove", move, { passive: false })
+                document.addEventListener("touchend", up)
+            }
+
+            // Toolbar buttons
+            document.getElementById("undoBtn").onclick = () => {
+                if (history.length === 0) return
+                const current = Array.from(canvas.children).map((p) => ({
+                    src: p.querySelector("img").src,
+                    left: p.style.left,
+                    top: p.style.top,
+                    width: p.style.width,
+                    height: p.style.height,
+                    transform: p.style.transform,
+                    z: p.style.zIndex,
+                }))
+                redoStack.push(current)
+                restoreSnapshot(history.pop())
+            }
+            document.getElementById("redoBtn").onclick = () => {
+                if (redoStack.length === 0) return
+                const current = Array.from(canvas.children).map((p) => ({
+                    src: p.querySelector("img").src,
+                    left: p.style.left,
+                    top: p.style.top,
+                    width: p.style.width,
+                    height: p.style.height,
+                    transform: p.style.transform,
+                    z: p.style.zIndex,
+                }))
+                history.push(current)
+                restoreSnapshot(redoStack.pop())
+            }
+            document.getElementById("deleteBtn").onclick = () => {
+                if (!selectedPiece) return
+                pushHistory()
+                selectedPiece.remove()
+                selectedPiece = null
+            }
+            document.getElementById("clearBtn").onclick = () => {
+                if (canvas.children.length === 0) return
+                if (!confirm("Clear the whole collage?")) return
+                pushHistory()
+                canvas.innerHTML = ""
+                selectedPiece = null
+            }
+            document.getElementById("frontBtn").onclick = () => {
+                if (!selectedPiece) return
+                selectedPiece.style.zIndex = ++zCounter
+            }
+            document.getElementById("glitchBtn").onclick = () => {
+                if (!selectedPiece) return
+                const r = (parseInt(selectedPiece.dataset.rot) || 0) + 15
+                selectedPiece.dataset.rot = r
+                selectedPiece.style.transform = `rotate(${r}deg)`
+                pushHistory()
+            }
+            document.getElementById("saveBtn").onclick = async () => {
+                // simple save: open a new window with rendered HTML of canvas
+                const html = `<!doctype html><meta charset="utf-8"><title>my collage</title>
+    <body style="margin:0;background:#fff">
+    <div style="position:relative;width:${canvas.clientWidth}px;height:${canvas.clientHeight}px">
+    ${canvas.innerHTML}</div>`
+                const blob = new Blob([html], { type: "text/html" })
+                const url = URL.createObjectURL(blob)
+                window.open(url, "_blank")
+            }
+            document.getElementById("helpBtn").onclick = () => {
+                alert(
+                    "♥ how to use ♥\n\n• click or drag fabric scraps & stickers from the right panel\n• drag pieces around the canvas to arrange them\n• use Spin to rotate, Top to bring to front\n• Bin deletes the selected piece, Clear wipes everything\n• Save opens your collage in a new tab",
+                )
+            }
+
+            // Keyboard delete
+            document.addEventListener("keydown", (e) => {
+                if ((e.key === "Delete" || e.key === "Backspace") && selectedPiece && e.target === document.body) {
+                    pushHistory()
+                    selectedPiece.remove()
+                    selectedPiece = null
+                }
+            })
+        </script>
+    </body>
+</html>
