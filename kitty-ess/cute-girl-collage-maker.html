@@ -1,0 +1,759 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Cute Girl Collage Maker</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  </head>
+  <body>
+    <div class="app">
+      <div class="header">
+        <span class="heart">♥</span>Cute Girl Collage Maker<span class="heart"
+          >♥</span
+        >
+      </div>
+
+      <div class="workspace">
+        <div class="sidebar">
+          <button class="tool" id="undoBtn" title="Undo">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="#fff"
+              stroke-width="2.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M9 14L4 9l5-5" />
+              <path d="M4 9h11a5 5 0 0 1 0 10h-3" />
+            </svg>
+            Undo
+          </button>
+          <button class="tool" id="redoBtn" title="Redo">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="#fff"
+              stroke-width="2.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M15 14l5-5-5-5" />
+              <path d="M20 9H9a5 5 0 0 0 0 10h3" />
+            </svg>
+            Redo
+          </button>
+          <button class="tool" id="saveBtn" title="Save">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="#fff"
+              stroke-width="2.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M12 3v12" />
+              <path d="M7 10l5 5 5-5" />
+              <path d="M5 21h14" />
+            </svg>
+            Save
+          </button>
+          <button class="tool" id="frontBtn" title="Bring to front">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="#fff"
+              stroke-width="2.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <rect x="3" y="3" width="12" height="12" rx="2" />
+              <rect x="9" y="9" width="12" height="12" rx="2" fill="#ffd6e8" />
+            </svg>
+            Top
+          </button>
+          <button class="tool" id="glitchBtn" title="Glitch">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="#fff"
+              stroke-width="2.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M13 2L4.5 13.5H12L11 22L19.5 10.5H12L13 2Z" />
+            </svg>
+            Glitch
+          </button>
+          <button class="tool" id="deleteBtn" title="Delete selected">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="#fff"
+              stroke-width="2.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M4 7h16" />
+              <path d="M10 11v6" />
+              <path d="M14 11v6" />
+              <path d="M6 7l1 13a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2l1-13" />
+              <path d="M9 7V4h6v3" />
+            </svg>
+            Bin
+          </button>
+          <button class="tool" id="clearBtn" title="Clear all">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="#fff"
+              stroke-width="2.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <circle cx="12" cy="12" r="9" />
+              <path d="M8 12h8" />
+            </svg>
+            Clear
+          </button>
+          <button class="tool" id="helpBtn" title="Help">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="#fff"
+              stroke-width="2.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <circle cx="12" cy="12" r="9" />
+              <path d="M9.5 9a2.5 2.5 0 1 1 3.5 2.3c-1 .5-1.5 1.2-1.5 2.2" />
+              <circle cx="12" cy="17" r="0.6" fill="#fff" />
+            </svg>
+            Help
+          </button>
+        </div>
+
+        <!-- CANVAS -->
+        <div class="canvas-wrap">
+          <div class="canvas" id="canvas"></div>
+        </div>
+
+        <!-- RIGHT PANEL -->
+        <div class="panel">
+          <div class="tabs" id="tabs"></div>
+          <div class="library" id="library"></div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const CATEGORIES = {
+        Scraps: {
+          folder: "scraps",
+          files: [
+            "bff.png",
+            "birds.png",
+            "bluedots.png",
+            "bluefloral.png",
+            "bubblewrap.png",
+            "butterfly.png",
+            "cloud.png",
+            "collage.png",
+            "crystal.png",
+            "doodle.png",
+            "dotfabric.png",
+            "dots.png",
+            "flowerpaper.png",
+            "flowers.png",
+            "fruitella.png",
+            "funstickers.png",
+            "gingham.png",
+            "glitter.png",
+            "green.png",
+            "greenlines.png",
+            "label.png",
+            "lemonfabric.png",
+            "necklace.png",
+            "net.png",
+            "notepaper.png",
+            "notepaper2.png",
+            "orbeez.png",
+            "pink.png",
+            "pinklines.png",
+            "pinkplastic.png",
+            "purple.png",
+            "purplesparkle.png",
+            "rainbow.png",
+            "shiny.png",
+            "shiny2.png",
+            "stars.png",
+            "stripes.png",
+            "stripes2.png",
+            "sweets1.png",
+            "tag.png",
+            "text.png",
+            "yellowlines.png",
+            "yellowplastic.png",
+          ],
+        },
+        Flowers: {
+          folder: "flowers",
+          files: [
+            "bouquet.png",
+            "flower1.png",
+            "flower2.png",
+            "flower3.png",
+            "flower4.png",
+            "flower5.png",
+            "flower6.png",
+            "flower7.png",
+            "flower9.png",
+          ],
+        },
+        Bows: { folder: "bows", files: ["bow1.png", "bow2.png", "bow3.png"] },
+        Stickers: {
+          folder: "stickers",
+          files: [
+            "dino_sticker_green.png",
+            "dino_sticker_purple.png",
+            "dino_sticker_yellow.png",
+            "eye.png",
+            "flower_sequin1.png",
+            "flower_sequin2.png",
+            "heart.png",
+            "heart_blue.png",
+            "heart_pink.png",
+            "heart_purple.png",
+            "jewel2.png",
+            "jewel_heart2.png",
+            "jewel_heart_blue2.png",
+            "jewel_heart_pink.png",
+            "jewel_round.png",
+            "jewel_round_blue.png",
+            "jewel_round_purple.png",
+            "jewel_star.png",
+            "jewel_star_pink.png",
+            "jewel_star_purple.png",
+            "lollipop.png",
+            "pudding.png",
+            "smileygreen.png",
+            "smileyorange.png",
+            "smileyyellow.png",
+            "star_blue.png",
+            "star_pink.png",
+            "star_purple.png",
+            "sticker_bear.png",
+            "sticker_butterfly.png",
+            "sticker_heart.png",
+            "sticker_mirror.png",
+            "strawberry.png",
+          ],
+        },
+        Buttons: {
+          folder: "buttons",
+          files: [
+            "button_blue.png",
+            "button_blue2.png",
+            "button_green.png",
+            "button_heart.png",
+            "button_pink.png",
+            "button_star.png",
+            "button_yellow.png",
+          ],
+        },
+        Lace: {
+          folder: "lace",
+          files: [
+            "lace1.png",
+            "lace2.png",
+            "lace3.png",
+            "lace4.png",
+            "lace5.png",
+            "lace6.png",
+            "lace7.png",
+            "pinkgingham.png",
+            "pompomtrim.png",
+          ],
+        },
+        Letters: {
+          folder: "letters",
+          files: [
+            "B.png",
+            "H.png",
+            "J.png",
+            "N.png",
+            "O.png",
+            "P.png",
+            "T.png",
+            "V.png",
+            "Y.png",
+            "Z.png",
+            "exclamation.png",
+          ],
+        },
+      };
+
+      const DEFAULT_SIZE = {
+        Scraps: 190,
+        Flowers: 180,
+        Bows: 100,
+        Stickers: 100,
+        Buttons: 70,
+        Lace: 200,
+        Letters: 70,
+      };
+
+      const canvas = document.getElementById("canvas");
+      const library = document.getElementById("library");
+      const tabsEl = document.getElementById("tabs");
+
+      let activeCategory = "Scraps";
+      let zCounter = 1;
+      let selectedPiece = null;
+      const history = [];
+      const redoStack = [];
+
+      // Build tabs
+      Object.keys(CATEGORIES).forEach((name, i) => {
+        const tab = document.createElement("button");
+        tab.className = "tab" + (i === 0 ? " active" : "");
+        tab.textContent = name;
+        tab.onclick = () => {
+          activeCategory = name;
+          document
+            .querySelectorAll(".tab")
+            .forEach((t) => t.classList.remove("active"));
+          tab.classList.add("active");
+          renderLibrary();
+        };
+        tabsEl.appendChild(tab);
+      });
+
+      function renderLibrary() {
+        library.innerHTML = "";
+        const { folder, files } = CATEGORIES[activeCategory];
+        files.forEach((file) => {
+          const item = document.createElement("div");
+          item.className = "item";
+          const src = `assets/images/${folder}/${file}`;
+          item.innerHTML = `<img src="${src}" alt="${file}" draggable="false">`;
+          item.onclick = () => addPiece(src, DEFAULT_SIZE[activeCategory]);
+          // also allow drag from library to canvas
+          item.addEventListener("mousedown", (e) =>
+            startDragFromLibrary(e, src, DEFAULT_SIZE[activeCategory]),
+          );
+          item.addEventListener(
+            "touchstart",
+            (e) => startDragFromLibrary(e, src, DEFAULT_SIZE[activeCategory]),
+            { passive: false },
+          );
+          library.appendChild(item);
+        });
+      }
+      renderLibrary();
+
+      function pushHistory() {
+        const snapshot = Array.from(canvas.children).map((p) => ({
+          src: p.querySelector("img").src,
+          left: p.style.left,
+          top: p.style.top,
+          width: p.style.width,
+          height: p.style.height,
+          transform: p.style.transform,
+          z: p.style.zIndex,
+        }));
+        history.push(snapshot);
+        if (history.length > 40) history.shift();
+        redoStack.length = 0;
+      }
+
+      function restoreSnapshot(snap) {
+        canvas.innerHTML = "";
+        selectedPiece = null;
+        snap.forEach((p) => {
+          const piece = createPieceEl(p.src);
+          piece.style.left = p.left;
+          piece.style.top = p.top;
+          piece.style.width = p.width;
+          piece.style.height = p.height;
+          piece.style.transform = p.transform;
+          piece.style.zIndex = p.z;
+          canvas.appendChild(piece);
+        });
+      }
+
+      function createPieceEl(src) {
+        const piece = document.createElement("div");
+        piece.className = "piece";
+        piece.dataset.rot = "0";
+        piece.innerHTML = `<img src="${src}" draggable="false"><div class="resize-handle"></div>`;
+        attachPieceDrag(piece);
+        attachResizeHandle(piece);
+        return piece;
+      }
+
+      function addPiece(src, size, x, y) {
+        pushHistory();
+        const piece = createPieceEl(src);
+        piece.style.width = size + "px";
+        piece.style.height = "auto";
+        const rect = canvas.getBoundingClientRect();
+        const cx = (x ?? rect.width / 2) - size / 2;
+        const cy = (y ?? rect.height / 2) - size / 2;
+        piece.style.left = Math.max(0, Math.min(rect.width - 20, cx)) + "px";
+        piece.style.top = Math.max(0, Math.min(rect.height - 20, cy)) + "px";
+        piece.style.zIndex = ++zCounter;
+        canvas.appendChild(piece);
+        selectPiece(piece);
+        return piece;
+      }
+
+      function selectPiece(piece) {
+        if (selectedPiece) selectedPiece.classList.remove("selected");
+        selectedPiece = piece;
+        if (piece) piece.classList.add("selected");
+      }
+
+      canvas.addEventListener("mousedown", (e) => {
+        if (e.target === canvas) selectPiece(null);
+      });
+
+      function attachPieceDrag(piece) {
+        let startX,
+          startY,
+          origX,
+          origY,
+          dragging = false;
+
+        const onDown = (e) => {
+          e.preventDefault();
+          const t = e.touches ? e.touches[0] : e;
+          selectPiece(piece);
+          piece.style.zIndex = ++zCounter;
+          startX = t.clientX;
+          startY = t.clientY;
+          origX = parseFloat(piece.style.left);
+          origY = parseFloat(piece.style.top);
+          dragging = true;
+          document.addEventListener("mousemove", onMove);
+          document.addEventListener("mouseup", onUp);
+          document.addEventListener("touchmove", onMove, { passive: false });
+          document.addEventListener("touchend", onUp);
+        };
+        const onMove = (e) => {
+          if (!dragging) return;
+          e.preventDefault();
+          const t = e.touches ? e.touches[0] : e;
+          piece.style.left = origX + t.clientX - startX + "px";
+          piece.style.top = origY + t.clientY - startY + "px";
+        };
+        const onUp = () => {
+          if (dragging) {
+            dragging = false;
+            pushHistory();
+          }
+          document.removeEventListener("mousemove", onMove);
+          document.removeEventListener("mouseup", onUp);
+          document.removeEventListener("touchmove", onMove);
+          document.removeEventListener("touchend", onUp);
+        };
+        piece.addEventListener("mousedown", onDown);
+        piece.addEventListener("touchstart", onDown, { passive: false });
+      }
+
+      function attachResizeHandle(piece) {
+        const handle = piece.querySelector(".resize-handle");
+
+        const onDown = (e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          const t = e.touches ? e.touches[0] : e;
+          const startX = t.clientX;
+          const startW = piece.offsetWidth;
+          const startH = piece.offsetHeight;
+          const aspectRatio = startW / startH;
+
+          const onMove = (e) => {
+            e.preventDefault();
+            const t = e.touches ? e.touches[0] : e;
+            const newW = Math.max(20, startW + (t.clientX - startX));
+            piece.style.width = newW + "px";
+            piece.style.height = newW / aspectRatio + "px";
+          };
+
+          const onUp = () => {
+            pushHistory();
+            document.removeEventListener("mousemove", onMove);
+            document.removeEventListener("mouseup", onUp);
+            document.removeEventListener("touchmove", onMove);
+            document.removeEventListener("touchend", onUp);
+          };
+
+          document.addEventListener("mousemove", onMove);
+          document.addEventListener("mouseup", onUp);
+          document.addEventListener("touchmove", onMove, { passive: false });
+          document.addEventListener("touchend", onUp);
+        };
+
+        handle.addEventListener("mousedown", onDown);
+        handle.addEventListener("touchstart", onDown, { passive: false });
+      }
+
+      // Drag from library straight onto canvas
+      function startDragFromLibrary(e, src, size) {
+        e.preventDefault();
+        const ghost = document.createElement("img");
+        ghost.src = src;
+        ghost.style.position = "fixed";
+        ghost.style.width = size + "px";
+        ghost.style.pointerEvents = "none";
+        ghost.style.opacity = "0.8";
+        ghost.style.zIndex = "9999";
+        document.body.appendChild(ghost);
+
+        const move = (ev) => {
+          const t = ev.touches ? ev.touches[0] : ev;
+          ghost.style.left = t.clientX - size / 2 + "px";
+          ghost.style.top = t.clientY - size / 2 + "px";
+        };
+        const up = (ev) => {
+          const t = ev.changedTouches ? ev.changedTouches[0] : ev;
+          const rect = canvas.getBoundingClientRect();
+          if (
+            t.clientX >= rect.left &&
+            t.clientX <= rect.right &&
+            t.clientY >= rect.top &&
+            t.clientY <= rect.bottom
+          ) {
+            addPiece(src, size, t.clientX - rect.left, t.clientY - rect.top);
+          }
+          document.body.removeChild(ghost);
+          document.removeEventListener("mousemove", move);
+          document.removeEventListener("mouseup", up);
+          document.removeEventListener("touchmove", move);
+          document.removeEventListener("touchend", up);
+        };
+        move(e);
+        document.addEventListener("mousemove", move);
+        document.addEventListener("mouseup", up);
+        document.addEventListener("touchmove", move, { passive: false });
+        document.addEventListener("touchend", up);
+      }
+
+      // Toolbar buttons
+      document.getElementById("undoBtn").onclick = () => {
+        if (history.length === 0) return;
+        const current = Array.from(canvas.children).map((p) => ({
+          src: p.querySelector("img").src,
+          left: p.style.left,
+          top: p.style.top,
+          width: p.style.width,
+          height: p.style.height,
+          transform: p.style.transform,
+          z: p.style.zIndex,
+        }));
+        redoStack.push(current);
+        restoreSnapshot(history.pop());
+      };
+      document.getElementById("redoBtn").onclick = () => {
+        if (redoStack.length === 0) return;
+        const current = Array.from(canvas.children).map((p) => ({
+          src: p.querySelector("img").src,
+          left: p.style.left,
+          top: p.style.top,
+          width: p.style.width,
+          height: p.style.height,
+          transform: p.style.transform,
+          z: p.style.zIndex,
+        }));
+        history.push(current);
+        restoreSnapshot(redoStack.pop());
+      };
+      document.getElementById("deleteBtn").onclick = () => {
+        if (!selectedPiece) return;
+        pushHistory();
+        selectedPiece.remove();
+        selectedPiece = null;
+      };
+      document.getElementById("clearBtn").onclick = () => {
+        if (canvas.children.length === 0) return;
+        if (!confirm("Clear the whole collage?")) return;
+        pushHistory();
+        canvas.innerHTML = "";
+        selectedPiece = null;
+      };
+      document.getElementById("frontBtn").onclick = () => {
+        if (!selectedPiece) return;
+        selectedPiece.style.zIndex = ++zCounter;
+      };
+
+      document.getElementById("glitchBtn").onclick = () => {
+        const pieces = canvas.querySelectorAll(".piece");
+
+        if (pieces.length === 0) {
+          alert("Add some images to the canvas first!");
+          return;
+        }
+
+        const INTENSITY = {
+          maxStrips: 15, // more strips
+          maxShift: 60, // more pixel displacement
+          probability: 0.7, // more strips affected
+          extraEffects: true, // true = adds color/noise effects
+        };
+
+        pieces.forEach((piece) => {
+          const img = piece.querySelector("img");
+          if (!img) return;
+
+          const canvas = document.createElement("canvas");
+          const ctx = canvas.getContext("2d");
+
+          const imgWidth = img.naturalWidth || 200;
+          const imgHeight = img.naturalHeight || 200;
+
+          canvas.width = imgWidth;
+          canvas.height = imgHeight;
+
+          ctx.drawImage(img, 0, 0, imgWidth, imgHeight);
+
+          const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+          const data = imageData.data;
+
+          const numStrips = Math.floor(Math.random() * INTENSITY.maxStrips) + 2;
+          const stripHeight = Math.floor(canvas.height / numStrips);
+
+          for (let i = 0; i < numStrips; i++) {
+            if (Math.random() < INTENSITY.probability) {
+              const y = i * stripHeight;
+              const shift =
+                Math.floor(Math.random() * INTENSITY.maxShift) -
+                INTENSITY.maxShift / 2;
+
+              const stripData = new Uint8ClampedArray(
+                stripHeight * canvas.width * 4,
+              );
+              for (let row = 0; row < stripHeight; row++) {
+                const srcIdx = ((y + row) % canvas.height) * canvas.width * 4;
+                const dstIdx = row * canvas.width * 4;
+                for (let j = 0; j < canvas.width * 4; j++) {
+                  stripData[dstIdx + j] = data[srcIdx + j];
+                }
+              }
+
+              for (let row = 0; row < stripHeight; row++) {
+                const dstRow = (y + row) % canvas.height;
+                const dstIdx = dstRow * canvas.width * 4;
+                for (let x = 0; x < canvas.width; x++) {
+                  const srcX = (x + shift + canvas.width) % canvas.width;
+                  const srcIdx = row * canvas.width * 4 + srcX * 4;
+                  const dstIdx2 = dstIdx + x * 4;
+                  for (let c = 0; c < 4; c++) {
+                    data[dstIdx2 + c] = stripData[srcIdx + c];
+                  }
+                }
+              }
+            }
+          }
+
+          if (INTENSITY.extraEffects) {
+            // Color distortion
+            for (let i = 0; i < data.length; i += 4) {
+              if (Math.random() < 0.05) {
+                data[i] = Math.floor(Math.random() * 256); // Red
+                data[i + 1] = Math.floor(Math.random() * 256); // Green
+                data[i + 2] = Math.floor(Math.random() * 256); // Blue
+              }
+            }
+
+            // Random block shifts
+            const numBlocks = Math.floor(Math.random() * 3);
+            for (let b = 0; b < numBlocks; b++) {
+              const blockX = Math.floor(Math.random() * canvas.width * 0.7);
+              const blockY = Math.floor(Math.random() * canvas.height * 0.7);
+              const blockW = Math.floor(Math.random() * 40) + 20;
+              const blockH = Math.floor(Math.random() * 40) + 20;
+              const shiftX = Math.floor(Math.random() * 30) - 15;
+              const shiftY = Math.floor(Math.random() * 30) - 15;
+
+              const blockData = new Uint8ClampedArray(blockW * blockH * 4);
+              for (let y = 0; y < blockH; y++) {
+                for (let x = 0; x < blockW; x++) {
+                  const srcX =
+                    (blockX + x + shiftX + canvas.width) % canvas.width;
+                  const srcY =
+                    (blockY + y + shiftY + canvas.height) % canvas.height;
+                  const srcIdx = (srcY * canvas.width + srcX) * 4;
+                  const dstIdx = (y * blockW + x) * 4;
+                  for (let c = 0; c < 4; c++) {
+                    blockData[dstIdx + c] = data[srcIdx + c];
+                  }
+                }
+              }
+              for (let y = 0; y < blockH; y++) {
+                for (let x = 0; x < blockW; x++) {
+                  const dstX = (blockX + x) % canvas.width;
+                  const dstY = (blockY + y) % canvas.height;
+                  const dstIdx = (dstY * canvas.width + dstX) * 4;
+                  const srcIdx = (y * blockW + x) * 4;
+                  for (let c = 0; c < 4; c++) {
+                    data[dstIdx + c] = blockData[srcIdx + c];
+                  }
+                }
+              }
+            }
+          }
+
+          ctx.putImageData(imageData, 0, 0);
+
+          const glitchedSrc = canvas.toDataURL("image/png");
+          img.src = glitchedSrc;
+        });
+
+        pushHistory();
+      };
+
+      document.getElementById("saveBtn").onclick = async () => {
+        const canvasElement = document.querySelector(".canvas");
+
+        try {
+          const canvas = await html2canvas(canvasElement, {
+            backgroundColor: "#ffffff",
+            scale: 2, // Higher quality (2x resolution)
+            useCORS: true,
+            logging: false,
+            allowTaint: true,
+          });
+
+          const link = document.createElement("a");
+          link.download = "my-collage.png";
+          link.href = canvas.toDataURL("image/png");
+          link.click();
+        } catch (error) {
+          console.error("Error saving collage:", error);
+          alert("Failed to save collage. Please try again.");
+        }
+      };
+
+      document.getElementById("helpBtn").onclick = () => {
+        alert(
+          "♥ how to use ♥\n\n• click or drag fabric scraps & stickers from the right panel\n• drag pieces around the canvas to arrange them\n• top to bring to front\n• glitch to data bend\n• bin deletes the selected piece\n• clear wipes everything\n• save downloads your collage as a PNG\n• undo/redo to revert changes\n",
+        );
+      };
+
+      // Keyboard delete
+      document.addEventListener("keydown", (e) => {
+        if (
+          (e.key === "Delete" || e.key === "Backspace") &&
+          selectedPiece &&
+          e.target === document.body
+        ) {
+          pushHistory();
+          selectedPiece.remove();
+          selectedPiece = null;
+        }
+      });
+    </script>
+  </body>
+</html>
