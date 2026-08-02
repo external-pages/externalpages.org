@@ -3,6 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <title>Cute Girl Collage Maker</title>
+        <link rel="icon" type="image/png" href="https://external-pages.s3.amazonaws.com/kitty-ess/assets/images/stickers/jewel_heart_pink.png" />
         <link rel="stylesheet" type="text/css" href="style.css" />
         <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
     </head>
@@ -160,11 +161,8 @@
                 Stickers: {
                     folder: "stickers",
                     files: [
-                        "dino_sticker_green.png",
-                        "dino_sticker_green2.png",
                         "dino_sticker_purple.png",
                         "dino_sticker_yellow.png",
-                        "eye.png",
                         "flower_sequin1.png",
                         "flower_sequin2.png",
                         "heart.png",
@@ -205,8 +203,6 @@
                         "sticker_flower2.png",
                         "sticker_frog.png",
                         "sticker_heart.png",
-                        "sticker_mirror.png",
-                        "sticker_mirror2.png",
                         "sticker_mushroom1.png",
                         "sticker_mushroom2.png",
                         "sticker_puppy.png",
@@ -230,7 +226,7 @@
                 },
                 Lace: {
                     folder: "lace",
-                    files: ["lace1.png", "lace2.png", "lace3.png", "lace4.png", "lace5.png", "lace6.png", "lace7.png", "pinkgingham.png", "pompomtrim.png"],
+                    files: ["lace1.png", "lace2.png", "lace3.png", "lace4.png", "lace5.png", "lace6.png", "lace7.png", "pinkgingham.png"],
                 },
                 Letters: {
                     folder: "letters",
@@ -240,7 +236,6 @@
                         "C.png",
                         "D.png",
                         "E.png",
-                        "exclamation.png",
                         "F2.png",
                         "G.png",
                         "H.png",
@@ -262,6 +257,7 @@
                         "X.png",
                         "Y.png",
                         "Z.png",
+                        "exclamation.png",
                     ],
                 },
             }
@@ -306,12 +302,12 @@
                 files.forEach((file) => {
                     const item = document.createElement("div")
                     item.className = "item"
-                    const src = `assets/images/${folder}/${file}`
+                    const src = `https://external-pages.s3.amazonaws.com/kitty-ess/assets/images/${folder}/${file}`
                     item.innerHTML = `<img src="${src}" alt="${file}" draggable="false">`
-                    item.onclick = () => addPiece(src, DEFAULT_SIZE[activeCategory])
+                    item.onclick = () => addPiece(src, DEFAULT_SIZE[activeCategory], null, null, file)
                     // also allow drag from library to canvas
-                    item.addEventListener("mousedown", (e) => startDragFromLibrary(e, src, DEFAULT_SIZE[activeCategory]))
-                    item.addEventListener("touchstart", (e) => startDragFromLibrary(e, src, DEFAULT_SIZE[activeCategory]), { passive: false })
+                    item.addEventListener("mousedown", (e) => startDragFromLibrary(e, src, DEFAULT_SIZE[activeCategory], file))
+                    item.addEventListener("touchstart", (e) => startDragFromLibrary(e, src, DEFAULT_SIZE[activeCategory], file), { passive: false })
                     library.appendChild(item)
                 })
             }
@@ -357,11 +353,20 @@
                 return piece
             }
 
-            function addPiece(src, size, x, y) {
+            function addPiece(src, size, x, y, filename) {
                 pushHistory()
                 const piece = createPieceEl(src)
-                piece.style.width = size + "px"
-                piece.style.height = "auto"
+
+                const isTallLetter = filename && (filename === "I2.png" || filename === "exclamation.png" || filename === "l.png" || filename === "L.png")
+
+                if (isTallLetter) {
+                    piece.style.height = "90px"
+                    piece.style.width = "auto"
+                } else {
+                    piece.style.width = size + "px"
+                    piece.style.height = "auto"
+                }
+
                 const rect = canvas.getBoundingClientRect()
                 const cx = (x ?? rect.width / 2) - size / 2
                 const cy = (y ?? rect.height / 2) - size / 2
@@ -464,13 +469,22 @@
                 handle.addEventListener("touchstart", onDown, { passive: false })
             }
 
-            // Drag from library straight onto canvas
-            function startDragFromLibrary(e, src, size) {
+            function startDragFromLibrary(e, src, size, filename) {
                 e.preventDefault()
                 const ghost = document.createElement("img")
                 ghost.src = src
                 ghost.style.position = "fixed"
-                ghost.style.width = size + "px"
+
+                // Use height for tall letters, width for others
+                const isTallLetter = filename && (filename === "I2.png" || filename === "exclamation.png" || filename === "l.png" || filename === "L.png")
+                if (isTallLetter) {
+                    ghost.style.height = size + "px"
+                    ghost.style.width = "auto"
+                } else {
+                    ghost.style.width = size + "px"
+                    ghost.style.height = "auto"
+                }
+
                 ghost.style.pointerEvents = "none"
                 ghost.style.opacity = "0.8"
                 ghost.style.zIndex = "9999"
@@ -485,7 +499,7 @@
                     const t = ev.changedTouches ? ev.changedTouches[0] : ev
                     const rect = canvas.getBoundingClientRect()
                     if (t.clientX >= rect.left && t.clientX <= rect.right && t.clientY >= rect.top && t.clientY <= rect.bottom) {
-                        addPiece(src, size, t.clientX - rect.left, t.clientY - rect.top)
+                        addPiece(src, size, t.clientX - rect.left, t.clientY - rect.top, filename)
                     }
                     document.body.removeChild(ghost)
                     document.removeEventListener("mousemove", move)
@@ -500,7 +514,6 @@
                 document.addEventListener("touchend", up)
             }
 
-            // Toolbar buttons
             document.getElementById("undoBtn").onclick = () => {
                 if (history.length === 0) return
                 const current = Array.from(canvas.children).map((p) => ({
