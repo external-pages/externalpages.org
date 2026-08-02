@@ -5,6 +5,7 @@
   "routes": [
     { "src": "/coverart10", "dest": "/coverart10.html" },
     { "src": "/cute-girl-collage-maker", "dest": "/cute-girl-collage-maker.html" },
+    { "src": "/kitty-ess", "dest": "/kitty-ess.html" },
     { "src": "/rhea-dillon", "dest": "/rhea-dillon.html" },
     { "src": "/camila-galaz", "dest": "/camila-galaz.html" },
     { "src": "/yacht-metaphor", "dest": "/yacht-metaphor.html" },
