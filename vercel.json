@@ -4,6 +4,7 @@
   "builds": [{ "src": "**/*", "use": "@now/static" }],
   "routes": [
     { "src": "/coverart10", "dest": "/coverart10.html" },
+    { "src": "/cute-girl-collage-maker", "dest": "/cute-girl-collage-maker.html" },
     { "src": "/rhea-dillon", "dest": "/rhea-dillon.html" },
     { "src": "/camila-galaz", "dest": "/camila-galaz.html" },
     { "src": "/yacht-metaphor", "dest": "/yacht-metaphor.html" },
