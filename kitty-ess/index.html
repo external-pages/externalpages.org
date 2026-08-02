@@ -632,16 +632,7 @@
                     }
 
                     if (INTENSITY.extraEffects) {
-                        // Color distortion
-                        for (let i = 0; i < data.length; i += 4) {
-                            if (Math.random() < 0.05) {
-                                data[i] = Math.floor(Math.random() * 256) // Red
-                                data[i + 1] = Math.floor(Math.random() * 256) // Green
-                                data[i + 2] = Math.floor(Math.random() * 256) // Blue
-                            }
-                        }
-
-                        // Random block shifts
+                        // Random block shifts only - no color noise
                         const numBlocks = Math.floor(Math.random() * 3)
                         for (let b = 0; b < numBlocks; b++) {
                             const blockX = Math.floor(Math.random() * canvas.width * 0.7)
