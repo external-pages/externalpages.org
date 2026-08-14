@@ -5,7 +5,6 @@
         <title>Cute Girl Collage Maker</title>
         <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1" />
         <link rel="icon" type="image/png" href="https://external-pages.s3.amazonaws.com/kitty-ess/assets/images/stickers/jewel_heart_pink.png" />
-
         <meta property="og:title" content="Cute Girl Collage Maker" />
         <meta property="og:description" content="by Kitty Ess" />
         <meta property="og:image" content="https://external-pages.s3.amazonaws.com/kitty-ess/assets/meta/meta.png" />
@@ -16,7 +15,6 @@
         <meta name="twitter:description" content="by Kitty Ess" />
         <meta name="twitter:image" content="https://external-pages.s3.amazonaws.com/kitty-ess/assets/meta/meta.png" />
         <meta name="twitter:url" content="https://externalpages.org/cute-girl-collage-maker" />
-
         <link rel="stylesheet" type="text/css" href="style.css" />
         <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
     </head>
@@ -88,12 +86,10 @@
                     </button>
                 </div>
 
-                <!-- CANVAS -->
                 <div class="canvas-wrap">
                     <div class="canvas" id="canvas"></div>
                 </div>
 
-                <!-- RIGHT PANEL -->
                 <div class="panel">
                     <div class="tabs" id="tabs"></div>
                     <div class="library" id="library"></div>
@@ -296,7 +292,6 @@
             const history = []
             const redoStack = []
 
-            // Build tabs
             Object.keys(CATEGORIES).forEach((name, i) => {
                 const tab = document.createElement("button")
                 tab.className = "tab" + (i === 0 ? " active" : "")
@@ -489,7 +484,6 @@
                 ghost.src = src
                 ghost.style.position = "fixed"
 
-                // Use height for tall letters, width for others
                 const isTallLetter = filename && (filename === "I2.png" || filename === "exclamation.png" || filename === "l.png" || filename === "L.png")
                 if (isTallLetter) {
                     ghost.style.height = size + "px"
@@ -639,9 +633,6 @@
                         }
                     }
 
-                    // Subtle chromatic aberration: shift red/blue channels a few px
-                    // in opposite directions while leaving green in place, so edges
-                    // pick up a soft red/cyan color fringe like a mis-registered print.
                     const original = new Uint8ClampedArray(data)
                     const shiftAmount = Math.floor(Math.random() * 12) + 6 // 6-17px
                     for (let y = 0; y < canvas.height; y++) {
@@ -659,7 +650,6 @@
                     }
 
                     if (INTENSITY.extraEffects) {
-                        // Random block shifts only - no color noise
                         const numBlocks = Math.floor(Math.random() * 3)
                         for (let b = 0; b < numBlocks; b++) {
                             const blockX = Math.floor(Math.random() * canvas.width * 0.7)
@@ -732,7 +722,6 @@
                 )
             }
 
-            // Keyboard delete
             document.addEventListener("keydown", (e) => {
                 if ((e.key === "Delete" || e.key === "Backspace") && selectedPiece && e.target === document.body) {
                     pushHistory()
