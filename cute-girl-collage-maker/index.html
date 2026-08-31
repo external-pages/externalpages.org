@@ -356,7 +356,7 @@
                 const piece = document.createElement("div")
                 piece.className = "piece"
                 piece.dataset.rot = "0"
-                piece.innerHTML = `<img src="${src}" draggable="false"><div class="resize-handle"></div>`
+                piece.innerHTML = `<img src="${src}" draggable="false" crossorigin="anonymous"><div class="resize-handle"></div>`
                 attachPieceDrag(piece)
                 attachResizeHandle(piece)
                 return piece
