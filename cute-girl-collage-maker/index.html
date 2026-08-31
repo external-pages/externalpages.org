@@ -312,7 +312,7 @@
                     const item = document.createElement("div")
                     item.className = "item"
                     const src = `https://external-pages.s3.amazonaws.com/kitty-ess/assets/images/${folder}/${file}`
-                    item.innerHTML = `<img src="${src}" alt="${file}" draggable="false">`
+                    item.innerHTML = `<img src="${src}" alt="${file}" draggable="false" crossorigin="anonymous">`
                     item.onclick = () => addPiece(src, DEFAULT_SIZE[activeCategory], null, null, file)
                     // also allow drag from library to canvas
                     item.addEventListener("mousedown", (e) => startDragFromLibrary(e, src, DEFAULT_SIZE[activeCategory], file))
